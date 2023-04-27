@@ -1,29 +1,37 @@
 {
-  "extends": "@open-web3/dev-config/config/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["esnext"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "target": "esnext",
+    "skipLibCheck": true,
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "types": ["node", "@polkadot/types-known", "@polkadot/types-codec"],
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@acala-network/api": ["packages/api/src"],
+      "@acala-network/api/*": ["packages/api/src/*"],
+      "@acala-network/types": ["packages/types/src"],
+      "@acala-network/types/*": ["packages/types/src/*"],
+      "@acala-network/api-derive": ["packages/api-derive/src"],
+      "@acala-network/api-derive/*": ["packages/api-derive/src/*"],
+      "@acala-network/type-definitions": ["packages/type-definitions/src"],
+      "@acala-network/type-definitions/*": ["packages/type-definitions/src/*"]
+    }
+  },
   "exclude": [
     "build/**/*",
     "**/build/**/*"
-  ],
-  "compilerOptions": {
-    "target": "es2019",
-    "module": "CommonJS",
-    "resolveJsonModule": true,
-    "baseUrl": "./packages",
-    "composite": true,
-    "paths": {
-      "@acala-network/api": ["api/src"],
-      "@acala-network/api/*": ["api/src/*"],
-      "@acala-network/types": ["types/src"],
-      "@acala-network/types/*": ["types/src/*"],
-      "@acala-network/api-derive": ["api-derive/src"],
-      "@acala-network/api-derive/*": ["api-derive/src/*"],
-      "@acala-network/type-definitions": ["type-definitions/src"],
-      "@acala-network/type-definitions/*": ["type-definitions/src/*"]
-    },
-    "skipLibCheck": true,
-    "typeRoots": [
-      "./node_modules/@polkadot/ts",
-      "./node_modules/@types"
-    ]
-  }
+  ]
 }
