@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/AcalaNetwork/acala.js",
   "dependencies": {
-    "@acala-network/type-definitions": "4.1.8-14",
+    "@acala-network/type-definitions": "5.0.0",
     "@open-web3/orml-types": "^1.1.4"
   },
   "peerDependencies": {
