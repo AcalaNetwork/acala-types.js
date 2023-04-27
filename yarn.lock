@@ -10,7 +10,7 @@ __metadata:
   resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
     "@acala-network/types": 5.0.2
-    "@open-web3/orml-types": ^1.1.4
+    "@open-web3/orml-types": ^2.0.1
   peerDependencies:
     "@polkadot/api": ^9.9.1
   languageName: unknown
@@ -43,7 +43,7 @@ __metadata:
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
     "@acala-network/type-definitions": 5.0.2
-    "@open-web3/orml-types": ^1.1.4
+    "@open-web3/orml-types": ^2.0.1
   peerDependencies:
     "@polkadot/api": ^9.9.1
   languageName: unknown
@@ -2340,7 +2340,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-web3/orml-type-definitions@npm:1.1.4, @open-web3/orml-type-definitions@npm:^1.1.4":
+"@open-web3/orml-type-definitions@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@open-web3/orml-type-definitions@npm:2.0.1"
+  dependencies:
+    lodash.merge: ^4.6.2
+  checksum: a27ba7d37d9c4d497989d4f4cebaf997bc4a06e2f74412a46735b4431d8f21d2ce2ceaafcebbb9911b0e5271a169994bad0b7c359d8eef0839cfdb3575a3c886
+  languageName: node
+  linkType: hard
+
+"@open-web3/orml-type-definitions@npm:^1.1.4":
   version: 1.1.4
   resolution: "@open-web3/orml-type-definitions@npm:1.1.4"
   dependencies:
@@ -2349,14 +2358,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-web3/orml-types@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "@open-web3/orml-types@npm:1.1.4"
+"@open-web3/orml-types@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@open-web3/orml-types@npm:2.0.1"
   dependencies:
-    "@open-web3/orml-type-definitions": 1.1.4
+    "@open-web3/orml-type-definitions": 2.0.1
   peerDependencies:
-    "@polkadot/api": ">6.3.1"
-  checksum: fb3985b70922c9bbac6fea41754467d8fa5db298383336d1d43d5aa59ed85d0036ffd077089cccf6e4936b4589829f079496e61ace3344e6a6cae22dce7cc265
+    "@polkadot/api": ^8.12.2
+  checksum: aa01716f15328260ffeb3d1e5c2cf01664c4af4872c625a9ea590fa56581a0f39a02a92ce5f860b27ac22e56091b0d4a6a03f90810b29e5f9abcdfaf09487fe4
   languageName: node
   linkType: hard
 
