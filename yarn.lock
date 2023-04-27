@@ -22,7 +22,7 @@ __metadata:
   dependencies:
     "@acala-network/api-derive": 5.0.2
     "@acala-network/types": 5.0.2
-    "@open-web3/orml-api-derive": ^1.1.4
+    "@open-web3/orml-api-derive": ^2.0.1
   peerDependencies:
     "@polkadot/api": ^9.9.1
   languageName: unknown
@@ -2328,15 +2328,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-web3/orml-api-derive@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "@open-web3/orml-api-derive@npm:1.1.4"
+"@open-web3/orml-api-derive@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@open-web3/orml-api-derive@npm:2.0.1"
   dependencies:
     memoizee: ^0.4.15
-    rxjs: ^7.2.0
+    rxjs: ^7.5.5
   peerDependencies:
-    "@polkadot/api": ">6.3.1"
-  checksum: 7913157df1f65e37a368d6178e2d20a7b29f9f15832689440890d9b01589f5871a9451ab298357591dd6d82552fba9510e27ada353fb4b9bcf3c0ca482599714
+    "@polkadot/api": ^8.12.2
+  checksum: 6ff7a515aca591d32ffdd91f57d386481894fef2be293b6f0be7b76330643b333fd3410400358791a837a8d6e57acdf930e1255bd80466bc3732b7ac7e6a5cfd
   languageName: node
   linkType: hard
 
@@ -10204,7 +10204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.2.0, rxjs@npm:^7.5.5, rxjs@npm:^7.5.7":
+"rxjs@npm:^7.5.5, rxjs@npm:^7.5.7":
   version: 7.8.1
   resolution: "rxjs@npm:7.8.1"
   dependencies:
