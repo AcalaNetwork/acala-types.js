@@ -5,11 +5,11 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/api-derive@5.0.1, @acala-network/api-derive@workspace:packages/api-derive":
+"@acala-network/api-derive@5.0.2, @acala-network/api-derive@workspace:packages/api-derive":
   version: 0.0.0-use.local
   resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
-    "@acala-network/types": 5.0.1
+    "@acala-network/types": 5.0.2
     "@open-web3/orml-types": ^1.1.4
   peerDependencies:
     "@polkadot/api": ^9.9.1
@@ -20,15 +20,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@acala-network/api@workspace:packages/api"
   dependencies:
-    "@acala-network/api-derive": 5.0.1
-    "@acala-network/types": 5.0.1
+    "@acala-network/api-derive": 5.0.2
+    "@acala-network/types": 5.0.2
     "@open-web3/orml-api-derive": ^1.1.4
   peerDependencies:
     "@polkadot/api": ^9.9.1
   languageName: unknown
   linkType: soft
 
-"@acala-network/type-definitions@5.0.1, @acala-network/type-definitions@workspace:packages/type-definitions":
+"@acala-network/type-definitions@5.0.2, @acala-network/type-definitions@workspace:packages/type-definitions":
   version: 0.0.0-use.local
   resolution: "@acala-network/type-definitions@workspace:packages/type-definitions"
   dependencies:
@@ -38,11 +38,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@acala-network/types@5.0.1, @acala-network/types@workspace:packages/types":
+"@acala-network/types@5.0.2, @acala-network/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
-    "@acala-network/type-definitions": 5.0.1
+    "@acala-network/type-definitions": 5.0.2
     "@open-web3/orml-types": ^1.1.4
   peerDependencies:
     "@polkadot/api": ^9.9.1
