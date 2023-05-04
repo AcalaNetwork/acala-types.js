@@ -22,7 +22,7 @@
     "@polkadot/api": "^10.5.1"
   },
   "devDependencies": {
-    "@types/websocket": "^1",
+    "@types/websocket": "^1.0.5",
     "websocket": "^1.0.34"
   }
 }

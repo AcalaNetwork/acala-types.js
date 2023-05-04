@@ -22,9 +22,9 @@
     "update-types": "yarn update-metadata && yarn generate:defs && yarn generate:meta"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.21.8",
     "@babel/register": "^7.21.0",
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "@open-web3/dev-config": "^0.2.9",
     "@open-web3/util": "^2.0.1",
     "@polkadot/api": "^10.5.1",
