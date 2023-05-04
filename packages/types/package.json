@@ -16,9 +16,13 @@
   "homepage": "https://github.com/AcalaNetwork/acala.js",
   "dependencies": {
     "@acala-network/type-definitions": "5.0.2",
-    "@open-web3/orml-types": "^1.1.4"
+    "@open-web3/orml-types": "^2.0.1"
   },
   "peerDependencies": {
-    "@polkadot/api": "^9.9.1"
+    "@polkadot/api": "^10.5.1"
+  },
+  "devDependencies": {
+    "@types/websocket": "^1",
+    "websocket": "^1.0.34"
   }
 }

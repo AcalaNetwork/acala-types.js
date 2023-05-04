@@ -6,7 +6,7 @@ import fs from 'fs';
 import { generateTsDef } from '@polkadot/typegen/generate/tsDef';
 import { generateInterfaceTypes } from '@polkadot/typegen/generate/interfaceRegistry'
 import { assertDir, writeFile, HEADER } from '@polkadot/typegen/util';
-import { generateDefaultCalls, generateDefaultConsts, generateDefaultErrors, generateDefaultEvents, generateDefaultQuery, generateDefaultRpc, generateDefaultTx } from '@polkadot/typegen/generate';
+import { generateDefaultRuntime, generateDefaultConsts, generateDefaultErrors, generateDefaultEvents, generateDefaultQuery, generateDefaultRpc, generateDefaultTx } from '@polkadot/typegen/generate';
 
 import * as substractDefinations from '@polkadot/types/interfaces/definitions';
 import * as ormlDefinations from '@open-web3/orml-types/interfaces/definitions';
@@ -89,7 +89,7 @@ export function main () {
   generateDefaultRpc(path.join(argumentPath, 'api-rpc.ts'), allDefs);
   generateDefaultTx(path.join(argumentPath, 'api-tx.ts'), metadata, allDefs, false, customLookupDefinitions);
 
-  generateDefaultCalls(path.join(argumentPath, 'api-runtime.ts'), metadata, allDefs, false, customLookupDefinitions);
+  generateDefaultRuntime(path.join(argumentPath, 'api-runtime.ts'), metadata, allDefs, false, customLookupDefinitions);
   writeFile(path.join(argumentPath, 'api.ts'), (): string =>
   [
     HEADER('chain'),
