@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api",
-  "version": "5.0.2",
+  "version": "5.0.3-0",
   "description": "Acala JS API",
   "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
@@ -15,8 +15,8 @@
   },
   "homepage": "https://github.com/AcalaNetwork/acala.js",
   "dependencies": {
-    "@acala-network/api-derive": "5.0.2",
-    "@acala-network/types": "5.0.2",
+    "@acala-network/api-derive": "5.0.3-0",
+    "@acala-network/types": "5.0.3-0",
     "@open-web3/orml-api-derive": "^2.0.1"
   },
   "peerDependencies": {
