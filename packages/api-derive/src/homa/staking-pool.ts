@@ -1,6 +1,6 @@
 import '@polkadot/api/augment/consts';
 
-import type { ExchangeRate, BlockNumber } from '@acala-network/types/interfaces';
+import type { BlockNumber, ExchangeRate } from '@acala-network/types/interfaces';
 import type { Observable } from 'rxjs';
 import type { ApiInterfaceRx } from '@polkadot/api/types';
 import type { EraIndex } from '@polkadot/types/interfaces';
