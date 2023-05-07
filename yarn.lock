@@ -10,7 +10,6 @@ __metadata:
   resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
     "@acala-network/types": 5.0.3-0
-    "@open-web3/orml-types": ^2.0.1
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^10.5.1
