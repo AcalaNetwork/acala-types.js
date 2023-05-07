@@ -7,7 +7,7 @@
     "packages/**/test/**/*"
   ],
   "exclude": [
-    "packages/**/lib/**/*",
+    "packages/**/build/**/*",
     "**/node_modules/**/*"
   ]
 }

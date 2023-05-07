@@ -1,7 +1,8 @@
 {
   "name": "@acala-network/api",
-  "version": "5.1.0-1",
+  "version": "5.1.1-0",
   "description": "Acala JS API",
+  "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -18,12 +19,11 @@
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js",
   "scripts": {
-    "clean": "rm -rf lib tsconfig.tsbuildinfo",
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {
-    "@acala-network/api-derive": "workspace:*",
-    "@acala-network/types": "workspace:*",
+    "@acala-network/api-derive": "5.1.1-0",
+    "@acala-network/types": "5.1.1-0",
     "@open-web3/orml-api-derive": "^2.0.1"
   },
   "peerDependencies": {
@@ -31,23 +31,5 @@
   },
   "devDependencies": {
     "typescript": "^5.0.4"
-  },
-  "files": [
-    "lib",
-    "README.md"
-  ],
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    },
-    "./*": {
-      "types": "./lib/*.d.ts",
-      "default": "./lib/*.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "stableVersion": "5.0.2"
+  }
 }
