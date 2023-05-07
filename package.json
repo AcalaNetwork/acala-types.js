@@ -23,7 +23,7 @@
     "postinstall": "polkadot-dev-yarn-only",
     "test": "echo noop",
     "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts",
-    "bump": "yarn workspaces foreach -pvit version"
+    "bump": "yarn workspaces foreach --include '@acala-network/*' -pvit version"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
