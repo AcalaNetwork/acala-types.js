@@ -1,4 +1,5 @@
 {
+  "version": "5.1.0-1",
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
@@ -15,15 +16,14 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "yarn workspaces foreach -pvit run clean",
     "build": "yarn build:interfaces; yarn workspaces foreach -pvit run build",
     "build:interfaces": "ts-node -r tsconfig-paths/register packages/types/scripts/generateTypes.ts && ts-node -r tsconfig-paths/register packages/type-definitions/scripts/generate.ts",
     "check-deps": "./node_modules/@open-web3/util/scripts/check-deps.js yarn.lock @polkadot/ @open-web3/",
+    "clean": "polkadot-dev-clean-build",
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "echo noop",
-    "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts",
-    "bump": "yarn workspaces foreach --include '@acala-network/*' -pvit version"
+    "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
