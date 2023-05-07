@@ -49,9 +49,7 @@ export default {
       }
     },
     CurrencyIdOf: 'CurrencyId',
-    AirDropCurrencyId: {
-      _enum: ['KAR', 'ACA']
-    },
+    AirDropCurrencyId: { _enum: ['KAR', 'ACA'] },
     AuthoritysOriginId: {
       _enum: ['Root', 'Treasury', 'HonzonTreasury', 'HomaTreasury', 'TreasuryReserve']
     },
@@ -70,14 +68,8 @@ export default {
     NumberOrHex: 'u128'
   },
   typesAlias: {
-    rewards: {
-      OrmlCurrencyId: 'CurrencyId'
-    },
-    oracle: {
-      DataProviderId: 'AcalaDataProviderId'
-    },
-    chainBridge: {
-      ChainId: 'ChainBridgeChainId'
-    }
+    rewards: { OrmlCurrencyId: 'CurrencyId' },
+    oracle: { DataProviderId: 'AcalaDataProviderId' },
+    chainBridge: { ChainId: 'ChainBridgeChainId' }
   }
 };

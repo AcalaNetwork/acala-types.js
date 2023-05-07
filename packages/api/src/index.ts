@@ -1,15 +1,10 @@
-import { derive as ormlDerives } from '@open-web3/orml-api-derive';
+import type { ApiOptions } from '@polkadot/api/types';
+import type { RegistryTypes } from '@polkadot/types/types';
+
 import { derive as acalaDerives } from '@acala-network/api-derive';
-import {
-  rpc as acalaRpc,
-  types as acalaTypes,
-  typesAlias as acalaTypesAlias,
-  typesBundle as acalaTypesBundle,
-  signedExtensions as acalaSignedExtensions,
-  lookupTypes as acalaLookupTypes
-} from '@acala-network/types';
-import { ApiOptions } from '@polkadot/api/types';
-import { RegistryTypes } from '@polkadot/types/types';
+import { lookupTypes as acalaLookupTypes, rpc as acalaRpc, signedExtensions as acalaSignedExtensions, types as acalaTypes, typesAlias as acalaTypesAlias, typesBundle as acalaTypesBundle } from '@acala-network/types';
+import { derive as ormlDerives } from '@open-web3/orml-api-derive';
+
 import { runtime as acalaRuntime } from './runtime';
 
 export const defaultOptions: ApiOptions = {
@@ -17,15 +12,13 @@ export const defaultOptions: ApiOptions = {
   rpc: acalaRpc
 };
 
-export const options = ({
-  types = {},
-  rpc = {},
-  typesAlias = {},
-  typesBundle = {},
+export const options = ({ rpc = {},
   runtime = {},
   signedExtensions,
-  ...otherOptions
-}: ApiOptions = {}): ApiOptions => ({
+  types = {},
+  typesAlias = {},
+  typesBundle = {},
+  ...otherOptions }: ApiOptions = {}): ApiOptions => ({
   types: {
     ...acalaTypes,
     ...(acalaLookupTypes as unknown as RegistryTypes), // TODO: RegistryTypes's own issue?

@@ -1,13 +1,15 @@
-import { Observable, combineLatest } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { ApiInterfaceRx } from '@polkadot/api/types';
+import type { AccountId } from '@acala-network/types/interfaces';
+import type { Observable } from 'rxjs';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { DerivedUserLoan } from '../types/loan';
 
-import { AccountId, Position } from '@acala-network/types/interfaces';
+import { combineLatest } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+
 import { memo } from '@polkadot/api-derive/util';
 
-import { DerivedUserLoan } from '../types/loan';
 import { getAllCollateralCurrencyIds } from '../utils';
-import { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
 
 /**
  * @name loan
@@ -15,16 +17,21 @@ import { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
  * @param {(AccountId | string)} account
  * @param {(AcalaPrimitivesCurrencyCurrencyId | string)} currency
  */
-export function loan(
+export function loan (
   instanceId: string,
   api: ApiInterfaceRx
 ): (account: AccountId | string, currency: AcalaPrimitivesCurrencyCurrencyId) => Observable<DerivedUserLoan> {
   return memo(instanceId, (account: AccountId | string, currency: AcalaPrimitivesCurrencyCurrencyId) =>
-    api.query.loans.positions<Position>(currency, account).pipe(
+    api.query.loans.positions(currency, account).pipe(
       map((result) => {
-        const { debit, collateral } = result;
+        const { collateral, debit } = result;
 
-        return { account, currency, debit, collateral };
+        return {
+          account,
+          currency,
+          debit,
+          collateral
+        };
       })
     )
   );
@@ -35,7 +42,7 @@ export function loan(
  * @description get all user loans information includes debit value and collateral value
  * @param {(AccountId | string)} account
  */
-export function allLoans(
+export function allLoans (
   instanceId: string,
   api: ApiInterfaceRx
 ): (account: AccountId | string) => Observable<DerivedUserLoan[]> {

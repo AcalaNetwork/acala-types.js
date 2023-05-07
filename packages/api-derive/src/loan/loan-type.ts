@@ -1,21 +1,21 @@
-import { Observable, combineLatest } from 'rxjs';
+import type { Balance, ExchangeRate, Rate, Ratio } from '@acala-network/types/interfaces';
+import type { Observable } from 'rxjs';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { AcalaPrimitivesCurrencyCurrencyId, ModuleCdpEngineRiskManagementParams } from '@polkadot/types/lookup';
+import type { DerivedLoanConstants, DerivedLoanOverView, DerivedLoanType } from '../types/loan';
+
+import { combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { ApiInterfaceRx } from '@polkadot/api/types';
 import { memo } from '@polkadot/api-derive/util';
-import { Option } from '@polkadot/types';
 
-import { Rate, ExchangeRate, Balance, Position, Ratio } from '@acala-network/types/interfaces';
-
-import { DerivedLoanConstants, DerivedLoanType, DerivedLoanOverView } from '../types/loan';
 import { getAllCollateralCurrencyIds } from '../utils';
-import { AcalaPrimitivesCurrencyCurrencyId, ModuleCdpEngineRiskManagementParams } from '@polkadot/types/lookup';
 
 /**
  * @name loanConstants
  * @description get constants in loan module
  */
-function loanConstants(api: ApiInterfaceRx): DerivedLoanConstants {
+function loanConstants (api: ApiInterfaceRx): DerivedLoanConstants {
   return {
     minimumDebitValue: api.consts.cdpEngine.minimumDebitValue as Balance,
     defaultDebitExchangeRate: api.consts.cdpEngine.defaultDebitExchangeRate as ExchangeRate,
@@ -29,14 +29,14 @@ function loanConstants(api: ApiInterfaceRx): DerivedLoanConstants {
  * @description get loan type
  * @param {(AcalaPrimitivesCurrencyCurrencyId | string)} currency
  */
-export function loanType(
+export function loanType (
   instanceId: string,
   api: ApiInterfaceRx
 ): (currncy: AcalaPrimitivesCurrencyCurrencyId) => Observable<DerivedLoanType> {
   return memo(instanceId, (currency: AcalaPrimitivesCurrencyCurrencyId) => {
     return combineLatest([
-      api.query.cdpEngine.debitExchangeRate<Rate>(currency),
-      api.query.cdpEngine.collateralParams<Option<ModuleCdpEngineRiskManagementParams>>(currency)
+      api.query.cdpEngine.debitExchangeRate(currency),
+      api.query.cdpEngine.collateralParams(currency)
     ]).pipe(
       map((result) => {
         const constants = loanConstants(api);
@@ -68,7 +68,7 @@ export function loanType(
  * @name allLoanTypes
  * @description  get loan types of all kinds of collateral
  */
-export function allLoanTypes(instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedLoanType[]> {
+export function allLoanTypes (instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedLoanType[]> {
   return memo(instanceId, () => {
     const loanTypeQuery = loanType(instanceId, api);
 
@@ -85,16 +85,20 @@ export function allLoanTypes(instanceId: string, api: ApiInterfaceRx): () => Obs
  * @description get loan overview includes total debit, total collateral
  * @param {(CurrencyId | string)} currency
  */
-export function loanOverview(
+export function loanOverview (
   instanceId: string,
   api: ApiInterfaceRx
 ): (currency: AcalaPrimitivesCurrencyCurrencyId) => Observable<DerivedLoanOverView> {
   return memo(instanceId, (currency: AcalaPrimitivesCurrencyCurrencyId) =>
-    api.query.loans.totalPositions<Position>(currency).pipe(
+    api.query.loans.totalPositions(currency).pipe(
       map((result) => {
         const { collateral, debit } = result;
 
-        return { currency, totalDebit: debit, totalCollateral: collateral };
+        return {
+          currency,
+          totalDebit: debit,
+          totalCollateral: collateral
+        };
       })
     )
   );
@@ -104,7 +108,7 @@ export function loanOverview(
  * @name allLoanOverview
  * @description get loan overviews of all kinds of collatearl
  */
-export function allLoanOverviews(instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedLoanOverView[]> {
+export function allLoanOverviews (instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedLoanOverView[]> {
   return memo(instanceId, () => {
     const loanOverViewQuery = loanOverview(instanceId, api);
 

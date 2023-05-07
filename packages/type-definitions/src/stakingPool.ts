@@ -51,15 +51,9 @@ export default {
         NewValue: 'Ratio'
       }
     },
-    BalanceInfo: {
-      amount: 'Balance'
-    },
+    BalanceInfo: { amount: 'Balance' },
     PolkadotAccountId: 'AccountId',
     PolkadotAccountIdOf: 'PolkadotAccountId'
   },
-  typesAlias: {
-    stakingPool: {
-      Phase: 'StakingPoolPhase'
-    }
-  }
+  typesAlias: { stakingPool: { Phase: 'StakingPoolPhase' } }
 };

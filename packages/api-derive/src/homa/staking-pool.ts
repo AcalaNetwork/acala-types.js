@@ -1,16 +1,18 @@
-import { combineLatest, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { EraIndex } from '@polkadot/types/interfaces';
+import '@polkadot/api/augment/consts';
 
-import { ApiInterfaceRx } from '@polkadot/api/types';
+import type { BlockNumber, ExchangeRate } from '@acala-network/types/interfaces';
+import type { Observable } from 'rxjs';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { EraIndex } from '@polkadot/types/interfaces';
+import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { DerivedStakingPool, DerivedStakingPoolConstants } from '../types/staking-pool';
+
+import { combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { memo } from '@polkadot/api-derive/util';
 
-import { DerivedStakingPool, DerivedStakingPoolConstants } from '../types/staking-pool';
-import { ExchangeRate } from '@acala-network/types/interfaces';
-import { BlockNumber } from '@open-web3/orml-types/interfaces';
-import { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
-
-function getConstants(api: ApiInterfaceRx): DerivedStakingPoolConstants {
+function getConstants (api: ApiInterfaceRx): DerivedStakingPoolConstants {
   return {
     defaultExchangeRate: api.consts.stakingPool.defaultExchangeRate as ExchangeRate,
     bondingDuration: api.consts.polkadotBridge.bondingDuration as EraIndex,
@@ -24,7 +26,7 @@ function getConstants(api: ApiInterfaceRx): DerivedStakingPoolConstants {
  * @name stakingPool
  * @description get staking pool information
  */
-export function stakingPool(instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedStakingPool> {
+export function stakingPool (instanceId: string, api: ApiInterfaceRx): () => Observable<DerivedStakingPool> {
   return memo(instanceId, () => {
     const constants = getConstants(api);
 

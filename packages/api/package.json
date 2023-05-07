@@ -1,25 +1,53 @@
 {
   "name": "@acala-network/api",
-  "version": "5.0.3-0",
+  "version": "5.1.0-0",
   "description": "Acala JS API",
-  "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "repository": "https://github.com/AcalaNetwork/acala.js.git",
-  "bugs": {
-    "url": "https://github.com/AcalaNetwork/acala.js/issues"
+  "repository": {
+    "directory": "packages/api",
+    "type": "git",
+    "url": "https://github.com/AcalaNetwork/acala-types.js.git"
   },
-  "homepage": "https://github.com/AcalaNetwork/acala.js",
+  "bugs": {
+    "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
+  },
+  "homepage": "https://github.com/AcalaNetwork/acala-types.js",
+  "scripts": {
+    "clean": "rm -rf lib tsconfig.tsbuildinfo",
+    "build": "tsc --build tsconfig.json"
+  },
   "dependencies": {
-    "@acala-network/api-derive": "5.0.3-0",
-    "@acala-network/types": "5.0.3-0",
+    "@acala-network/api-derive": "workspace:*",
+    "@acala-network/types": "workspace:*",
     "@open-web3/orml-api-derive": "^2.0.1"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.5.1"
-  }
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "default": "./lib/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "stableVersion": "5.0.2"
 }

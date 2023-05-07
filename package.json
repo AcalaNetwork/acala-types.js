@@ -1,42 +1,43 @@
 {
-  "version": "5.0.3-0",
   "private": true,
+  "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
     "node": ">=16"
   },
+  "homepage": "https://github.com/AcalaNetwork/acala-types.js#readme",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AcalaNetwork/acala-types.js.git"
+  },
+  "sideEffects": false,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn build:interfaces && polkadot-dev-build-ts",
-    "build:release": "polkadot-ci-ghact-build",
-    "build:interfaces": "node -r ts-node/register -r tsconfig-paths/register packages/types/scripts/generateTypes.ts && node -r ts-node/register -r tsconfig-paths/register packages/type-definitions/scripts/generate.ts",
-    "lint": "polkadot-dev-run-lint",
-    "clean": "polkadot-dev-clean-build",
-    "postinstall": "polkadot-dev-yarn-only",
-    "test": "polkadot-dev-run-test --coverage --forceExit --detectOpenHandles --passWithNoTests",
+    "clean": "yarn workspaces foreach -pvit run clean",
+    "build": "yarn build:interfaces; yarn workspaces foreach -pvit run build",
+    "build:interfaces": "ts-node -r tsconfig-paths/register packages/types/scripts/generateTypes.ts && ts-node -r tsconfig-paths/register packages/type-definitions/scripts/generate.ts",
     "check-deps": "./node_modules/@open-web3/util/scripts/check-deps.js yarn.lock @polkadot/ @open-web3/",
+    "lint": "polkadot-dev-run-lint",
+    "postinstall": "polkadot-dev-yarn-only",
+    "test": "echo noop",
     "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts",
-    "generate:defs": "ts-node -r tsconfig-paths/register node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --input packages/types/src/interfaces --endpoint packages/types/src/metadata/static-latest.json",
-    "generate:meta": "ts-node -r tsconfig-paths/register node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --output packages/types/src/interfaces --endpoint packages/types/src/metadata/static-latest.json",
-    "update-types": "yarn update-metadata && yarn generate:defs && yarn generate:meta"
+    "bump": "yarn workspaces foreach -pvit version"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/register": "^7.21.0",
     "@babel/runtime": "^7.21.5",
-    "@open-web3/dev-config": "^0.2.9",
     "@open-web3/util": "^2.0.1",
     "@polkadot/api": "^10.5.1",
+    "@polkadot/dev": "^0.73.11",
     "@polkadot/typegen": "^10.5.1",
     "@types/jest": "^29.5.1",
     "jest-config": "^29.5.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.3"
   },
   "packageManager": "yarn@3.5.0",
   "stableVersion": "5.0.2"

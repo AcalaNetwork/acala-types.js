@@ -1,6 +1,4 @@
 export default {
   rpc: {},
-  types: {
-    PalletBalanceOf: 'Balance'
-  }
+  types: { PalletBalanceOf: 'Balance' }
 };
