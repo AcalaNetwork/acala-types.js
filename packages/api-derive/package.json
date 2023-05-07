@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api-derive",
-  "version": "5.1.1-0",
+  "version": "5.1.1-1-x",
   "description": "Additional polkadot.js derives for Acala Network",
   "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
@@ -22,7 +22,7 @@
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {
-    "@acala-network/types": "5.1.1-0"
+    "@acala-network/types": "5.1.1-1-x"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.5.1"
