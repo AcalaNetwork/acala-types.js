@@ -1,7 +1,5 @@
-**/build/*
+**/lib/*
 **/coverage/*
 **/node_modules/*
 **/configs/*
 packages/types/src/metadata/static-latest.ts
-babel.config.js
-jest.config.js
