@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js",
   "scripts": {
-    "clean": "rm -rf lib *.tsbuildinfo",
+    "clean": "rm -rf lib tsconfig.tsbuildinfo",
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {

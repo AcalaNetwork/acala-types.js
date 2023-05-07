@@ -1,4 +1,5 @@
-import '@polkadot/api/augment';
+import '@acala-network/types/augment/api';
+import '@acala-network/types/augment/api-consts';
 
 import type { DeriveCustom } from '@polkadot/api-base/types';
 

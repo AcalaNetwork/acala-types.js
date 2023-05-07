@@ -1,5 +1,5 @@
 import '@polkadot/types/lookup';
-import './argument/api';
+import './augment/api';
 import './lookup/acala';
 
 import type { DefinitionRpc, DefinitionRpcSub, OverrideBundleType, OverrideModuleType, RegistryTypes } from '@polkadot/types/types';

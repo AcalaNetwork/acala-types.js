@@ -29,7 +29,7 @@ export function main () {
   console.log('------ start -------');
 
   const registryPath = assertDir(path.join(process.cwd(), 'packages/types/src/registry'));
-  const argumentPath = assertDir(path.join(process.cwd(), 'packages/types/src/argument'));
+  const augmentPath = assertDir(path.join(process.cwd(), 'packages/types/src/augment'));
   const lookupPath = assertDir(path.join(process.cwd(), 'packages/types/src/lookup'));
   const inputPath = assertDir(path.join(process.cwd(), 'packages/types/src/interfaces'));
   const pkg = '@acala-network/types/interfaces';
@@ -75,22 +75,22 @@ export function main () {
   generateTsDef(allDefs, inputPath, pkg);
   generateInterfaceTypes(allDefs, path.join(registryPath, 'interfaces.ts'));
   generateDefaultLookup(lookupPath, metadata);
-  generateDefaultConsts(path.join(argumentPath, 'api-consts.ts'), metadata, allDefs, false, customLookupDefinitions);
-  generateDefaultErrors(path.join(argumentPath, 'api-errors.ts'), metadata, allDefs, false);
-  generateDefaultEvents(path.join(argumentPath, 'api-events.ts'), metadata, allDefs, false, customLookupDefinitions);
-  generateDefaultQuery(path.join(argumentPath, 'api-query.ts'), metadata, allDefs, false, customLookupDefinitions);
+  generateDefaultConsts(path.join(augmentPath, 'api-consts.ts'), metadata, allDefs, false, customLookupDefinitions);
+  generateDefaultErrors(path.join(augmentPath, 'api-errors.ts'), metadata, allDefs, false);
+  generateDefaultEvents(path.join(augmentPath, 'api-events.ts'), metadata, allDefs, false, customLookupDefinitions);
+  generateDefaultQuery(path.join(augmentPath, 'api-query.ts'), metadata, allDefs, false, customLookupDefinitions);
 
   // TODO: should check why import an unused type
-  writeFile(path.join(argumentPath, 'api-query.ts'), () => {
-    const content = fs.readFileSync(path.join(argumentPath, 'api-query.ts'), { encoding: 'utf-8' });
+  writeFile(path.join(augmentPath, 'api-query.ts'), () => {
+    const content = fs.readFileSync(path.join(augmentPath, 'api-query.ts'), { encoding: 'utf-8' });
     return content.replace('OrmlUtilitiesOrderedSet,', '')
   });
 
-  generateDefaultRpc(path.join(argumentPath, 'api-rpc.ts'), allDefs);
-  generateDefaultTx(path.join(argumentPath, 'api-tx.ts'), metadata, allDefs, false, customLookupDefinitions);
+  generateDefaultRpc(path.join(augmentPath, 'api-rpc.ts'), allDefs);
+  generateDefaultTx(path.join(augmentPath, 'api-tx.ts'), metadata, allDefs, false, customLookupDefinitions);
 
-  generateDefaultRuntime(path.join(argumentPath, 'api-runtime.ts'), metadata, allDefs, false, customLookupDefinitions);
-  writeFile(path.join(argumentPath, 'api.ts'), (): string =>
+  generateDefaultRuntime(path.join(augmentPath, 'api-runtime.ts'), metadata, allDefs, false, customLookupDefinitions);
+  writeFile(path.join(augmentPath, 'api.ts'), (): string =>
   [
     HEADER('chain'),
     ...[
