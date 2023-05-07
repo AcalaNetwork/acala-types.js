@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1-1-x",
+  "version": "5.1.1-2",
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
@@ -42,7 +42,7 @@
   },
   "packageManager": "yarn@3.5.0",
   "versions": {
-    "npm": "5.1.1-0",
-    "git": "5.1.1-1-x"
+    "npm": "5.1.1-2",
+    "git": "5.1.1-2"
   }
 }
