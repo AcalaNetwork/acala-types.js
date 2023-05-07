@@ -9,11 +9,18 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "repository": "https://github.com/AcalaNetwork/acala.js.git",
-  "bugs": {
-    "url": "https://github.com/AcalaNetwork/acala.js/issues"
+  "repository": {
+    "directory": "packages/types",
+    "type": "git",
+    "url": "https://github.com/AcalaNetwork/acala-types.js.git"
   },
-  "homepage": "https://github.com/AcalaNetwork/acala.js",
+  "bugs": {
+    "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
+  },
+  "homepage": "https://github.com/AcalaNetwork/acala-types.js",
+  "scripts": {
+    "build": "tsc --build tsconfig.json"
+  },
   "dependencies": {
     "@acala-network/type-definitions": "5.0.3-0",
     "@open-web3/orml-types": "^2.0.1"
@@ -23,6 +30,7 @@
   },
   "devDependencies": {
     "@types/websocket": "^1.0.5",
+    "typescript": "^5.0.4",
     "websocket": "^1.0.34"
   }
 }

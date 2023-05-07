@@ -3,21 +3,20 @@
 
 import type { PortableType, SiLookupTypeId, SiPath, SiTypeParameter } from '@polkadot/types/interfaces';
 import type { PortableRegistry } from '@polkadot/types/metadata';
+import type { Registry } from '@polkadot/types/types';
 import type { TypeDef } from '@polkadot/types-create/types';
 import type { HexString } from '@polkadot/util/types';
 
 import Handlebars from 'handlebars';
 import path from 'path';
 
+import { typeEncoders } from '@polkadot/typegen/generate/tsDef';
+import { createImports, exportInterface, initMeta, readTemplate, writeFile } from '@polkadot/typegen/util';
 import * as defaultDefinitions from '@polkadot/types/interfaces/definitions';
-import { Registry } from '@polkadot/types/types';
 // import staticKusama from '@polkadot/types-support/metadata/static-kusama';
 // import staticPolkadot from '@polkadot/types-support/metadata/static-polkadot';
 // import staticSubstrate from '@polkadot/types-support/metadata/static-substrate';
 import { isString, stringify } from '@polkadot/util';
-
-import { createImports, exportInterface, initMeta, readTemplate, writeFile } from '@polkadot/typegen/util';
-import { typeEncoders } from '@polkadot/typegen/generate/tsDef';
 
 const WITH_TYPEDEF = false;
 
@@ -27,7 +26,7 @@ const generateLookupIndexTmpl = Handlebars.compile(readTemplate('lookup/index'))
 const generateLookupTypesTmpl = Handlebars.compile(readTemplate('lookup/types'));
 const generateRegistryTmpl = Handlebars.compile(readTemplate('interfaceRegistry'));
 
-function generateParamType(registry: Registry, { name, type }: SiTypeParameter): string {
+function generateParamType (registry: Registry, { name, type }: SiTypeParameter): string {
   if (type.isSome) {
     const link = registry.lookup.types[type.unwrap().toNumber()];
 
@@ -39,7 +38,7 @@ function generateParamType(registry: Registry, { name, type }: SiTypeParameter):
   return name.toString();
 }
 
-function generateTypeDocs(
+function generateTypeDocs (
   registry: Registry,
   id: SiLookupTypeId | null,
   path: SiPath,
@@ -50,7 +49,7 @@ function generateTypeDocs(
     .join('::')}${params.length ? `<${params.map((p) => generateParamType(registry, p)).join(', ')}>` : ''}`;
 }
 
-function formatObject(lines: string[]): string[] {
+function formatObject (lines: string[]): string[] {
   const max = lines.length - 1;
 
   return [
@@ -68,7 +67,7 @@ function formatObject(lines: string[]): string[] {
   ];
 }
 
-function expandSet(parsed: Record<string, number>): string[] {
+function expandSet (parsed: Record<string, number>): string[] {
   return formatObject(
     Object.entries(parsed).reduce<string[]>((all, [k, v]) => {
       all.push(`${k}: ${v}`);
@@ -78,7 +77,7 @@ function expandSet(parsed: Record<string, number>): string[] {
   );
 }
 
-function expandObject(parsed: Record<string, string | Record<string, string>>): string[] {
+function expandObject (parsed: Record<string, string | Record<string, string>>): string[] {
   if (parsed._set) {
     return expandSet(parsed._set as unknown as Record<string, number>);
   }
@@ -88,8 +87,8 @@ function expandObject(parsed: Record<string, string | Record<string, string>>): 
       const inner = isString(v)
         ? expandType(v)
         : Array.isArray(v)
-        ? [`[${(v as string[]).map((e) => `'${e}'`).join(', ')}]`]
-        : expandObject(v);
+          ? [`[${(v as string[]).map((e) => `'${e}'`).join(', ')}]`]
+          : expandObject(v);
 
       inner.forEach((l, index): void => {
         all.push(`${index === 0 ? `${k}: ${l}` : `${l}`}`);
@@ -100,7 +99,7 @@ function expandObject(parsed: Record<string, string | Record<string, string>>): 
   );
 }
 
-function expandType(encoded: string): string[] {
+function expandType (encoded: string): string[] {
   if (!encoded.startsWith('{')) {
     return [`'${encoded}'`];
   }
@@ -108,7 +107,7 @@ function expandType(encoded: string): string[] {
   return expandObject(JSON.parse(encoded) as Record<string, string | Record<string, string>>);
 }
 
-function expandDefToString({ lookupNameRoot, type }: TypeDef, indent: number): string {
+function expandDefToString ({ lookupNameRoot, type }: TypeDef, indent: number): string {
   if (lookupNameRoot) {
     return `'${lookupNameRoot}'`;
   }
@@ -136,7 +135,7 @@ function expandDefToString({ lookupNameRoot, type }: TypeDef, indent: number): s
     .join('\n');
 }
 
-function getFilteredTypes(lookup: PortableRegistry, exclude: string[] = []): [PortableType, TypeDef][] {
+function getFilteredTypes (lookup: PortableRegistry, exclude: string[] = []): [PortableType, TypeDef][] {
   const named = lookup.types.filter(({ id }) => !!lookup.getTypeDef(id).lookupName);
   const names = named.map(({ id }) => lookup.getName(id));
 
@@ -146,7 +145,7 @@ function getFilteredTypes(lookup: PortableRegistry, exclude: string[] = []): [Po
     .filter(([, typeDef]) => !exclude.includes(typeDef.lookupName || '<invalid>'));
 }
 
-function generateLookupDefs(
+function generateLookupDefs (
   registry: Registry,
   filtered: [PortableType, TypeDef][],
   destDir: string,
@@ -155,10 +154,8 @@ function generateLookupDefs(
   writeFile(path.join(destDir, `${subPath || 'definitions'}.ts`), (): string => {
     const all = filtered.map(
       ([
-        {
-          id,
-          type: { params, path }
-        },
+        { id,
+          type: { params, path } },
         typeDef
       ]) => {
         const typeLookup = registry.createLookupType(id);
@@ -169,7 +166,11 @@ function generateLookupDefs(
             generateTypeDocs(registry, id, path, params),
             WITH_TYPEDEF ? `@typeDef ${stringify(typeDef)}` : null
           ].filter((d): d is string => !!d),
-          type: { def, typeLookup, typeName: typeDef.lookupName }
+          type: {
+            def,
+            typeLookup,
+            typeName: typeDef.lookupName
+          }
         };
       }
     );
@@ -189,7 +190,7 @@ function generateLookupDefs(
   });
 }
 
-function generateLookupTypes(
+function generateLookupTypes (
   registry: Registry,
   filtered: [PortableType, TypeDef][],
   destDir: string,
@@ -236,8 +237,8 @@ function generateLookupTypes(
   writeFile(path.join(destDir, 'index.ts'), () => generateLookupIndexTmpl({ headerType: 'defs' }), true);
 }
 
-function generateRegistry(
-  registry: Registry,
+function generateRegistry (
+  _registry: Registry,
   filtered: [PortableType, TypeDef][],
   destDir: string,
   subPath: string
@@ -265,7 +266,7 @@ function generateRegistry(
   );
 }
 
-function generateLookup(destDir: string, entries: [string, HexString][]): void {
+function generateLookup (destDir: string, entries: [string, HexString][]): void {
   entries.reduce<string[]>((exclude, [subPath, staticMeta]): string[] => {
     const { lookup, registry } = initMeta(staticMeta).metadata.asLatest;
     const filtered = getFilteredTypes(lookup, exclude);
@@ -279,6 +280,6 @@ function generateLookup(destDir: string, entries: [string, HexString][]): void {
 }
 
 // Generate `packages/types/src/lookup/*s`, the registry of all lookup types
-export function generateDefaultLookup(destDir = 'packages/types-augment/src/lookup', staticData?: HexString): void {
-  generateLookup(destDir, [['acala', staticData as HexString]]);
+export function generateDefaultLookup (destDir = 'packages/types-augment/src/lookup', staticData: HexString): void {
+  generateLookup(destDir, [['acala', staticData]]);
 }

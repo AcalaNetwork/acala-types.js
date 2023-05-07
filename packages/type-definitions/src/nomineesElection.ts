@@ -12,9 +12,5 @@ export default {
       unlocking: 'Vec<HomaUnlockChunk>'
     }
   },
-  typesAlias: {
-    nomineesElection: {
-      UnlockChunk: 'HomaUnlockChunk'
-    }
-  }
+  typesAlias: { nomineesElection: { UnlockChunk: 'HomaUnlockChunk' } }
 };

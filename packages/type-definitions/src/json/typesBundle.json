@@ -439,14 +439,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -457,22 +457,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -488,19 +488,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -920,14 +920,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -938,22 +938,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -969,19 +969,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -1409,14 +1409,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -1427,22 +1427,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -1458,19 +1458,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -1899,14 +1899,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -1917,22 +1917,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -1948,19 +1948,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -2386,14 +2386,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -2404,22 +2404,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -2435,19 +2435,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -2873,14 +2873,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -2891,22 +2891,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -2922,19 +2922,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -3365,14 +3365,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -3383,22 +3383,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -3414,19 +3414,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -3856,14 +3856,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -3874,22 +3874,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -3905,19 +3905,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -4344,14 +4344,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -4362,22 +4362,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -4393,19 +4393,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -4832,14 +4832,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -4850,22 +4850,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -4881,19 +4881,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -5522,14 +5522,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -5540,22 +5540,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -5571,19 +5571,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -6003,14 +6003,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -6021,22 +6021,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -6052,19 +6052,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -6492,14 +6492,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -6510,22 +6510,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -6541,19 +6541,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -6982,14 +6982,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -7000,22 +7000,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -7031,19 +7031,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -7469,14 +7469,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -7487,22 +7487,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -7518,19 +7518,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -7956,14 +7956,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -7974,22 +7974,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -8005,19 +8005,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -8448,14 +8448,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -8466,22 +8466,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -8497,19 +8497,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -8939,14 +8939,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -8957,22 +8957,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -8988,19 +8988,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -9427,14 +9427,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -9445,22 +9445,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -9476,19 +9476,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -9915,14 +9915,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -9933,22 +9933,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -9964,19 +9964,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -10605,14 +10605,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -10623,22 +10623,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -10654,19 +10654,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -11086,14 +11086,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -11104,22 +11104,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -11135,19 +11135,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -11575,14 +11575,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -11593,22 +11593,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -11624,19 +11624,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -12065,14 +12065,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -12083,22 +12083,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -12114,19 +12114,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -12552,14 +12552,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -12570,22 +12570,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -12601,19 +12601,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -13039,14 +13039,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -13057,22 +13057,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -13088,19 +13088,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -13531,14 +13531,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -13549,22 +13549,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -13580,19 +13580,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -14022,14 +14022,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -14040,22 +14040,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -14071,19 +14071,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -14510,14 +14510,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -14528,22 +14528,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -14559,19 +14559,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },
@@ -14998,14 +14998,14 @@
                             "data": "Option<Bytes>"
                         },
                         "CallInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "Vec<u8>",
                             "used_gas": "U256",
                             "used_storage": "i32",
                             "logs": "Vec<EthereumLog>"
                         },
                         "CreateInfo": {
-                            "exit_reason": "EvmCoreErrorExitReason",
+                            "exit_reason": "ExitReason",
                             "value": "H160",
                             "used_gas": "U256",
                             "used_storage": "i32",
@@ -15016,22 +15016,22 @@
                             "topics": "Vec<H256>",
                             "data": "Bytes"
                         },
-                        "EvmCoreErrorExitReason": {
+                        "ExitReason": {
                             "_enum": {
-                                "Succeed": "EvmCoreErrorExitSucceed",
-                                "Error": "EvmCoreErrorExitError",
-                                "Revert": "EvmCoreErrorExitRevert",
-                                "Fatal": "EvmCoreErrorExitFatal"
+                                "Succeed": "ExitSucceed",
+                                "Error": "ExitError",
+                                "Revert": "ExitRevert",
+                                "Fatal": "ExitFatal"
                             }
                         },
-                        "EvmCoreErrorExitSucceed": {
+                        "ExitSucceed": {
                             "_enum": [
                                 "Stopped",
                                 "Returned",
                                 "Suicided"
                             ]
                         },
-                        "EvmCoreErrorExitError": {
+                        "ExitError": {
                             "_enum": {
                                 "StackUnderflow": "Null",
                                 "StackOverflow": "Null",
@@ -15047,19 +15047,19 @@
                                 "PCUnderflow": "Null",
                                 "CreateEmpty": "Null",
                                 "Other": "Text",
-                                "InvalidCode": "Null"
+                                "InvalidCode": "u8"
                             }
                         },
-                        "EvmCoreErrorExitRevert": {
+                        "ExitRevert": {
                             "_enum": [
                                 "Reverted"
                             ]
                         },
-                        "EvmCoreErrorExitFatal": {
+                        "ExitFatal": {
                             "_enum": {
                                 "NotSupported": "Null",
                                 "UnhandledInterrupt": "Null",
-                                "CallErrorAsFatal": "EvmCoreErrorExitError",
+                                "CallErrorAsFatal": "ExitError",
                                 "Other": "Text"
                             }
                         },

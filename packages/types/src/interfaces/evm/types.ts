@@ -6,7 +6,7 @@ import type { Bytes, Enum, Option, Struct, Text, U128, U256, Vec, bool, i32, u25
 
 /** @name CallInfo */
 export interface CallInfo extends Struct {
-  readonly exit_reason: EvmCoreErrorExitReason;
+  readonly exit_reason: ExitReason;
   readonly value: Bytes;
   readonly used_gas: U256;
   readonly used_storage: i32;
@@ -31,7 +31,7 @@ export interface CodeInfo extends Struct {
 
 /** @name CreateInfo */
 export interface CreateInfo extends Struct {
-  readonly exit_reason: EvmCoreErrorExitReason;
+  readonly exit_reason: ExitReason;
   readonly value: H160;
   readonly used_gas: U256;
   readonly used_storage: i32;
@@ -76,8 +76,8 @@ export interface EvmContractInfo extends Struct {
   readonly deployed: bool;
 }
 
-/** @name EvmCoreErrorExitError */
-export interface EvmCoreErrorExitError extends Enum {
+/** @name ExitError */
+export interface ExitError extends Enum {
   readonly isStackUnderflow: boolean;
   readonly isStackOverflow: boolean;
   readonly isInvalidJump: boolean;
@@ -94,41 +94,42 @@ export interface EvmCoreErrorExitError extends Enum {
   readonly isOther: boolean;
   readonly asOther: Text;
   readonly isInvalidCode: boolean;
+  readonly asInvalidCode: u8;
   readonly type: 'StackUnderflow' | 'StackOverflow' | 'InvalidJump' | 'InvalidRange' | 'DesignatedInvalid' | 'CallTooDeep' | 'CreateCollision' | 'CreateContractLimit' | 'OutOfOffset' | 'OutOfGas' | 'OutOfFund' | 'PcUnderflow' | 'CreateEmpty' | 'Other' | 'InvalidCode';
 }
 
-/** @name EvmCoreErrorExitFatal */
-export interface EvmCoreErrorExitFatal extends Enum {
+/** @name ExitFatal */
+export interface ExitFatal extends Enum {
   readonly isNotSupported: boolean;
   readonly isUnhandledInterrupt: boolean;
   readonly isCallErrorAsFatal: boolean;
-  readonly asCallErrorAsFatal: EvmCoreErrorExitError;
+  readonly asCallErrorAsFatal: ExitError;
   readonly isOther: boolean;
   readonly asOther: Text;
   readonly type: 'NotSupported' | 'UnhandledInterrupt' | 'CallErrorAsFatal' | 'Other';
 }
 
-/** @name EvmCoreErrorExitReason */
-export interface EvmCoreErrorExitReason extends Enum {
+/** @name ExitReason */
+export interface ExitReason extends Enum {
   readonly isSucceed: boolean;
-  readonly asSucceed: EvmCoreErrorExitSucceed;
+  readonly asSucceed: ExitSucceed;
   readonly isError: boolean;
-  readonly asError: EvmCoreErrorExitError;
+  readonly asError: ExitError;
   readonly isRevert: boolean;
-  readonly asRevert: EvmCoreErrorExitRevert;
+  readonly asRevert: ExitRevert;
   readonly isFatal: boolean;
-  readonly asFatal: EvmCoreErrorExitFatal;
+  readonly asFatal: ExitFatal;
   readonly type: 'Succeed' | 'Error' | 'Revert' | 'Fatal';
 }
 
-/** @name EvmCoreErrorExitRevert */
-export interface EvmCoreErrorExitRevert extends Enum {
+/** @name ExitRevert */
+export interface ExitRevert extends Enum {
   readonly isReverted: boolean;
   readonly type: 'Reverted';
 }
 
-/** @name EvmCoreErrorExitSucceed */
-export interface EvmCoreErrorExitSucceed extends Enum {
+/** @name ExitSucceed */
+export interface ExitSucceed extends Enum {
   readonly isStopped: boolean;
   readonly isReturned: boolean;
   readonly isSuicided: boolean;

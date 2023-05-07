@@ -51,11 +51,11 @@ export default {
       decimals: 'u8'
     },
     EstimateResourcesResponse: {
-      /// Used gas
+      // Used gas
       gas: 'u256',
-      /// Used storage
+      // Used storage
       storage: 'i32',
-      /// Adjusted weight fee
+      // Adjusted weight fee
       weightFee: 'u256'
     },
     EvmAccountInfo: {
@@ -81,48 +81,36 @@ export default {
       data: 'Option<Bytes>'
     },
     CallInfo: {
-      exit_reason: 'EvmCoreErrorExitReason',
+      exit_reason: 'ExitReason',
       value: 'Vec<u8>',
       used_gas: 'U256',
       used_storage: 'i32',
       logs: 'Vec<EthereumLog>'
     },
     CreateInfo: {
-      exit_reason: 'EvmCoreErrorExitReason',
+      exit_reason: 'ExitReason',
       value: 'H160',
       used_gas: 'U256',
       used_storage: 'i32',
       logs: 'Vec<EthereumLog>'
     },
-    /**
-     * Lookup171: ethereum::log::Log
-     **/
     EthereumLog: {
       address: 'H160',
       topics: 'Vec<H256>',
       data: 'Bytes'
     },
-    /**
-     * Lookup174: evm_core::error::ExitReason
-     **/
-    EvmCoreErrorExitReason: {
+    ExitReason: {
       _enum: {
-        Succeed: 'EvmCoreErrorExitSucceed',
-        Error: 'EvmCoreErrorExitError',
-        Revert: 'EvmCoreErrorExitRevert',
-        Fatal: 'EvmCoreErrorExitFatal'
+        Succeed: 'ExitSucceed',
+        Error: 'ExitError',
+        Revert: 'ExitRevert',
+        Fatal: 'ExitFatal'
       }
     },
-    /**
-     * Lookup175: evm_core::error::ExitSucceed
-     **/
-    EvmCoreErrorExitSucceed: {
+    ExitSucceed: {
       _enum: ['Stopped', 'Returned', 'Suicided']
     },
-    /**
-     * Lookup176: evm_core::error::ExitError
-     **/
-    EvmCoreErrorExitError: {
+    ExitError: {
       _enum: {
         StackUnderflow: 'Null',
         StackOverflow: 'Null',
@@ -138,23 +126,17 @@ export default {
         PCUnderflow: 'Null',
         CreateEmpty: 'Null',
         Other: 'Text',
-        InvalidCode: 'Null'
+        InvalidCode: 'u8'
       }
     },
-    /**
-     * Lookup179: evm_core::error::ExitRevert
-     **/
-    EvmCoreErrorExitRevert: {
+    ExitRevert: {
       _enum: ['Reverted']
     },
-    /**
-     * Lookup180: evm_core::error::ExitFatal
-     **/
-    EvmCoreErrorExitFatal: {
+    ExitFatal: {
       _enum: {
         NotSupported: 'Null',
         UnhandledInterrupt: 'Null',
-        CallErrorAsFatal: 'EvmCoreErrorExitError',
+        CallErrorAsFatal: 'ExitError',
         Other: 'Text'
       }
     }

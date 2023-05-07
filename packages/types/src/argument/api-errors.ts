@@ -130,6 +130,7 @@ declare module '@polkadot/api-base/types/errors' {
       ExceedDebitValueHardCap: AugmentedError<ApiType>;
       InvalidCollateralType: AugmentedError<ApiType>;
       InvalidFeedPrice: AugmentedError<ApiType>;
+      InvalidRate: AugmentedError<ApiType>;
       LiquidationFailed: AugmentedError<ApiType>;
       MustAfterShutdown: AugmentedError<ApiType>;
       MustBeSafe: AugmentedError<ApiType>;
@@ -195,9 +196,7 @@ declare module '@polkadot/api-base/types/errors' {
       AlreadyCanceled: AugmentedError<ApiType>;
       AlreadyDelegating: AugmentedError<ApiType>;
       AlreadyVetoed: AugmentedError<ApiType>;
-      DuplicatePreimage: AugmentedError<ApiType>;
       DuplicateProposal: AugmentedError<ApiType>;
-      Imminent: AugmentedError<ApiType>;
       InstantNotAllowed: AugmentedError<ApiType>;
       InsufficientFunds: AugmentedError<ApiType>;
       InvalidHash: AugmentedError<ApiType>;
@@ -207,16 +206,12 @@ declare module '@polkadot/api-base/types/errors' {
       NoPermission: AugmentedError<ApiType>;
       NoProposal: AugmentedError<ApiType>;
       NotDelegating: AugmentedError<ApiType>;
-      NotImminent: AugmentedError<ApiType>;
       NotSimpleMajority: AugmentedError<ApiType>;
       NotVoter: AugmentedError<ApiType>;
-      PreimageInvalid: AugmentedError<ApiType>;
-      PreimageMissing: AugmentedError<ApiType>;
       ProposalBlacklisted: AugmentedError<ApiType>;
       ProposalMissing: AugmentedError<ApiType>;
       ReferendumInvalid: AugmentedError<ApiType>;
-      TooEarly: AugmentedError<ApiType>;
-      TooManyProposals: AugmentedError<ApiType>;
+      TooMany: AugmentedError<ApiType>;
       ValueLow: AugmentedError<ApiType>;
       VotesExist: AugmentedError<ApiType>;
       VotingPeriodLow: AugmentedError<ApiType>;
@@ -387,6 +382,7 @@ declare module '@polkadot/api-base/types/errors' {
       FastMatchIsNotAllowed: AugmentedError<ApiType>;
       InsufficientUnclaimedRedemption: AugmentedError<ApiType>;
       InvalidLastEraBumpedBlock: AugmentedError<ApiType>;
+      InvalidRate: AugmentedError<ApiType>;
       OutdatedEraIndex: AugmentedError<ApiType>;
       /**
        * Generic error
@@ -552,7 +548,7 @@ declare module '@polkadot/api-base/types/errors' {
       NotNoted: AugmentedError<ApiType>;
       NotRequested: AugmentedError<ApiType>;
       Requested: AugmentedError<ApiType>;
-      TooLarge: AugmentedError<ApiType>;
+      TooBig: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
@@ -591,6 +587,7 @@ declare module '@polkadot/api-base/types/errors' {
     };
     scheduler: {
       FailedToSchedule: AugmentedError<ApiType>;
+      Named: AugmentedError<ApiType>;
       NotFound: AugmentedError<ApiType>;
       RescheduleNoChange: AugmentedError<ApiType>;
       TargetBlockNumberInPast: AugmentedError<ApiType>;

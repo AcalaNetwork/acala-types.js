@@ -44,12 +44,8 @@ export default {
       accumulatedProvision: '(Balance, Balance)',
       notBefore: 'BlockNumber'
     },
-    BalanceWrapper: {
-      amount: 'Balance'
-    },
-    BalanceRequest: {
-      amount: 'Balance'
-    },
+    BalanceWrapper: { amount: 'Balance' },
+    BalanceRequest: { amount: 'Balance' },
     TradingPairStatus: {
       _enum: {
         Disabled: 'Null',

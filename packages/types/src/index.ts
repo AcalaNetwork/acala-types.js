@@ -1,24 +1,12 @@
-import {
-  typesBundle as acalaTypesBundle,
-  types as acalaTypes,
-  typesAlias as acalaTypeAlias,
-  rpc as acalaRpc,
-  signedExtensions as acalaSignedExtensions
-} from '@acala-network/type-definitions';
-import {
-  OverrideBundleType,
-  OverrideModuleType,
-  RegistryTypes,
-  DefinitionRpc,
-  DefinitionRpcSub
-} from '@polkadot/types/types';
-
+import '@polkadot/types/lookup';
 import './argument/api';
-import './lookup/types';
+import './lookup/acala';
 
-export * as lookupTypes from './lookup';
+import type { DefinitionRpc, DefinitionRpcSub, OverrideBundleType, OverrideModuleType, RegistryTypes } from '@polkadot/types/types';
 
-// export * from './interfaces/augment-api-mobx';
+import { rpc as acalaRpc, signedExtensions as acalaSignedExtensions, types as acalaTypes, typesAlias as acalaTypeAlias, typesBundle as acalaTypesBundle } from '@acala-network/type-definitions';
+
+export * as lookupTypes from './lookup/acala';
 
 export const types: RegistryTypes = acalaTypes;
 

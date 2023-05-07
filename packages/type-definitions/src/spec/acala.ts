@@ -237,9 +237,7 @@ const versioned: OverrideVersionedType[] = [
   },
   {
     minmax: [1019, undefined],
-    types: {
-      ...addressV1
-    }
+    types: { ...addressV1 }
   }
 ];
 

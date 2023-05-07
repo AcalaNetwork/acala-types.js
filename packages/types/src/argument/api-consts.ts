@@ -9,7 +9,7 @@ import type { AccountId32, H160, Percent, Permill } from '@acala-network/types/i
 import type { ApiTypes, AugmentedConst } from '@polkadot/api-base/types';
 import type { Option, Vec, bool, u128, u16, u32, u64 } from '@polkadot/types-codec';
 import type { Codec, ITuple } from '@polkadot/types-codec/types';
-import type { AcalaPrimitivesCurrencyCurrencyId, FrameSupportPalletId, FrameSupportWeightsRuntimeDbWeight, FrameSystemLimitsBlockLength, FrameSystemLimitsBlockWeights, SpVersionRuntimeVersion, XcmV1MultiLocation } from '@polkadot/types/lookup';
+import type { AcalaPrimitivesCurrencyCurrencyId, FrameSupportPalletId, FrameSystemLimitsBlockLength, FrameSystemLimitsBlockWeights, SpVersionRuntimeVersion, SpWeightsRuntimeDbWeight, SpWeightsWeightV2Weight, XcmV1MultiLocation } from '@polkadot/types/lookup';
 
 export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>;
 
@@ -133,10 +133,11 @@ declare module '@polkadot/api-base/types/consts' {
       fastTrackVotingPeriod: u32 & AugmentedConst<ApiType>;
       instantAllowed: bool & AugmentedConst<ApiType>;
       launchPeriod: u32 & AugmentedConst<ApiType>;
+      maxBlacklisted: u32 & AugmentedConst<ApiType>;
+      maxDeposits: u32 & AugmentedConst<ApiType>;
       maxProposals: u32 & AugmentedConst<ApiType>;
       maxVotes: u32 & AugmentedConst<ApiType>;
       minimumDeposit: u128 & AugmentedConst<ApiType>;
-      preimageByteDeposit: u128 & AugmentedConst<ApiType>;
       voteLockingPeriod: u32 & AugmentedConst<ApiType>;
       votingPeriod: u32 & AugmentedConst<ApiType>;
       /**
@@ -198,7 +199,7 @@ declare module '@polkadot/api-base/types/consts' {
     };
     idleScheduler: {
       disableBlockThreshold: u32 & AugmentedConst<ApiType>;
-      minimumWeightRemainInBlock: u64 & AugmentedConst<ApiType>;
+      minimumWeightRemainInBlock: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -210,7 +211,6 @@ declare module '@polkadot/api-base/types/consts' {
       nativeCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       palletId: FrameSupportPalletId & AugmentedConst<ApiType>;
       rewardsSource: AccountId32 & AugmentedConst<ApiType>;
-      stableCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -226,7 +226,7 @@ declare module '@polkadot/api-base/types/consts' {
     multisig: {
       depositBase: u128 & AugmentedConst<ApiType>;
       depositFactor: u128 & AugmentedConst<ApiType>;
-      maxSignatories: u16 & AugmentedConst<ApiType>;
+      maxSignatories: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -267,7 +267,7 @@ declare module '@polkadot/api-base/types/consts' {
       [key: string]: Codec;
     };
     scheduler: {
-      maximumWeight: u64 & AugmentedConst<ApiType>;
+      maximumWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
       maxScheduledPerBlock: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
@@ -289,7 +289,7 @@ declare module '@polkadot/api-base/types/consts' {
       blockHashCount: u32 & AugmentedConst<ApiType>;
       blockLength: FrameSystemLimitsBlockLength & AugmentedConst<ApiType>;
       blockWeights: FrameSystemLimitsBlockWeights & AugmentedConst<ApiType>;
-      dbWeight: FrameSupportWeightsRuntimeDbWeight & AugmentedConst<ApiType>;
+      dbWeight: SpWeightsRuntimeDbWeight & AugmentedConst<ApiType>;
       ss58Prefix: u16 & AugmentedConst<ApiType>;
       version: SpVersionRuntimeVersion & AugmentedConst<ApiType>;
       /**
