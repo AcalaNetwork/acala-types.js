@@ -2,7 +2,13 @@
 /* eslint-disable */
 
 import type { H160, H256, Index } from '@acala-network/types/interfaces/runtime';
-import type { Bytes, Enum, Option, Struct, Text, U128, U256, Vec, bool, i32, u256, u32, u8 } from '@polkadot/types-codec';
+import type { Bytes, Enum, Option, Struct, Text, U128, U256, Vec, bool, i32, u256, u32, u64, u8 } from '@polkadot/types-codec';
+
+/** @name BlockLimits */
+export interface BlockLimits extends Struct {
+  readonly maxGasLimit: u64;
+  readonly maxStorageLimit: u32;
+}
 
 /** @name CallInfo */
 export interface CallInfo extends Struct {

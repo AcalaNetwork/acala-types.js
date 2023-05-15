@@ -10,7 +10,7 @@ import type { CollateralAuctionItem, DebitAuctionItem, SurplusAuctionItem } from
 import type { ChangeBalance, ChangeOptionRate, ChangeOptionRatio, LiquidationStrategy, OptionRate, OptionRatio, RiskManagementParams } from '@acala-network/types/interfaces/cdpEngine';
 import type { CandidateInfoOf } from '@acala-network/types/interfaces/collatorSelection';
 import type { BalanceRequest, BalanceWrapper, TradingPairProvisionParameters, TradingPairStatus } from '@acala-network/types/interfaces/dex';
-import type { CallInfo, CallRequest, CodeInfo, CreateInfo, Erc20Info, EstimateResourcesResponse, EthereumLog, EvmAccountInfo, EvmAddress, EvmContractInfo, ExitError, ExitFatal, ExitReason, ExitRevert, ExitSucceed } from '@acala-network/types/interfaces/evm';
+import type { BlockLimits, CallInfo, CallRequest, CodeInfo, CreateInfo, Erc20Info, EstimateResourcesResponse, EthereumLog, EvmAccountInfo, EvmAddress, EvmContractInfo, ExitError, ExitFatal, ExitReason, ExitRevert, ExitSucceed } from '@acala-network/types/interfaces/evm';
 import type { AcalaStakingLedge, AcalaUnlockChunk } from '@acala-network/types/interfaces/homa';
 import type { Guarantee, RelaychainAccountId, SlashInfo, ValidatorBacking } from '@acala-network/types/interfaces/homaValidatorList';
 import type { PoolId, PoolIdV0 } from '@acala-network/types/interfaces/incentives';
@@ -212,6 +212,7 @@ declare module '@polkadot/types/types/registry' {
     BlockAttestations: BlockAttestations;
     BlockHash: BlockHash;
     BlockLength: BlockLength;
+    BlockLimits: BlockLimits;
     BlockNumber: BlockNumber;
     BlockNumberFor: BlockNumberFor;
     BlockNumberOf: BlockNumberOf;
