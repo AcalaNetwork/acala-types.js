@@ -6,8 +6,8 @@ import type { Bytes, Enum, Option, Struct, Text, U128, U256, Vec, bool, i32, u25
 
 /** @name BlockLimits */
 export interface BlockLimits extends Struct {
-  readonly max_gas_limit: u64;
-  readonly max_storage_limit: u32;
+  readonly maxGasLimit: u64;
+  readonly maxStorageLimit: u32;
 }
 
 /** @name CallInfo */
