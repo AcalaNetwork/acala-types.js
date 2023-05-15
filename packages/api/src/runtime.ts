@@ -76,6 +76,11 @@ export const runtime: ApiOptions['runtime'] = {
             }
           ],
           type: 'Result<CreateInfo, sp_runtime::DispatchError>'
+        },
+        block_limits: {
+          description: 'evm block limits',
+          params: [],
+          type: 'BlockLimits'
         }
       }
     }

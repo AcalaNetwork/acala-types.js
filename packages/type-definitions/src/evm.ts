@@ -44,6 +44,10 @@ export default {
     }
   },
   types: {
+    BlockLimits: {
+      max_gas_limit: 'u64',
+      max_storage_limit: 'u32'
+    },
     Erc20Info: {
       address: 'EvmAddress',
       name: 'Vec<u8>',
