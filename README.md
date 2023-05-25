@@ -12,14 +12,13 @@ More documentation and examples on [wiki](https://github.com/AcalaNetwork/acala-
 - Install dependencies
 
 ```bash
-yarn add @polkadot/api @acala-network/api@beta
+yarn add @polkadot/api @acala-network/api
 ```
 
 - Create API instance
 
 ```ts
-import { ApiPromise } from '@polkadot/api';
-import { WsProvider } from '@polkadot/rpc-provider';
+import { ApiPromise, WsProvider } from '@polkadot/api';
 import { options } from '@acala-network/api';
 
 async function main() {
