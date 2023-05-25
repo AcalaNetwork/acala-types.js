@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 5.1.1 May 25, 2023
+Changes:
+  - define evmRuntimeApi_blockLimits
+  - update dependencies
+
 ## 4.1.6-15 July 7, 2022
 Changes:
   - Changes homa sdk interface name subscribeEnv -> env$
