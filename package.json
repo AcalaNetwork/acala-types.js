@@ -33,7 +33,7 @@
     "@open-web3/util": "^2.0.1",
     "@polkadot/api": "^10.5.1",
     "@polkadot/dev": "^0.73.11",
-    "@polkadot/typegen": "^10.5.1",
+    "@polkadot/typegen": "^10.9.1",
     "@types/jest": "^29.5.1",
     "jest-config": "^29.5.0",
     "ts-node": "^10.9.1",
