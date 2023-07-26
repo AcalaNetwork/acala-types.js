@@ -3,7 +3,6 @@ import type { RegistryTypes } from '@polkadot/types/types';
 
 import { derive as acalaDerives } from '@acala-network/api-derive';
 import { lookupTypes as acalaLookupTypes, rpc as acalaRpc, signedExtensions as acalaSignedExtensions, types as acalaTypes, typesAlias as acalaTypesAlias, typesBundle as acalaTypesBundle } from '@acala-network/types';
-import { derive as ormlDerives } from '@open-web3/orml-api-derive';
 
 import { runtime as acalaRuntime } from './runtime';
 
@@ -34,8 +33,7 @@ export const options = ({ rpc = {},
   },
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   derives: {
-    ...acalaDerives,
-    ...ormlDerives
+    ...acalaDerives
   },
   typesBundle: {
     ...typesBundle,

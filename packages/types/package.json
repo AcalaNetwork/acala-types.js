@@ -22,8 +22,7 @@
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {
-    "@acala-network/type-definitions": "5.1.1",
-    "@open-web3/orml-types": "^2.0.1"
+    "@acala-network/type-definitions": "5.1.1"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.5.1"

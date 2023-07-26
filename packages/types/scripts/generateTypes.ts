@@ -9,7 +9,6 @@ import { assertDir, writeFile, HEADER } from '@polkadot/typegen/util';
 import { generateDefaultRuntime, generateDefaultConsts, generateDefaultErrors, generateDefaultEvents, generateDefaultQuery, generateDefaultRpc, generateDefaultTx } from '@polkadot/typegen/generate';
 
 import * as substractDefinations from '@polkadot/types/interfaces/definitions';
-import * as ormlDefinations from '@open-web3/orml-types/interfaces/definitions';
 
 import * as acalaDefinations from '../src/interfaces/definitions';
 import metadata from '../src/metadata/static-latest';
@@ -17,12 +16,6 @@ import { generateDefaultLookup } from './generate/lookup';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // const { runtime, ...substrateDefinations } = defaultDefinations;
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { runtime: _runtime, ...ormlModulesDefinations } = ormlDefinations;
-
-
-// delete ormlModulesDefinations.__esModule
 
 export function main () {
   // generate
@@ -33,9 +26,6 @@ export function main () {
   const lookupPath = assertDir(path.join(process.cwd(), 'packages/types/src/lookup'));
   const inputPath = assertDir(path.join(process.cwd(), 'packages/types/src/interfaces'));
   const pkg = '@acala-network/types/interfaces';
-
-  // @ts-ignore
-  delete ormlModulesDefinations.__esModule;
 
   const userDefs: Record<string, any> = {
     ...acalaDefinations
@@ -63,7 +53,6 @@ export function main () {
       '@polkadot/types/interfaces': filteredBase,
       // The order of the keys will affect the generated file.
       [pkg]: userDefs,
-      '@open-web3/orml-types/interfaces': ormlModulesDefinations,
     }
 
   const customLookupDefinitions = {
