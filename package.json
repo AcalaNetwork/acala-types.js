@@ -24,7 +24,8 @@
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
     "test": "echo noop",
-    "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts"
+    "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts",
+    "bump": "yarn workspaces foreach -vit --include '@acala-network/*' version"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
@@ -44,5 +45,31 @@
   "versions": {
     "npm": "5.1.1",
     "git": "5.1.1"
+  },
+  "paths": {
+    "@acala-network/type-definitions": [
+      "packages/type-definitions/src"
+    ],
+    "@acala-network/type-definitions/*": [
+      "packages/type-definitions/src/*"
+    ],
+    "@acala-network/types": [
+      "packages/types/src"
+    ],
+    "@acala-network/types/*": [
+      "packages/types/src/*"
+    ],
+    "@acala-network/api-derive": [
+      "packages/api-derive/src"
+    ],
+    "@acala-network/api-derive/*": [
+      "packages/api-derive/src/*"
+    ],
+    "@acala-network/api": [
+      "packages/api/src"
+    ],
+    "@acala-network/api/*": [
+      "packages/api/src/*"
+    ]
   }
 }
