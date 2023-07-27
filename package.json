@@ -18,7 +18,7 @@
   "scripts": {
     "build": "yarn build:interfaces; yarn workspaces foreach -pvit run build",
     "build:interfaces": "ts-node -r tsconfig-paths/register packages/types/scripts/generateTypes.ts && ts-node -r tsconfig-paths/register packages/type-definitions/scripts/generate.ts",
-    "build:release": "polkadot-ci-ghact-build",
+    "build:release": "./scripts/publish",
     "check-deps": "./node_modules/@open-web3/util/scripts/check-deps.js yarn.lock @polkadot/ @open-web3/",
     "clean": "polkadot-dev-clean-build",
     "lint": "polkadot-dev-run-lint",
@@ -40,9 +40,5 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4"
   },
-  "packageManager": "yarn@3.5.0",
-  "versions": {
-    "npm": "5.1.1-3",
-    "git": "5.1.1-3"
-  }
+  "packageManager": "yarn@3.5.0"
 }
