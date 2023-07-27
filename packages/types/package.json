@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/types",
-  "version": "5.1.2-6",
+  "version": "5.1.2-7-x",
   "description": "Polkadot.js type definations for Acala Network",
   "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
@@ -22,7 +22,7 @@
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {
-    "@acala-network/type-definitions": "5.1.2-6"
+    "@acala-network/type-definitions": "5.1.2-7-x"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.5.1"
@@ -31,6 +31,5 @@
     "@types/websocket": "^1.0.5",
     "typescript": "^5.0.4",
     "websocket": "^1.0.34"
-  },
-  "stableVersion": "5.1.1"
+  }
 }

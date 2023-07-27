@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/type-definitions",
-  "version": "5.1.2-6",
+  "version": "5.1.2-7-x",
   "description": "Polkadot.js type definations for Acala Network",
   "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
@@ -26,6 +26,5 @@
   },
   "devDependencies": {
     "typescript": "^5.0.4"
-  },
-  "stableVersion": "5.1.1"
+  }
 }
