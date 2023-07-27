@@ -21,13 +21,6 @@ import type { AcalaAssetMetadata, AcalaDataProviderId, AirDropCurrencyId, Amount
 import type { AccountId, AccountId20, AccountId32, AccountId33, AccountIdOf, AccountIndex, Address, AsOriginId, AssetId, AtLeast64BitUnsigned, Balance, BalanceOf, Block, BlockNumber, BlockNumberFor, BlockNumberOf, Call, CallHash, CallHashOf, ChangesTrieConfiguration, ChangesTrieSignal, CodecHash, Consensus, ConsensusEngineId, CrateVersion, Digest, DigestItem, EncodedJustification, ExtrinsicsWeight, Fixed128, Fixed64, FixedI128, FixedI64, FixedU128, FixedU64, H1024, H128, H160, H2048, H256, H32, H512, H64, Hash, Header, HeaderPartial, I32F32, Index, IndicesLookupSource, Justification, Justifications, KeyTypeId, KeyValue, LockIdentifier, LookupSource, LookupTarget, ModuleId, Moment, MultiAddress, MultiSigner, OpaqueCall, OracleKey, OracleValue, Origin, OriginCaller, PalletId, PalletVersion, PalletsOrigin, Pays, PerU16, Perbill, Percent, Permill, Perquintill, Phantom, PhantomData, PreRuntime, RelayChainBlockNumberOf, Releases, RuntimeCall, RuntimeDbWeight, RuntimeEvent, Seal, SealV0, SignedBlock, SignedBlockWithJustification, SignedBlockWithJustifications, Slot, SlotDuration, StableAssetPoolId, StorageData, StorageInfo, StorageProof, TransactionInfo, TransactionLongevity, TransactionPriority, TransactionStorageProof, TransactionTag, U32F32, ValidatorId, ValidatorIdOf, Weight, WeightMultiplier, WeightV0, WeightV1, WeightV2 } from '@acala-network/types/interfaces/runtime';
 import type { BalanceInfo, ChangeRate, ChangeRatio, Ledger, Params, PolkadotAccountId, PolkadotAccountIdOf, StakingPoolPhase, SubAccountStatus } from '@acala-network/types/interfaces/stakingPool';
 import type { ExchangeRate, Price, Rate, Ratio } from '@acala-network/types/interfaces/support';
-import type { AuthorityOrigin, CallOf, DelayedOrigin, DispatchTime, ScheduleTaskIndex } from '@open-web3/orml-types/interfaces/authority';
-import type { GraduallyUpdate, StorageKeyBytes, StorageValue, StorageValueBytes } from '@open-web3/orml-types/interfaces/graduallyUpdates';
-import type { DataProviderId, OrderedSet, RpcDataProviderId, TimestampedValue, TimestampedValueOf } from '@open-web3/orml-types/interfaces/oracle';
-import type { CompactBalance, PoolInfo, PoolInfoV0, Share } from '@open-web3/orml-types/interfaces/rewards';
-import type { OrmlAccountData, OrmlBalanceLock } from '@open-web3/orml-types/interfaces/tokens';
-import type { AuctionInfo, DelayedDispatchTime, DispatchId } from '@open-web3/orml-types/interfaces/traits';
-import type { OrmlVestingSchedule, VestingScheduleOf } from '@open-web3/orml-types/interfaces/vesting';
 import type { Data, StorageKey } from '@polkadot/types';
 import type { BitVec, Bool, Bytes, F32, F64, I128, I16, I256, I32, I64, I8, ISize, Json, Null, OptionBool, Raw, Text, Type, U128, U16, U256, U32, U64, U8, USize, bool, f32, f64, i128, i16, i256, i32, i64, i8, isize, u128, u16, u256, u32, u64, u8, usize } from '@polkadot/types-codec';
 import type { AssetApproval, AssetApprovalKey, AssetBalance, AssetDestroyWitness, AssetDetails, AssetMetadata, TAssetBalance, TAssetDepositBalance } from '@polkadot/types/interfaces/assets';
@@ -157,13 +150,11 @@ declare module '@polkadot/types/types/registry' {
     AuctionId: AuctionId;
     AuctionIdOf: AuctionIdOf;
     AuctionIndex: AuctionIndex;
-    AuctionInfo: AuctionInfo;
     AuthIndex: AuthIndex;
     AuthorityDiscoveryId: AuthorityDiscoveryId;
     AuthorityId: AuthorityId;
     AuthorityIndex: AuthorityIndex;
     AuthorityList: AuthorityList;
-    AuthorityOrigin: AuthorityOrigin;
     AuthoritySet: AuthoritySet;
     AuthoritySetChange: AuthoritySetChange;
     AuthoritySetChanges: AuthoritySetChanges;
@@ -247,7 +238,6 @@ declare module '@polkadot/types/types/registry' {
     CallHashOf: CallHashOf;
     CallIndex: CallIndex;
     CallInfo: CallInfo;
-    CallOf: CallOf;
     CallOrigin: CallOrigin;
     CallRequest: CallRequest;
     CandidateCommitments: CandidateCommitments;
@@ -296,7 +286,6 @@ declare module '@polkadot/types/types/registry' {
     CompactAssignmentsTo265: CompactAssignmentsTo265;
     CompactAssignmentsWith16: CompactAssignmentsWith16;
     CompactAssignmentsWith24: CompactAssignmentsWith24;
-    CompactBalance: CompactBalance;
     CompactScore: CompactScore;
     CompactScoreCompact: CompactScoreCompact;
     ConfigData: ConfigData;
@@ -382,12 +371,9 @@ declare module '@polkadot/types/types/registry' {
     CurrencyId: CurrencyId;
     CurrencyIdOf: CurrencyIdOf;
     Data: Data;
-    DataProviderId: DataProviderId;
     DebitAuctionItem: DebitAuctionItem;
     DeferredOffenceOf: DeferredOffenceOf;
     DefunctVoter: DefunctVoter;
-    DelayedDispatchTime: DelayedDispatchTime;
-    DelayedOrigin: DelayedOrigin;
     DelayKind: DelayKind;
     DelayKindBest: DelayKindBest;
     Delegations: Delegations;
@@ -410,7 +396,6 @@ declare module '@polkadot/types/types/registry' {
     DispatchErrorPre6First: DispatchErrorPre6First;
     DispatchErrorTo198: DispatchErrorTo198;
     DispatchFeePayment: DispatchFeePayment;
-    DispatchId: DispatchId;
     DispatchInfo: DispatchInfo;
     DispatchInfoTo190: DispatchInfoTo190;
     DispatchInfoTo244: DispatchInfoTo244;
@@ -419,7 +404,6 @@ declare module '@polkadot/types/types/registry' {
     DispatchResult: DispatchResult;
     DispatchResultOf: DispatchResultOf;
     DispatchResultTo198: DispatchResultTo198;
-    DispatchTime: DispatchTime;
     DisputeLocation: DisputeLocation;
     DisputeResult: DisputeResult;
     DisputeState: DisputeState;
@@ -579,7 +563,6 @@ declare module '@polkadot/types/types/registry' {
     GiltBid: GiltBid;
     GlobalValidationData: GlobalValidationData;
     GlobalValidationSchedule: GlobalValidationSchedule;
-    GraduallyUpdate: GraduallyUpdate;
     GrandpaCommit: GrandpaCommit;
     GrandpaEquivocation: GrandpaEquivocation;
     GrandpaEquivocationProof: GrandpaEquivocationProof;
@@ -816,16 +799,12 @@ declare module '@polkadot/types/types/registry' {
     OptionRatio: OptionRatio;
     OracleKey: OracleKey;
     OracleValue: OracleValue;
-    OrderedSet: OrderedSet;
     Origin: Origin;
     OriginCaller: OriginCaller;
     OriginKindV0: OriginKindV0;
     OriginKindV1: OriginKindV1;
     OriginKindV2: OriginKindV2;
-    OrmlAccountData: OrmlAccountData;
-    OrmlBalanceLock: OrmlBalanceLock;
     OrmlCurrencyId: OrmlCurrencyId;
-    OrmlVestingSchedule: OrmlVestingSchedule;
     OutboundHrmpMessage: OutboundHrmpMessage;
     OutboundLaneData: OutboundLaneData;
     OutboundMessageFee: OutboundMessageFee;
@@ -899,8 +878,6 @@ declare module '@polkadot/types/types/registry' {
     PolkadotAccountIdOf: PolkadotAccountIdOf;
     PoolId: PoolId;
     PoolIdV0: PoolIdV0;
-    PoolInfo: PoolInfo;
-    PoolInfoV0: PoolInfoV0;
     PortableType: PortableType;
     PortableTypeV14: PortableTypeV14;
     Position: Position;
@@ -994,7 +971,6 @@ declare module '@polkadot/types/types/registry' {
     RiskManagementParams: RiskManagementParams;
     RoundSnapshot: RoundSnapshot;
     RoundState: RoundState;
-    RpcDataProviderId: RpcDataProviderId;
     RpcMethods: RpcMethods;
     RuntimeCall: RuntimeCall;
     RuntimeDbWeight: RuntimeDbWeight;
@@ -1013,7 +989,6 @@ declare module '@polkadot/types/types/registry' {
     ScheduledTo254: ScheduledTo254;
     SchedulePeriod: SchedulePeriod;
     SchedulePriority: SchedulePriority;
-    ScheduleTaskIndex: ScheduleTaskIndex;
     ScheduleTo212: ScheduleTo212;
     ScheduleTo258: ScheduleTo258;
     ScheduleTo264: ScheduleTo264;
@@ -1044,7 +1019,6 @@ declare module '@polkadot/types/types/registry' {
     SessionKeys9B: SessionKeys9B;
     SetId: SetId;
     SetIndex: SetIndex;
-    Share: Share;
     Si0Field: Si0Field;
     Si0LookupTypeId: Si0LookupTypeId;
     Si0Path: Si0Path;
@@ -1162,7 +1136,6 @@ declare module '@polkadot/types/types/registry' {
     StorageHasherV9: StorageHasherV9;
     StorageInfo: StorageInfo;
     StorageKey: StorageKey;
-    StorageKeyBytes: StorageKeyBytes;
     StorageKind: StorageKind;
     StorageMetadataV10: StorageMetadataV10;
     StorageMetadataV11: StorageMetadataV11;
@@ -1170,8 +1143,6 @@ declare module '@polkadot/types/types/registry' {
     StorageMetadataV13: StorageMetadataV13;
     StorageMetadataV9: StorageMetadataV9;
     StorageProof: StorageProof;
-    StorageValue: StorageValue;
-    StorageValueBytes: StorageValueBytes;
     StoredPendingChange: StoredPendingChange;
     StoredState: StoredState;
     StrikeCount: StrikeCount;
@@ -1189,8 +1160,6 @@ declare module '@polkadot/types/types/registry' {
     TAssetDepositBalance: TAssetDepositBalance;
     Text: Text;
     Timepoint: Timepoint;
-    TimestampedValue: TimestampedValue;
-    TimestampedValueOf: TimestampedValueOf;
     TokenData: TokenData;
     TokenError: TokenError;
     TokenId: TokenId;
@@ -1276,7 +1245,6 @@ declare module '@polkadot/types/types/registry' {
     VersionMigrationStage: VersionMigrationStage;
     VestingInfo: VestingInfo;
     VestingSchedule: VestingSchedule;
-    VestingScheduleOf: VestingScheduleOf;
     Vote: Vote;
     VoteIndex: VoteIndex;
     Voter: Voter;
