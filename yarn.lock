@@ -5,11 +5,11 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/api-derive@5.1.1, @acala-network/api-derive@workspace:packages/api-derive":
+"@acala-network/api-derive@5.1.2-6, @acala-network/api-derive@workspace:packages/api-derive":
   version: 0.0.0-use.local
   resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
-    "@acala-network/types": 5.1.1
+    "@acala-network/types": 5.1.2-6
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^10.5.1
@@ -20,32 +20,29 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@acala-network/api@workspace:packages/api"
   dependencies:
-    "@acala-network/api-derive": 5.1.1
-    "@acala-network/types": 5.1.1
-    "@open-web3/orml-api-derive": ^2.0.1
+    "@acala-network/api-derive": 5.1.2-6
+    "@acala-network/types": 5.1.2-6
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^10.5.1
   languageName: unknown
   linkType: soft
 
-"@acala-network/type-definitions@5.1.1, @acala-network/type-definitions@workspace:packages/type-definitions":
+"@acala-network/type-definitions@5.1.2-6, @acala-network/type-definitions@workspace:packages/type-definitions":
   version: 0.0.0-use.local
   resolution: "@acala-network/type-definitions@workspace:packages/type-definitions"
   dependencies:
-    "@open-web3/orml-type-definitions": ^2.0.1
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/types": ^10.5.1
   languageName: unknown
   linkType: soft
 
-"@acala-network/types@5.1.1, @acala-network/types@workspace:packages/types":
+"@acala-network/types@5.1.2-6, @acala-network/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
-    "@acala-network/type-definitions": 5.1.1
-    "@open-web3/orml-types": ^2.0.1
+    "@acala-network/type-definitions": 5.1.2-6
     "@types/websocket": ^1.0.5
     typescript: ^5.0.4
     websocket: ^1.0.34
@@ -1022,38 +1019,6 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^17.1.1
   checksum: 84ccab65d6f7aa7dd5c878e1737f5ccc671cfdc4146378bc4931b877c2e10c1f40440c1bf4c662ce6a08c7c6d8e9ca6cbb605b70c803f33d9f94ed3fbe51e384
-  languageName: node
-  linkType: hard
-
-"@open-web3/orml-api-derive@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@open-web3/orml-api-derive@npm:2.0.1"
-  dependencies:
-    memoizee: ^0.4.15
-    rxjs: ^7.5.5
-  peerDependencies:
-    "@polkadot/api": ^8.12.2
-  checksum: 6ff7a515aca591d32ffdd91f57d386481894fef2be293b6f0be7b76330643b333fd3410400358791a837a8d6e57acdf930e1255bd80466bc3732b7ac7e6a5cfd
-  languageName: node
-  linkType: hard
-
-"@open-web3/orml-type-definitions@npm:2.0.1, @open-web3/orml-type-definitions@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@open-web3/orml-type-definitions@npm:2.0.1"
-  dependencies:
-    lodash.merge: ^4.6.2
-  checksum: a27ba7d37d9c4d497989d4f4cebaf997bc4a06e2f74412a46735b4431d8f21d2ce2ceaafcebbb9911b0e5271a169994bad0b7c359d8eef0839cfdb3575a3c886
-  languageName: node
-  linkType: hard
-
-"@open-web3/orml-types@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@open-web3/orml-types@npm:2.0.1"
-  dependencies:
-    "@open-web3/orml-type-definitions": 2.0.1
-  peerDependencies:
-    "@polkadot/api": ^8.12.2
-  checksum: aa01716f15328260ffeb3d1e5c2cf01664c4af4872c625a9ea590fa56581a0f39a02a92ce5f860b27ac22e56091b0d4a6a03f90810b29e5f9abcdfaf09487fe4
   languageName: node
   linkType: hard
 
@@ -4488,7 +4453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es5-ext@npm:^0.10.35, es5-ext@npm:^0.10.46, es5-ext@npm:^0.10.50, es5-ext@npm:^0.10.53, es5-ext@npm:~0.10.14, es5-ext@npm:~0.10.2, es5-ext@npm:~0.10.46":
+"es5-ext@npm:^0.10.35, es5-ext@npm:^0.10.50":
   version: 0.10.62
   resolution: "es5-ext@npm:0.10.62"
   dependencies:
@@ -4517,18 +4482,6 @@ __metadata:
     d: ^1.0.1
     ext: ^1.1.2
   checksum: cd49722c2a70f011eb02143ef1c8c70658d2660dead6641e160b94619f408b9cf66425515787ffe338affdf0285ad54f4eae30ea5bd510e33f8659ec53bcaa70
-  languageName: node
-  linkType: hard
-
-"es6-weak-map@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "es6-weak-map@npm:2.0.3"
-  dependencies:
-    d: 1
-    es5-ext: ^0.10.46
-    es6-iterator: ^2.0.3
-    es6-symbol: ^3.1.1
-  checksum: 19ca15f46d50948ce78c2da5f21fb5b1ef45addd4fe17b5df952ff1f2a3d6ce4781249bc73b90995257264be2a98b2ec749bb2aba0c14b5776a1154178f9c927
   languageName: node
   linkType: hard
 
@@ -4986,16 +4939,6 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 571aeb3dbe0f2bbd4e4fadbdb44f325fc75335cd5f6f6b6a091e6a06a9f25ed5392f0863c5442acb0646787446e816f13cbfc6edce5b07658541dff573cab1ff
-  languageName: node
-  linkType: hard
-
-"event-emitter@npm:^0.3.5":
-  version: 0.3.5
-  resolution: "event-emitter@npm:0.3.5"
-  dependencies:
-    d: 1
-    es5-ext: ~0.10.14
-  checksum: 27c1399557d9cd7e0aa0b366c37c38a4c17293e3a10258e8b692a847dd5ba9fb90429c3a5a1eeff96f31f6fa03ccbd31d8ad15e00540b22b22f01557be706030
   languageName: node
   linkType: hard
 
@@ -6529,13 +6472,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-promise@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "is-promise@npm:2.2.2"
-  checksum: 18bf7d1c59953e0ad82a1ed963fb3dc0d135c8f299a14f89a17af312fc918373136e56028e8831700e1933519630cc2fd4179a777030330fde20d34e96f40c78
-  languageName: node
-  linkType: hard
-
 "is-reference@npm:1.2.1":
   version: 1.2.1
   resolution: "is-reference@npm:1.2.1"
@@ -7480,15 +7416,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-queue@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "lru-queue@npm:0.1.0"
-  dependencies:
-    es5-ext: ~0.10.2
-  checksum: 7f2c53c5e7f2de20efb6ebb3086b7aea88d6cf9ae91ac5618ece974122960c4e8ed04988e81d92c3e63d60b12c556b14d56ef7a9c5a4627b23859b813e39b1a2
-  languageName: node
-  linkType: hard
-
 "madge@npm:^6.0.0":
   version: 6.0.0
   resolution: "madge@npm:6.0.0"
@@ -7612,22 +7539,6 @@ __metadata:
   dependencies:
     fs-monkey: ^1.0.3
   checksum: fcd037566a4bbb00d61dc991858395ccc06267ab5fe9471aeff28433f2a210bf5dd999e64e8b5473f8244f00dfb7ff3221b5c2fe41ff98af1439e5e2168fc410
-  languageName: node
-  linkType: hard
-
-"memoizee@npm:^0.4.15":
-  version: 0.4.15
-  resolution: "memoizee@npm:0.4.15"
-  dependencies:
-    d: ^1.0.1
-    es5-ext: ^0.10.53
-    es6-weak-map: ^2.0.3
-    event-emitter: ^0.3.5
-    is-promise: ^2.2.2
-    lru-queue: ^0.1.0
-    next-tick: ^1.1.0
-    timers-ext: ^0.1.7
-  checksum: 4065d94416dbadac56edf5947bf342beca0e9f051f33ad60d7c4baf3f6ca0f3c6fdb770c5caed5a89c0ceaf9121428582f396445d591785281383d60aa883418
   languageName: node
   linkType: hard
 
@@ -7958,7 +7869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-tick@npm:1, next-tick@npm:^1.1.0":
+"next-tick@npm:^1.1.0":
   version: 1.1.0
   resolution: "next-tick@npm:1.1.0"
   checksum: 83b5cf36027a53ee6d8b7f9c0782f2ba87f4858d977342bfc3c20c21629290a2111f8374d13a81221179603ffc4364f38374b5655d17b6a8f8a8c77bdea4fe8b
@@ -10105,16 +10016,6 @@ __metadata:
   version: 1.1.0
   resolution: "thunky@npm:1.1.0"
   checksum: 993096c472b6b8f30e29dc777a8d17720e4cab448375041f20c0cb802a09a7fb2217f2a3e8cdc11851faa71c957e2db309357367fc9d7af3cb7a4d00f4b66034
-  languageName: node
-  linkType: hard
-
-"timers-ext@npm:^0.1.7":
-  version: 0.1.7
-  resolution: "timers-ext@npm:0.1.7"
-  dependencies:
-    es5-ext: ~0.10.46
-    next-tick: 1
-  checksum: ef3f27a0702a88d885bcbb0317c3e3ecd094ce644da52e7f7d362394a125d9e3578292a8f8966071a980d8abbc3395725333b1856f3ae93835b46589f700d938
   languageName: node
   linkType: hard
 

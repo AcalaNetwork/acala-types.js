@@ -1,75 +1,4 @@
 {
-    "CallOf": "Call",
-    "DispatchTime": {
-        "_enum": {
-            "At": "BlockNumber",
-            "After": "BlockNumber"
-        }
-    },
-    "ScheduleTaskIndex": "u32",
-    "DelayedOrigin": {
-        "delay": "BlockNumber",
-        "origin": "PalletsOrigin"
-    },
-    "AuthorityOrigin": "DelayedOrigin",
-    "StorageValue": "Vec<u8>",
-    "GraduallyUpdate": {
-        "key": "StorageKey",
-        "targetValue": "StorageValue",
-        "perBlock": "StorageValue"
-    },
-    "StorageKeyBytes": "Vec<u8>",
-    "StorageValueBytes": "Vec<u8>",
-    "RpcDataProviderId": "Text",
-    "DataProviderId": "u8",
-    "TimestampedValue": {
-        "value": "OracleValue",
-        "timestamp": "Moment"
-    },
-    "TimestampedValueOf": "TimestampedValue",
-    "OrderedSet": "Vec<AccountId>",
-    "OrmlAccountData": {
-        "free": "Balance",
-        "reserved": "Balance",
-        "frozen": "Balance"
-    },
-    "OrmlBalanceLock": {
-        "amount": "Balance",
-        "id": "LockIdentifier"
-    },
-    "AuctionInfo": {
-        "bid": "Option<(AccountId, Balance)>",
-        "start": "BlockNumber",
-        "end": "Option<BlockNumber>"
-    },
-    "DelayedDispatchTime": {
-        "_enum": {
-            "At": "BlockNumber",
-            "After": "BlockNumber"
-        }
-    },
-    "DispatchId": "u32",
-    "Price": "FixedU128",
-    "OrmlVestingSchedule": {
-        "start": "BlockNumber",
-        "period": "BlockNumber",
-        "periodCount": "u32",
-        "perPeriod": "Compact<Balance>"
-    },
-    "VestingScheduleOf": "OrmlVestingSchedule",
-    "OrmlCurrencyId": "CurrencyId",
-    "PoolInfo": {
-        "totalShares": "Share",
-        "rewards": "BTreeMap<OrmlCurrencyId, (Balance, Balance)>"
-    },
-    "CompactBalance": "Compact<Balance>",
-    "PoolInfoV0": {
-        "totalShares": "Compact<Share>",
-        "totalRewards": "CompactBalance",
-        "totalWithdrawnRewards": "CompactBalance"
-    },
-    "Share": "u128",
-    "OracleValue": "Price",
     "Amount": "i128",
     "AmountOf": "Amount",
     "AuctionId": "u32",
@@ -133,6 +62,7 @@
         ]
     },
     "TradingPair": "(CurrencyId,  CurrencyId)",
+    "OrmlCurrencyId": "CurrencyId",
     "ChainBridgeChainId": "u8",
     "AcalaAssetMetadata": {
         "name": "Vec<u8>",
@@ -405,6 +335,7 @@
         "unlocking": "Vec<HomaUnlockChunk>"
     },
     "OracleKey": "CurrencyId",
+    "OracleValue": "Price",
     "AsOriginId": "AuthoritysOriginId",
     "ProxyType": {
         "_enum": [
@@ -466,6 +397,7 @@
     "ExchangeRate": "FixedU128",
     "Rate": "FixedU128",
     "Ratio": "FixedU128",
+    "Price": "FixedU128",
     "PublicKey": "[u8; 20]",
     "DestAddress": "Vec<u8>",
     "PoolTokenIndex": "u32",

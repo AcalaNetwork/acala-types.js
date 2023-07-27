@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { OverrideVersionedType } from '@polkadot/types/types';
 
-import { rpc as ormlRpc, types as ormlTypes, typesAlias as ormlAlias } from '@open-web3/orml-type-definitions';
-import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from '@open-web3/orml-type-definitions/utils';
-
 import acalaVersioned from './spec/acala';
 import karuraVersioned from './spec/karura';
 import mandalaVersioned from './spec/mandala';
@@ -27,6 +24,7 @@ import { signedExtensions as acalaSignedExtensions } from './signedExtensions';
 import stableAsset from './stableAsset';
 import stakingPool from './stakingPool';
 import support from './support';
+import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from './utils';
 
 // FIXME: currently we cannot override this in runtime definations because the code generation script cannot handle overrides
 // This will make it behave correctly in runtime, but wrong types in TS defination.
@@ -56,13 +54,12 @@ const acalaDefs = {
 };
 
 export const types = {
-  ...ormlTypes,
   ...typesFromDefs(acalaDefs),
   ...additionalOverride
 };
 
-export const rpc = jsonrpcFromDefs(acalaDefs, { ...ormlRpc });
-export const typesAlias = typesAliasFromDefs(acalaDefs, { ...ormlAlias });
+export const rpc = jsonrpcFromDefs(acalaDefs, {});
+export const typesAlias = typesAliasFromDefs(acalaDefs, {});
 
 function getBundle (versioned: OverrideVersionedType[]) {
   return {
