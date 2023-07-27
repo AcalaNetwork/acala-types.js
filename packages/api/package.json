@@ -22,8 +22,8 @@
     "build": "tsc --build tsconfig.json"
   },
   "dependencies": {
-    "@acala-network/api-derive": "workspace:*",
-    "@acala-network/types": "workspace:*"
+    "@acala-network/api-derive": "5.1.2-6",
+    "@acala-network/types": "5.1.2-6"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.5.1"
