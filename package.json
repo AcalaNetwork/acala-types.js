@@ -1,5 +1,5 @@
 {
-  "version": "5.1.2-5",
+  "version": "5.1.2-6",
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
@@ -46,31 +46,5 @@
   "versions": {
     "npm": "5.1.1",
     "git": "5.1.1"
-  },
-  "paths": {
-    "@acala-network/type-definitions": [
-      "packages/type-definitions/src"
-    ],
-    "@acala-network/type-definitions/*": [
-      "packages/type-definitions/src/*"
-    ],
-    "@acala-network/types": [
-      "packages/types/src"
-    ],
-    "@acala-network/types/*": [
-      "packages/types/src/*"
-    ],
-    "@acala-network/api-derive": [
-      "packages/api-derive/src"
-    ],
-    "@acala-network/api-derive/*": [
-      "packages/api-derive/src/*"
-    ],
-    "@acala-network/api": [
-      "packages/api/src"
-    ],
-    "@acala-network/api/*": [
-      "packages/api/src/*"
-    ]
   }
 }
