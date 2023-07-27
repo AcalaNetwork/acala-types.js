@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api-derive",
-  "version": "5.1.2-2",
+  "version": "5.1.2-5",
   "description": "Additional polkadot.js derives for Acala Network",
   "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",

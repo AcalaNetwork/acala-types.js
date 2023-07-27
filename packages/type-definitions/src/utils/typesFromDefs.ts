@@ -1,4 +1,4 @@
-export default function typesFromDefs(
+export default function typesFromDefs (
   definitions: Record<string, { types: Record<string, any> }>,
   initTypes: Record<string, any> = {}
 ): Record<string, any> {

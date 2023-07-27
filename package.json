@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1",
+  "version": "5.1.2-5",
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
@@ -25,7 +25,8 @@
     "postinstall": "polkadot-dev-yarn-only",
     "test": "echo noop",
     "update-metadata": "ts-node --project ./tsconfig.json packages/types/scripts/updateMetadata.ts",
-    "bump": "yarn workspaces foreach -vit --include '@acala-network/*' version"
+    "bump": "yarn workspaces foreach -vit --include '@acala-network/*' version",
+    "publish:manual": "yarn workspaces foreach -vit --include '@acala-network/*' npm publish --tolerate-republish"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
