@@ -2,12 +2,9 @@
   "name": "@acala-network/api",
   "version": "5.1.2-6",
   "description": "Acala JS API",
-  "main": "build/index.js",
+  "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
-  "files": [
-    "build"
-  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
