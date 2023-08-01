@@ -34,7 +34,7 @@
     "@babel/runtime": "^7.21.5",
     "@open-web3/util": "^2.0.1",
     "@polkadot/api": "^10.5.1",
-    "@polkadot/dev": "^0.73.11",
+    "@polkadot/dev": "^0.76.8",
     "@polkadot/typegen": "^10.5.1",
     "@types/jest": "^29.5.1",
     "jest-config": "^29.5.0",
