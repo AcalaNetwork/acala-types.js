@@ -36,7 +36,7 @@
     "@polkadot/api": "^10.5.1",
     "@polkadot/dev": "^0.73.11",
     "@polkadot/typegen": "^10.5.1",
-    "@types/jest": "^29.5.1",
+    "@types/jest": "^29.5.3",
     "jest-config": "^29.5.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
