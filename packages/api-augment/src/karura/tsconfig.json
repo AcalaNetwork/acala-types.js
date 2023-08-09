@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../build/karura",
+    "paths": {
+      "@acala-network/api-augment/karura/*": ["src/karura/*"],
+      "@polkadot/api/augment": ["src/karura/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["src/karura/interfaces/augment-types.ts"],
+      "@polkadot/types/lookup": ["src/karura/interfaces/types-lookup.ts"]
+    }
+  }
+}

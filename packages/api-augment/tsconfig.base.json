@@ -12,9 +12,9 @@
     "composite": true,
     "declaration": true,
     "paths": {
-      "moonbeam": ["acala/src"],
-      "moonriver": ["karura/src"],
-      "moonbase": ["mandala/src"]
+      "acala": ["acala/src"],
+      "karura": ["karura/src"],
+      "mandala": ["mandala/src"]
     }
   },
   "exclude": ["node_modules", "build"],

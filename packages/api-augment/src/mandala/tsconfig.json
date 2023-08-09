@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../build/mandala",
+    "paths": {
+      "@acala-network/api-augment/mandala/*": ["src/mandala/*"],
+      "@polkadot/api/augment": ["src/mandala/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["src/mandala/interfaces/augment-types.ts"],
+      "@polkadot/types/lookup": ["src/mandala/interfaces/types-lookup.ts"]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../build",
+    "paths": {
+      "@acala-network/api-augment/*": ["src/acala/*"],
+      "@polkadot/api/augment": ["src/acala/interfaces/augment-api.ts"],
+      "@polkadot/types/augment": ["src/acala/interfaces/augment-types.ts"],
+      "@polkadot/types/lookup": ["src/acala/interfaces/types-lookup.ts"]
+    }
+  }
+}
