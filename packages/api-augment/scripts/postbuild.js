@@ -19,6 +19,6 @@ copyFileSync('README.md', `${buildPath}/README.md`);
 console.log(`Copy ${buildPath}/README.md`);
 // Copy empty files for CommonJS modules
 copyFileSync('./src/index.cjs', `${buildPath}/index.cjs`);
-copyFileSync('./src/index.cjs', `${buildPath}/moonriver/index.cjs`);
-copyFileSync('./src/index.cjs', `${buildPath}/moonbase/index.cjs`);
+copyFileSync('./src/index.cjs', `${buildPath}/karura/index.cjs`);
+copyFileSync('./src/index.cjs', `${buildPath}/mandala/index.cjs`);
 console.log('Done postbuild');
