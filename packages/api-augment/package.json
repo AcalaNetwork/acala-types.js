@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api-augment",
-  "version": "0.2400.0",
+  "version": "6.0.0-0",
   "type": "module",
   "description": "Acala types augment for @polkadot/api",
   "license": "GPL-3.0-only",
