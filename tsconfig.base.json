@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["esnext"],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -17,13 +17,7 @@
     "declaration": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "composite": true,
-    "paths": {
-      "@acala-network/api": ["packages/api/src"],
-      "@acala-network/api/*": ["packages/api/src/*"],
-      "@acala-network/types": ["packages/types/src"],
-      "@acala-network/types/*": ["packages/types/src/*"],
-    }
+    "composite": true
   },
   "exclude": [
     "build/**/*",
