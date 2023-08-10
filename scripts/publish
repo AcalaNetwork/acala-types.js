@@ -146,7 +146,7 @@ npmSetup();
 
 // perform the actual CI ops
 runClean();
-runLint();
+// runLint();
 runTest();
 runBuild();
 

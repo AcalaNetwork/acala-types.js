@@ -1,35 +1,39 @@
 {
   "name": "@acala-network/types",
-  "version": "5.1.2",
-  "description": "Polkadot.js type definations for Acala Network",
-  "main": "index.js",
+  "version": "6.0.0-0",
+  "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "directory": "packages/types",
-    "type": "git",
-    "url": "https://github.com/AcalaNetwork/acala-types.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
-  },
-  "homepage": "https://github.com/AcalaNetwork/acala-types.js",
   "scripts": {
-    "build": "tsc --build tsconfig.json"
+    "generate": "npm run load:meta && npm run generate:defs && npm run generate:meta",
+    "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://mandala-tc9-rpc.aca-staging.network > metadata.json",
+    "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --endpoint ./metadata.json --input ./src/interfaces",
+    "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --endpoint ./metadata.json  --output ./src/interfaces",
+    "build": "rm -rf build && tsc -b --verbose",
+    "publish": "cd build && npm publish",
+    "deploy": "npm run generate && npm run build && npm run publish"
   },
-  "dependencies": {
-    "@acala-network/type-definitions": "5.1.2"
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "default": "./index.js"
+    }
   },
-  "peerDependencies": {
-    "@polkadot/api": "^10.9.1"
-  },
+  "keywords": [
+    "acala",
+    "karura",
+    "types",
+    "polkadot",
+    "api"
+  ],
   "devDependencies": {
-    "@types/websocket": "^1.0.5",
-    "typescript": "^5.0.4",
-    "websocket": "^1.0.34"
+    "@polkadot/api": "^10.9.1",
+    "@polkadot/typegen": "^10.9.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
   }
 }

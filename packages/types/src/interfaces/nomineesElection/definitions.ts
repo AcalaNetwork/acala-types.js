@@ -1,5 +1,16 @@
-import type { Definitions } from '@polkadot/types/types';
-
-import nomineesElection from '@acala-network/type-definitions/nomineesElection';
-
-export default nomineesElection as Definitions;
+export default {
+  rpc: {},
+  types: {
+    NomineeId: 'AccountId',
+    HomaUnlockChunk: {
+      value: 'Balance',
+      era: 'EraIndex'
+    },
+    BondingLedger: {
+      total: 'Balance',
+      active: 'Balance',
+      unlocking: 'Vec<HomaUnlockChunk>'
+    }
+  },
+  typesAlias: { nomineesElection: { UnlockChunk: 'HomaUnlockChunk' } }
+};

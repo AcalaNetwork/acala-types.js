@@ -5,9 +5,9 @@
 // this is required to allow for ambient/previous definitions
 import '@polkadot/api-base/types/calls';
 
-import type { AccountId, Block, Header, Index, KeyTypeId, SlotDuration } from '@acala-network/types/interfaces/runtime';
+import type { BlockLimits, CallInfo, CreateInfo } from '@acala-network/types/interfaces/evm';
 import type { ApiTypes, AugmentedCall, DecoratedCallBase } from '@polkadot/api-base/types';
-import type { Bytes, Null, Option, Raw, Vec, u128, u32 } from '@polkadot/types-codec';
+import type { Bytes, Null, Option, Raw, Result, Vec, bool, u128, u32, u64 } from '@polkadot/types-codec';
 import type { AnyNumber, ITuple } from '@polkadot/types-codec/types';
 import type { CheckInherentsResult, InherentData } from '@polkadot/types/interfaces/blockbuilder';
 import type { BlockHash } from '@polkadot/types/interfaces/chain';
@@ -16,8 +16,11 @@ import type { CollationInfo } from '@polkadot/types/interfaces/cumulus';
 import type { Extrinsic } from '@polkadot/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@polkadot/types/interfaces/metadata';
 import type { FeeDetails, RuntimeDispatchInfo } from '@polkadot/types/interfaces/payment';
-import type { ApplyExtrinsicResult } from '@polkadot/types/interfaces/system';
+import type { AccountId, Balance, Block, H160, Header, Index, KeyTypeId, SlotDuration, Weight } from '@polkadot/types/interfaces/runtime';
+import type { RuntimeVersion } from '@polkadot/types/interfaces/state';
+import type { ApplyExtrinsicResult, DispatchError } from '@polkadot/types/interfaces/system';
 import type { TransactionSource, TransactionValidity } from '@polkadot/types/interfaces/txqueue';
+import type { EthereumTransactionAccessListItem } from '@polkadot/types/lookup';
 import type { IExtrinsic, Observable } from '@polkadot/types/types';
 
 export type __AugmentedCall<ApiType extends ApiTypes> = AugmentedCall<ApiType>;
@@ -85,12 +88,58 @@ declare module '@polkadot/api-base/types/calls' {
        **/
       [key: string]: DecoratedCallBase<ApiType>;
     };
-    /** 0x37e397fc7c91f5e4/1 */
+    /** 0xdf6acb689907609b/4 */
+    core: {
+      /**
+       * Execute the given block.
+       **/
+      executeBlock: AugmentedCall<ApiType, (block: Block | { header?: any; extrinsics?: any } | string | Uint8Array) => Observable<Null>>;
+      /**
+       * Initialize a block with the given header.
+       **/
+      initializeBlock: AugmentedCall<ApiType, (header: Header | { parentHash?: any; number?: any; stateRoot?: any; extrinsicsRoot?: any; digest?: any } | string | Uint8Array) => Observable<Null>>;
+      /**
+       * Returns the version of the runtime.
+       **/
+      version: AugmentedCall<ApiType, () => Observable<RuntimeVersion>>;
+      /**
+       * Generic call
+       **/
+      [key: string]: DecoratedCallBase<ApiType>;
+    };
+    /** 0xe3df3f2aa8a5cc57/2 */
+    evmRuntimeRPCApi: {
+      /**
+       * evm block limits
+       **/
+      blockLimits: AugmentedCall<ApiType, () => Observable<BlockLimits>>;
+      /**
+       * call evm contract
+       **/
+      call: AugmentedCall<ApiType, (from: H160 | string | Uint8Array, to: H160 | string | Uint8Array, data: Bytes | string | Uint8Array, value: Balance | AnyNumber | Uint8Array, gas_limit: u64 | AnyNumber | Uint8Array, storage_limit: u32 | AnyNumber | Uint8Array, access_list: Option<Vec<EthereumTransactionAccessListItem>> | null | Uint8Array | Vec<EthereumTransactionAccessListItem> | (EthereumTransactionAccessListItem | { address?: any; storageKeys?: any } | string | Uint8Array)[], estimate: bool | boolean | Uint8Array) => Observable<Result<CallInfo, DispatchError>>>;
+      /**
+       * create evm contract
+       **/
+      create: AugmentedCall<ApiType, (from: H160 | string | Uint8Array, data: Bytes | string | Uint8Array, value: Balance | AnyNumber | Uint8Array, gas_limit: u64 | AnyNumber | Uint8Array, storage_limit: u32 | AnyNumber | Uint8Array, access_list: Option<Vec<EthereumTransactionAccessListItem>> | null | Uint8Array | Vec<EthereumTransactionAccessListItem> | (EthereumTransactionAccessListItem | { address?: any; storageKeys?: any } | string | Uint8Array)[], estimate: bool | boolean | Uint8Array) => Observable<Result<CreateInfo, DispatchError>>>;
+      /**
+       * Generic call
+       **/
+      [key: string]: DecoratedCallBase<ApiType>;
+    };
+    /** 0x37e397fc7c91f5e4/2 */
     metadata: {
       /**
        * Returns the metadata of a runtime
        **/
       metadata: AugmentedCall<ApiType, () => Observable<OpaqueMetadata>>;
+      /**
+       * Returns the metadata at a given version.
+       **/
+      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<OpaqueMetadata>>>;
+      /**
+       * Returns the supported metadata versions.
+       **/
+      metadataVersions: AugmentedCall<ApiType, () => Observable<Vec<u32>>>;
       /**
        * Generic call
        **/
@@ -159,7 +208,7 @@ declare module '@polkadot/api-base/types/calls' {
        **/
       [key: string]: DecoratedCallBase<ApiType>;
     };
-    /** 0x37c8bb1350a9a2a8/2 */
+    /** 0x37c8bb1350a9a2a8/4 */
     transactionPaymentApi: {
       /**
        * The transaction fee details
@@ -169,6 +218,14 @@ declare module '@polkadot/api-base/types/calls' {
        * The transaction info
        **/
       queryInfo: AugmentedCall<ApiType, (uxt: Extrinsic | IExtrinsic | string | Uint8Array, len: u32 | AnyNumber | Uint8Array) => Observable<RuntimeDispatchInfo>>;
+      /**
+       * Query the output of the current LengthToFee given some input
+       **/
+      queryLengthToFee: AugmentedCall<ApiType, (length: u32 | AnyNumber | Uint8Array) => Observable<Balance>>;
+      /**
+       * Query the output of the current WeightToFee given some input
+       **/
+      queryWeightToFee: AugmentedCall<ApiType, (weight: Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => Observable<Balance>>;
       /**
        * Generic call
        **/

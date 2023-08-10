@@ -1,5 +1,19 @@
-import type { Definitions } from '@polkadot/types/types';
-
-import homaValidatorList from '@acala-network/type-definitions/homaValidatorList';
-
-export default homaValidatorList as Definitions;
+export default {
+  rpc: {},
+  types: {
+    RelaychainAccountId: 'AccountId',
+    SlashInfo: {
+      validator: 'RelaychainAccountId',
+      relaychainTokenAmount: 'Balance'
+    },
+    ValidatorBacking: {
+      totalInsurance: 'Balance',
+      isFrozen: 'bool'
+    },
+    Guarantee: {
+      total: 'Balance',
+      bonded: 'Balance',
+      unbonding: 'Option<(Balance, BlockNumber)>'
+    }
+  }
+};
