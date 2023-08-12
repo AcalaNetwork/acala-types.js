@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/types",
-  "version": "6.0.0-4",
+  "version": "6.0.0-21",
   "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
@@ -10,27 +10,24 @@
     "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://mandala-tc9-rpc.aca-staging.network > metadata.json",
     "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --endpoint ./metadata.json --input ./src/interfaces",
     "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --endpoint ./metadata.json  --output ./src/interfaces",
-    "build": "rm -rf build && tsc -b --verbose",
-    "publish": "cd build && npm publish",
-    "deploy": "npm run generate && npm run build && npm run publish"
+    "build:release": "rm -rf dist && tsc --build tsconfig.cjs.json --verbose -f && yarn postBuild",
+    "postBuild": "node ./scripts/postbuild.js",
+    "pub": "cd ./dist && npm publish --tolerate-republish --access public"
   },
-  "main": "./index.cjs",
-  "module": "./index.js",
-  "types": "./index.d.ts",
+  "files": [
+    "interfaces/",
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "require": "./index.cjs",
-      "default": "./index.js"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
-  "keywords": [
-    "acala",
-    "karura",
-    "types",
-    "polkadot",
-    "api"
-  ],
   "peerDependencies": {
     "@polkadot/api": "^10.9.1"
   },

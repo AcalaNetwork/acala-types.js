@@ -19,6 +19,10 @@
     "baseUrl": ".",
     "composite": true
   },
+  "paths": {
+    "@acala-network/types": ["packages/types/src"],
+    "@acala-network/types/*": ["packages/types/src/*"],
+  },
   "exclude": [
     "build/**/*",
     "**/build/**/*"

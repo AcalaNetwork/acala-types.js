@@ -73,3 +73,5 @@ build/
 CONTRIBUTORS
 
 **/metadata.json
+
+**/dist/
