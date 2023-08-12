@@ -6,6 +6,8 @@ import {
   acalaRpc,
   acalaTypesAlias,
   acalaRuntime,
+  acalaTypesBundle,
+  acalaSignedExtensions,
 } from '@acala-network/types';
 import { runtime as paymentRuntime } from '@polkadot/types/interfaces/payment/runtime';
 
@@ -45,7 +47,27 @@ export const options = ({
   // derives: {
   //   ...acalaDerives
   // },
-  typesBundle,
-  signedExtensions,
+  typesBundle: {
+    ...typesBundle,
+    spec: {
+      ...typesBundle.spec,
+      acala: {
+        ...acalaTypesBundle.spec.acala,
+        ...typesBundle?.spec?.acala
+      },
+      mandala: {
+        ...acalaTypesBundle.spec.mandala,
+        ...typesBundle?.spec?.mandala
+      },
+      karura: {
+        ...acalaTypesBundle.spec.karura,
+        ...typesBundle?.spec?.mandala
+      }
+    }
+  },
+  signedExtensions: {
+    ...acalaSignedExtensions,
+    ...signedExtensions
+  },
   ...otherOptions
 });

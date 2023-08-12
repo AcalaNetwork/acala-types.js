@@ -1,3 +1,5 @@
+import type { OverrideVersionedType } from '@polkadot/types/types';
+
 export function jsonrpcFromDefs(
   definitions: Record<string, { rpc?: Record<string, any> }>,
   jsonrpc: Record<string, Record<string, any>> = {}
