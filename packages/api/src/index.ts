@@ -9,6 +9,7 @@ import {
   acalaTypesBundle,
   acalaSignedExtensions,
 } from '@acala-network/types';
+import { acalaDerives } from '@acala-network/api-derive';
 import { runtime as paymentRuntime } from '@polkadot/types/interfaces/payment/runtime';
 
 // currently we don't import all substrate runtime
@@ -23,6 +24,7 @@ export const options = ({
   signedExtensions,
   types = {},
   typesAlias = {},
+  derives = {},
   typesBundle = {},
   ...otherOptions
 }: ApiOptions = {}): ApiOptions => ({
@@ -43,10 +45,10 @@ export const options = ({
     ...acalaTypesAlias,
     ...typesAlias
   },
-  // // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  // derives: {
-  //   ...acalaDerives
-  // },
+  derives: {
+    ...acalaDerives,
+    ...derives,
+  },
   typesBundle: {
     ...typesBundle,
     spec: {

@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/types",
-  "version": "6.0.0-22",
+  "version": "6.0.0-27",
   "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
@@ -19,13 +19,18 @@
     "index.js",
     "index.d.ts"
   ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./*": {
+      "types": "./*.d.ts",
+      "require": "./*.js",
+      "default": "./*.js"
     }
   },
   "peerDependencies": {

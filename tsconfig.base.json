@@ -17,11 +17,15 @@
     "declaration": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "composite": true
-  },
-  "paths": {
-    "@acala-network/types": ["packages/types/src"],
-    "@acala-network/types/*": ["packages/types/src/*"],
+    "composite": true,
+    "paths": {
+      "@acala-network/api": ["packages/api/src"],
+      "@acala-network/api/*": ["packages/api/src/*"],
+      "@acala-network/types": ["packages/types/src"],
+      "@acala-network/types/*": ["packages/types/src/*"],
+      "@acala-network/api-derive": ["packages/api-derive/src"],
+      "@acala-network/api-derive/*": ["packages/api-derive/src/*"],
+    }
   },
   "exclude": [
     "build/**/*",

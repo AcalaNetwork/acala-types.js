@@ -15,15 +15,6 @@ const pkg = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
 
 delete pkg.type; // don't want it to force esm, which causes issue for other packages importing this pkg
 pkg.files = ['*'];
-pkg.main = './index.js';
-pkg.types = './index.d.js';
-pkg.exports = {
-  '.': {
-    'types': './index.d.ts',
-    'require': './index.js',
-    'default': './index.js'
-  }
-};
 
 await fs.writeFile(path.join(distPath, 'package.json'), JSON.stringify(pkg, null, 2));
 await fs.copyFile(readmePath, path.join(distPath, 'README.md'));

@@ -1,7 +1,7 @@
 {
-  "name": "@acala-network/api",
+  "name": "@acala-network/api-derive",
   "version": "6.0.0-27",
-  "description": "Acala JS API",
+  "description": "Additional polkadot.js derives for Acala Network",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -9,7 +9,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "repository": {
-    "directory": "packages/api",
+    "directory": "packages/api-derive",
     "type": "git",
     "url": "https://github.com/AcalaNetwork/acala-types.js.git"
   },
@@ -17,17 +17,16 @@
     "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js",
+  "scripts": {
+    "build:release": "rm -rf dist && tsc -b --verbose -f",
+    "pub": "npm publish --tolerate-republish --access public"
+  },
   "files": [
     "dist"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "scripts": {
-    "build:release": "rm -rf dist && tsc -b --verbose -f",
-    "pub": "npm publish --tolerate-republish --access public"
-  },
   "dependencies": {
-    "@acala-network/api-derive": "6.0.0-27",
     "@acala-network/types": "6.0.0-27"
   },
   "peerDependencies": {

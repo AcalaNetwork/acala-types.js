@@ -5,18 +5,30 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/api@workspace:packages/api":
+"@acala-network/api-derive@6.0.0-26, @acala-network/api-derive@workspace:packages/api-derive":
   version: 0.0.0-use.local
-  resolution: "@acala-network/api@workspace:packages/api"
+  resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
-    "@acala-network/types": 6.0.0-22
+    "@acala-network/types": 6.0.0-26
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^10.9.1
   languageName: unknown
   linkType: soft
 
-"@acala-network/types@6.0.0-22, @acala-network/types@workspace:packages/types":
+"@acala-network/api@workspace:packages/api":
+  version: 0.0.0-use.local
+  resolution: "@acala-network/api@workspace:packages/api"
+  dependencies:
+    "@acala-network/api-derive": 6.0.0-26
+    "@acala-network/types": 6.0.0-26
+    typescript: ^5.0.4
+  peerDependencies:
+    "@polkadot/api": ^10.9.1
+  languageName: unknown
+  linkType: soft
+
+"@acala-network/types@6.0.0-26, @acala-network/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
