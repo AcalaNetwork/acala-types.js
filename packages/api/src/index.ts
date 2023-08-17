@@ -8,6 +8,7 @@ import {
   acalaRuntime,
   acalaTypesBundle,
   acalaSignedExtensions,
+  acalaLookupTypes,
 } from '@acala-network/types';
 import { acalaDerives } from '@acala-network/api-derive';
 import { runtime as paymentRuntime } from '@polkadot/types/interfaces/payment/runtime';
@@ -30,6 +31,7 @@ export const options = ({
 }: ApiOptions = {}): ApiOptions => ({
   types: {
     ...acalaTypes as unknown as RegistryTypes,
+    ...acalaLookupTypes as unknown as RegistryTypes,
     ...types
   },
   runtime: {
@@ -50,7 +52,6 @@ export const options = ({
     ...derives,
   },
   typesBundle: {
-    ...typesBundle,
     spec: {
       ...typesBundle.spec,
       acala: {
@@ -65,7 +66,8 @@ export const options = ({
         ...acalaTypesBundle.spec.karura,
         ...typesBundle?.spec?.mandala
       }
-    }
+    },
+    ...typesBundle,
   },
   signedExtensions: {
     ...acalaSignedExtensions,

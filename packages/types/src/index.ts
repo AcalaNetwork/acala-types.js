@@ -4,7 +4,7 @@ import "./interfaces/augment-types.js";
 
 import type { OverrideVersionedType, OverrideBundleType } from '@polkadot/types/types';
 
-import acalaLookupTypes from "./interfaces/lookup.js";
+export * as acalaLookupTypes from "./interfaces/lookup.js";
 import * as acalaDefs from "./interfaces/definitions.js";
 import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from "./utils.js";
 import { acalaVersioned, karuraVersioned, mandalaVersioned } from "./versioned.js";
@@ -17,7 +17,6 @@ const additionalOverride = { Keys: 'SessionKeys1' };
 
 export const acalaTypes = {
   ...typesFromDefs(acalaDefs),
-  ...acalaLookupTypes,
   ...additionalOverride
 };
 
