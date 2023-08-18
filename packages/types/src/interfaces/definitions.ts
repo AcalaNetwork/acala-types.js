@@ -17,4 +17,4 @@ export { default as support } from './support/definitions';
 
 // ecosystem
 export { default as renvmBridge } from './renvmBridge/definitions';
-// export { default as stableAsset } from './stableAsset/definitions';
+export { default as stableAsset } from './stableAsset/definitions';

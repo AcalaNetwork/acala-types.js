@@ -20,6 +20,7 @@ import type { BondingLedger, HomaUnlockChunk, NomineeId } from '@acala-network/t
 import type { AcalaAssetMetadata, AcalaDataProviderId, AirDropCurrencyId, Amount, AmountOf, AuctionId, AuctionIdOf, AuthoritysOriginId, ChainBridgeChainId, CurrencyId, CurrencyIdOf, DexShare, NumberOrHex, OrmlCurrencyId, TokenSymbol, TradingPair } from '@acala-network/types/interfaces/primitives';
 import type { DestAddress, PublicKey } from '@acala-network/types/interfaces/renvmBridge';
 import type { AccountId, AccountId20, AccountId32, AccountId33, AccountIdOf, AccountIndex, Address, AsOriginId, AssetId, AtLeast64BitUnsigned, Balance, BalanceOf, Block, BlockNumber, BlockNumberFor, BlockNumberOf, Call, CallHash, CallHashOf, ChangesTrieConfiguration, ChangesTrieSignal, CodecHash, Consensus, ConsensusEngineId, CrateVersion, Digest, DigestItem, EncodedJustification, ExtrinsicsWeight, Fixed128, Fixed64, FixedI128, FixedI64, FixedU128, FixedU64, H1024, H128, H160, H2048, H256, H32, H512, H64, Hash, Header, HeaderPartial, I32F32, Index, IndicesLookupSource, Justification, Justifications, KeyTypeId, KeyValue, LockIdentifier, LookupSource, LookupTarget, ModuleId, Moment, MultiAddress, MultiSigner, OpaqueCall, OracleKey, OracleValue, Origin, OriginCaller, PalletId, PalletVersion, PalletsOrigin, Pays, PerU16, Perbill, Percent, Permill, Perquintill, Phantom, PhantomData, PreRuntime, RelayChainBlockNumberOf, Releases, RuntimeCall, RuntimeDbWeight, RuntimeEvent, Seal, SealV0, SignedBlock, SignedBlockWithJustification, SignedBlockWithJustifications, Slot, SlotDuration, StableAssetPoolId, StorageData, StorageInfo, StorageProof, TransactionInfo, TransactionLongevity, TransactionPriority, TransactionStorageProof, TransactionTag, U32F32, ValidatorId, ValidatorIdOf, Weight, WeightMultiplier, WeightV0, WeightV1, WeightV2 } from '@acala-network/types/interfaces/runtime';
+import type { PoolTokenIndex } from '@acala-network/types/interfaces/stableAsset';
 import type { BalanceInfo, ChangeRate, ChangeRatio, Ledger, Params, PolkadotAccountId, PolkadotAccountIdOf, StakingPoolPhase, SubAccountStatus } from '@acala-network/types/interfaces/stakingPool';
 import type { ExchangeRate, Price, Rate, Ratio } from '@acala-network/types/interfaces/support';
 import type { Data, StorageKey } from '@polkadot/types';
@@ -885,6 +886,7 @@ declare module '@polkadot/types/types/registry' {
     PolkadotAccountIdOf: PolkadotAccountIdOf;
     PoolId: PoolId;
     PoolIdV0: PoolIdV0;
+    PoolTokenIndex: PoolTokenIndex;
     PortableType: PortableType;
     PortableTypeV14: PortableTypeV14;
     Position: Position;

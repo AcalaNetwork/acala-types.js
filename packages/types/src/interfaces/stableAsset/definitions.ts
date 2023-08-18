@@ -4,6 +4,10 @@ export default {
   rpc: {},
   types: {
     PoolTokenIndex: 'u32',
-    AssetId: 'CurrencyId'
+  },
+  typesAlias: {
+    stableAsset: {
+      AssetId: 'CurrencyId'
+    }
   }
 } as Definitions;
