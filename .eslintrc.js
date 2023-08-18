@@ -1,7 +1,7 @@
-// const base = require('@polkadot/dev/config/eslint.cjs');
+const base = require('@polkadot/dev/config/eslint.cjs');
 
 module.exports = {
-  // ...base,
+  ...base,
   ignorePatterns: [
     '.eslintrc.js',
     '.github/**',
@@ -15,7 +15,7 @@ module.exports = {
     project: ['./tsconfig.eslint.json']
   },
   rules: {
-    // ...base.rules,
+    ...base.rules,
     '@typescript-eslint/no-explicit-any': 'off',
     'import/extensions': 'off',
     'header/header': 'off',

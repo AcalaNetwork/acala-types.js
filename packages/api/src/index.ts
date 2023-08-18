@@ -1,43 +1,25 @@
 import type { ApiOptions } from '@polkadot/api/types';
 import type { RegistryTypes } from '@polkadot/types/types';
 
-import {
-  acalaTypes,
-  acalaRpc,
-  acalaTypesAlias,
-  acalaRuntime,
-  acalaTypesBundle,
-  acalaSignedExtensions,
-  acalaLookupTypes,
-} from '@acala-network/types';
 import { acalaDerives } from '@acala-network/api-derive';
-import { runtime as paymentRuntime } from '@polkadot/types/interfaces/payment/runtime';
+import { acalaLookupTypes, acalaRpc, acalaRuntime, acalaSignedExtensions, acalaTypes, acalaTypesAlias, acalaTypesBundle } from '@acala-network/types';
 
-// currently we don't import all substrate runtime
-// and only add each module as needed
-const substrateRuntime = {
-  ...paymentRuntime,
-};
-
-export const options = ({
+export const options = ({ derives = {},
   rpc = {},
   runtime = {},
   signedExtensions,
   types = {},
   typesAlias = {},
-  derives = {},
   typesBundle = {},
-  ...otherOptions
-}: ApiOptions = {}): ApiOptions => ({
+  ...otherOptions }: ApiOptions = {}): ApiOptions => ({
   types: {
     ...acalaTypes as unknown as RegistryTypes,
     ...acalaLookupTypes as unknown as RegistryTypes,
     ...types
   },
   runtime: {
-    ...substrateRuntime,
     ...acalaRuntime,
-    ...runtime,
+    ...runtime
   },
   rpc: {
     ...acalaRpc,
@@ -49,7 +31,7 @@ export const options = ({
   },
   derives: {
     ...acalaDerives,
-    ...derives,
+    ...derives
   },
   typesBundle: {
     spec: {
@@ -67,7 +49,7 @@ export const options = ({
         ...typesBundle?.spec?.mandala
       }
     },
-    ...typesBundle,
+    ...typesBundle
   },
   signedExtensions: {
     ...acalaSignedExtensions,

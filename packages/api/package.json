@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api",
-  "version": "6.0.0-32",
+  "version": "6.0.0-33",
   "description": "Acala JS API",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
@@ -27,8 +27,8 @@
     "pub": "npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "@acala-network/api-derive": "6.0.0-32",
-    "@acala-network/types": "6.0.0-32"
+    "@acala-network/api-derive": "6.0.0-33",
+    "@acala-network/types": "6.0.0-33"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.9.1"

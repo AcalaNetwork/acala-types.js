@@ -1,6 +1,6 @@
 import type { OverrideVersionedType } from '@polkadot/types/types';
 
-export function jsonrpcFromDefs(
+export function jsonrpcFromDefs (
   definitions: Record<string, { rpc?: Record<string, any> }>,
   jsonrpc: Record<string, Record<string, any>> = {}
 ): Record<string, Record<string, any>> {
@@ -24,7 +24,7 @@ export function jsonrpcFromDefs(
   return jsonrpc;
 }
 
-export function typesAliasFromDefs(
+export function typesAliasFromDefs (
   definitions: Record<string, Record<string, any>>,
   initAlias: Record<string, any> = {}
 ): Record<string, any> {
@@ -34,7 +34,7 @@ export function typesAliasFromDefs(
   );
 }
 
-export function typesFromDefs(
+export function typesFromDefs (
   definitions: Record<string, { types: Record<string, any> }>,
   initTypes: Record<string, any> = {}
 ): Record<string, any> {

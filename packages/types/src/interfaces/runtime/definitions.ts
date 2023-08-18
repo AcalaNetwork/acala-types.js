@@ -1,4 +1,5 @@
 import type { Definitions } from '@polkadot/types/types';
+
 import substrateRuntimeDefs from '@polkadot/types/interfaces/runtime/definitions';
 
 const acalaRuntimeDefs: Definitions = {
@@ -106,14 +107,14 @@ const acalaRuntimeDefs: Definitions = {
 export default {
   rpc: {
     ...substrateRuntimeDefs.rpc,
-    ...acalaRuntimeDefs.rpc,
+    ...acalaRuntimeDefs.rpc
   },
   types: {
     ...substrateRuntimeDefs.types,
-    ...acalaRuntimeDefs.types,
+    ...acalaRuntimeDefs.types
   },
   runtime: {
     ...substrateRuntimeDefs.runtime,
-    ...acalaRuntimeDefs.runtime,
-  },
+    ...acalaRuntimeDefs.runtime
+  }
 };
