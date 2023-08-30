@@ -1,35 +1,44 @@
 {
   "name": "@acala-network/types",
-  "version": "5.1.2",
-  "description": "Polkadot.js type definations for Acala Network",
-  "main": "index.js",
+  "version": "6.0.0-34",
+  "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "directory": "packages/types",
-    "type": "git",
-    "url": "https://github.com/AcalaNetwork/acala-types.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
-  },
-  "homepage": "https://github.com/AcalaNetwork/acala-types.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc --build tsconfig.json"
+    "generate": "npm run load:meta && npm run generate:defs && npm run generate:meta",
+    "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://acala-rpc.aca-api.network > metadata.json",
+    "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --endpoint ./metadata.json --input ./src/interfaces",
+    "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --endpoint ./metadata.json  --output ./src/interfaces",
+    "build": "rm -rf dist && tsc --build tsconfig.cjs.json --verbose -f && yarn postBuild",
+    "postBuild": "node ./scripts/postbuild.js",
+    "publish:manual": "cd ./dist && npm publish --tolerate-republish --access public"
   },
-  "dependencies": {
-    "@acala-network/type-definitions": "5.1.2"
+  "files": [
+    "interfaces/",
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./*": {
+      "types": "./*.d.ts",
+      "require": "./*.js",
+      "default": "./*.js"
+    }
   },
   "peerDependencies": {
-    "@polkadot/api": "^10.5.1"
+    "@polkadot/api": "^10.9.1"
   },
   "devDependencies": {
-    "@types/websocket": "^1.0.5",
-    "typescript": "^5.0.4",
-    "websocket": "^1.0.34"
+    "@polkadot/typegen": "^10.9.1",
+    "@types/node": "^20.4.9",
+    "typescript": "^5.0.4"
   }
 }

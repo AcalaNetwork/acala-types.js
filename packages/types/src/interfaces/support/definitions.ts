@@ -1,5 +1,11 @@
 import type { Definitions } from '@polkadot/types/types';
 
-import support from '@acala-network/type-definitions/support';
-
-export default support as Definitions;
+export default {
+  rpc: {},
+  types: {
+    ExchangeRate: 'FixedU128',
+    Rate: 'FixedU128',
+    Ratio: 'FixedU128',
+    Price: 'FixedU128',
+  },
+} as Definitions;

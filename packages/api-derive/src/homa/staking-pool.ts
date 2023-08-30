@@ -1,9 +1,9 @@
-import type { BlockNumber, ExchangeRate } from '@acala-network/types/interfaces';
-import type { Observable } from 'rxjs';
-import type { ApiInterfaceRx } from '@polkadot/api/types';
-import type { EraIndex } from '@polkadot/types/interfaces';
 import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { BlockNumber, ExchangeRate } from '@acala-network/types/interfaces';
 import type { DerivedStakingPool, DerivedStakingPoolConstants } from '../types/staking-pool';
+import type { EraIndex } from '@polkadot/types/interfaces';
+import type { Observable } from 'rxjs';
 
 import { combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,7 +16,7 @@ function getConstants (api: ApiInterfaceRx): DerivedStakingPoolConstants {
     bondingDuration: api.consts.polkadotBridge.bondingDuration as EraIndex,
     eraLength: api.consts.polkadotBridge.eraLength as BlockNumber,
     stakingCurrency: api.consts.stakingPool.stakingCurrencyId as AcalaPrimitivesCurrencyCurrencyId,
-    liquidCurrency: api.consts.stakingPool.liquidCurrencyId as AcalaPrimitivesCurrencyCurrencyId
+    liquidCurrency: api.consts.stakingPool.liquidCurrencyId as AcalaPrimitivesCurrencyCurrencyId,
   };
 }
 
@@ -32,7 +32,7 @@ export function stakingPool (instanceId: string, api: ApiInterfaceRx): () => Obs
       api.query.stakingPool.currentEra(),
       api.query.stakingPool.stakingPoolLedger(),
       api.query.stakingPool.stakingPoolParams(),
-      api.query.tokens.totalIssuance(constants.liquidCurrency)
+      api.query.tokens.totalIssuance(constants.liquidCurrency),
     ]).pipe(
       map((result) => {
         const [currentEra, ledger, params, liquidIssuance] = result;
@@ -42,7 +42,7 @@ export function stakingPool (instanceId: string, api: ApiInterfaceRx): () => Obs
           ledger,
           params,
           liquidIssuance,
-          ...constants
+          ...constants,
         } as unknown as DerivedStakingPool;
       })
     );

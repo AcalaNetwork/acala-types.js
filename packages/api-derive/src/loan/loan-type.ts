@@ -1,8 +1,8 @@
-import type { Balance, ExchangeRate, Rate, Ratio } from '@acala-network/types/interfaces';
-import type { Observable } from 'rxjs';
-import type { ApiInterfaceRx } from '@polkadot/api/types';
 import type { AcalaPrimitivesCurrencyCurrencyId, ModuleCdpEngineRiskManagementParams } from '@polkadot/types/lookup';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { Balance, ExchangeRate, Rate, Ratio } from '@acala-network/types/interfaces';
 import type { DerivedLoanConstants, DerivedLoanOverView, DerivedLoanType } from '../types/loan';
+import type { Observable } from 'rxjs';
 
 import { combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -20,7 +20,7 @@ function loanConstants (api: ApiInterfaceRx): DerivedLoanConstants {
     minimumDebitValue: api.consts.cdpEngine.minimumDebitValue as Balance,
     defaultDebitExchangeRate: api.consts.cdpEngine.defaultDebitExchangeRate as ExchangeRate,
     defaultLiquidationRatio: api.consts.cdpEngine.defaultLiquidationRatio as Ratio,
-    defaultLiquidationPenalty: api.consts.cdpEngine.defaultLiquidationPenalty as Rate
+    defaultLiquidationPenalty: api.consts.cdpEngine.defaultLiquidationPenalty as Rate,
   };
 }
 
@@ -36,7 +36,7 @@ export function loanType (
   return memo(instanceId, (currency: AcalaPrimitivesCurrencyCurrencyId) => {
     return combineLatest([
       api.query.cdpEngine.debitExchangeRate(currency),
-      api.query.cdpEngine.collateralParams(currency)
+      api.query.cdpEngine.collateralParams(currency),
     ]).pipe(
       map((result) => {
         const constants = loanConstants(api);
@@ -57,7 +57,7 @@ export function loanType (
           requiredCollateralRatio: collateralParams.requiredCollateralRatio,
           interestRatePerSec: collateralParams.interestRatePerSec,
           maximumTotalDebitValue: collateralParams.maximumTotalDebitValue,
-          minimumDebitValue: constants.minimumDebitValue
+          minimumDebitValue: constants.minimumDebitValue,
         };
       })
     );
@@ -97,7 +97,7 @@ export function loanOverview (
         return {
           currency,
           totalDebit: debit,
-          totalCollateral: collateral
+          totalCollateral: collateral,
         };
       })
     )

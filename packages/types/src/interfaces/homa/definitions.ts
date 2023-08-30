@@ -1,5 +1,13 @@
-import type { Definitions } from '@polkadot/types/types';
-
-import homa from '@acala-network/type-definitions/homa';
-
-export default homa as Definitions;
+export default {
+  rpc: {},
+  types: {
+    AcalaStakingLedge: {
+      bonded: 'Compact<Balance>',
+      unlocking: 'Vec<UnlockChunk>',
+    },
+    AcalaUnlockChunk: {
+      value: 'Compact<Balance>',
+      era: 'Compact<EraIndex>',
+    },
+  },
+};

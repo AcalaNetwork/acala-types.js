@@ -1,8 +1,7 @@
 {
   "name": "@acala-network/api",
-  "version": "5.1.2",
+  "version": "6.0.0-34",
   "description": "Acala JS API",
-  "main": "index.js",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -18,15 +17,21 @@
     "url": "https://github.com/AcalaNetwork/acala-types.js/issues"
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build tsconfig.json"
+    "build": "rm -rf dist && tsc -b --verbose -f",
+    "publish:manual": "npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "@acala-network/api-derive": "5.1.2",
-    "@acala-network/types": "5.1.2"
+    "@acala-network/api-derive": "6.0.0-34",
+    "@acala-network/types": "6.0.0-34"
   },
   "peerDependencies": {
-    "@polkadot/api": "^10.5.1"
+    "@polkadot/api": "^10.9.1"
   },
   "devDependencies": {
     "typescript": "^5.0.4"

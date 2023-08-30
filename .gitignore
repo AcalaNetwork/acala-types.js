@@ -71,3 +71,7 @@ build/
 
 *.tsbuildinfo
 CONTRIBUTORS
+
+**/metadata.json
+
+**/dist/

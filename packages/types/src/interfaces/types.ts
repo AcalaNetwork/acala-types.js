@@ -14,6 +14,8 @@ export * from './loans/types.js';
 export * from './nft/types.js';
 export * from './nomineesElection/types.js';
 export * from './primitives/types.js';
+export * from './renvmBridge/types.js';
 export * from './runtime/types.js';
+export * from './stableAsset/types.js';
 export * from './stakingPool/types.js';
 export * from './support/types.js';

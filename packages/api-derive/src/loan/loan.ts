@@ -1,8 +1,8 @@
-import type { AccountId } from '@acala-network/types/interfaces';
-import type { Observable } from 'rxjs';
-import type { ApiInterfaceRx } from '@polkadot/api/types';
 import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { AccountId } from '@acala-network/types/interfaces';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
 import type { DerivedUserLoan } from '../types/loan';
+import type { Observable } from 'rxjs';
 
 import { combineLatest } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -30,7 +30,7 @@ export function loan (
           account,
           currency,
           debit,
-          collateral
+          collateral,
         };
       })
     )

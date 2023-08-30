@@ -1,5 +1,5 @@
-import type { AccountId, Balance, ExchangeRate, OptionRate, OptionRatio, Rate } from '@acala-network/types/interfaces';
 import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { AccountId, Balance, ExchangeRate, OptionRate, OptionRatio, Rate } from '@acala-network/types/interfaces';
 
 export interface DerivedLoanConstants {
   minimumDebitValue: Balance;

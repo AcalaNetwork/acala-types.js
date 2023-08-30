@@ -14,3 +14,7 @@ export { default as primitives } from './primitives/definitions';
 export { default as runtime } from './runtime/definitions';
 export { default as stakingPool } from './stakingPool/definitions';
 export { default as support } from './support/definitions';
+
+// ecosystem
+export { default as renvmBridge } from './renvmBridge/definitions';
+export { default as stableAsset } from './stableAsset/definitions';

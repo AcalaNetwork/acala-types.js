@@ -7,37 +7,31 @@ This library provides additional typing information for user to access Acala Net
 
 # Getting Started
 
-More documentation and examples on [wiki](https://github.com/AcalaNetwork/acala-types.js/wiki).
-
-- Install dependencies
+- install
 
 ```bash
 yarn add @polkadot/api @acala-network/api
 ```
 
-- Create API instance
+- import TS interfaces augmentation
+```ts
+// index.ts
+import '@acala-network/types';
+```
 
+- create and use api with Acala type definitions
 ```ts
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { options } from '@acala-network/api';
 
-async function main() {
-    const provider = new WsProvider('wss://karura.api.onfinality.io/public-ws');
-    const api = new ApiPromise(options({ provider }));
-    await api.isReady;
+const provider = new WsProvider('wss://karura.api.onfinality.io/public-ws');
+const api = new ApiPromise(options({ provider }));
+await api.isReady;
 
-    // use api
-}
-
-main()
-```
-
-- Use api to interact with node
-
-```ts
-// query and display account data
+// use api
 const data = await api.query.system.account('5F98oWfz2r5rcRVnP9VCndg33DAAsky3iuoBSpaPUbgN9AJn');
 console.log(data.toHuman())
+
 ```
 
 # Packages

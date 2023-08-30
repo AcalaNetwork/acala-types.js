@@ -1,12 +1,11 @@
-import type { Observable } from 'rxjs';
-import type { ApiInterfaceRx } from '@polkadot/api/types';
-import type { AcalaPrimitivesCurrencyCurrencyId, AcalaPrimitivesTradingPair } from '@polkadot/types/lookup';
-import type { DerivedDexPool } from '../types/dex';
-
-import primitivesConfig from '@acala-network/type-definitions/primitives';
 import { map } from 'rxjs/operators';
-
 import { memo } from '@polkadot/api-derive/util';
+import primitivesConfig from '@acala-network/types/interfaces/primitives/definitions';
+import type { AcalaPrimitivesCurrencyCurrencyId, AcalaPrimitivesTradingPair } from '@polkadot/types/lookup';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { Observable } from 'rxjs';
+
+import type { DerivedDexPool } from '../types/dex';
 
 const TOKEN_SORT: Record<string, number> = primitivesConfig.types.TokenSymbol._enum;
 

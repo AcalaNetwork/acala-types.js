@@ -1,13 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./build",
+    "module": "CommonJS",
+    "outDir": "./dist",
     "rootDir": "./src"
   },
   "include": ["src/**/*"],
   "references": [
-    { "path": "../types" },
-    { "path": "../api-derive" }
-  ]
+    { "path": "../types/tsconfig.cjs.json" },
+    { "path": "../api-derive" },
+  ],
 }
 

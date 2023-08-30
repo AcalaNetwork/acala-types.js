@@ -1,5 +1,9 @@
-import type { Definitions } from '@polkadot/types/types';
-
-import loans from '@acala-network/type-definitions/loans';
-
-export default loans as Definitions;
+export default {
+  rpc: {},
+  types: {
+    Position: {
+      collateral: 'Balance',
+      debit: 'Balance',
+    },
+  },
+};
