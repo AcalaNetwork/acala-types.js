@@ -29,14 +29,14 @@ export default {
         VSKSM: 169,
         PHA: 170,
         KINT: 171,
-        KBTC: 172
-      }
+        KBTC: 172,
+      },
     },
     DexShare: {
       _enum: {
         Token: 'TokenSymbol',
-        Erc20: 'EvmAddress'
-      }
+        Erc20: 'EvmAddress',
+      },
     },
     CurrencyId: {
       _enum: {
@@ -45,16 +45,16 @@ export default {
         ERC20: 'EvmAddress',
         StableAssetPoolToken: 'u32',
         LiquidCrowdloan: 'u32',
-        ForeignAsset: 'u32'
-      }
+        ForeignAsset: 'u32',
+      },
     },
     CurrencyIdOf: 'CurrencyId',
     AirDropCurrencyId: { _enum: ['KAR', 'ACA'] },
     AuthoritysOriginId: {
-      _enum: ['Root', 'Treasury', 'HonzonTreasury', 'HomaTreasury', 'TreasuryReserve']
+      _enum: ['Root', 'Treasury', 'HonzonTreasury', 'HomaTreasury', 'TreasuryReserve'],
     },
     AcalaDataProviderId: {
-      _enum: ['Aggregated', 'Acala', 'Band']
+      _enum: ['Aggregated', 'Acala', 'Band'],
     },
     TradingPair: '(CurrencyId,  CurrencyId)',
     OrmlCurrencyId: 'CurrencyId',
@@ -63,13 +63,13 @@ export default {
       name: 'Vec<u8>',
       symbol: 'Vec<u8>',
       decimals: 'u8',
-      minimalBalance: 'Balance'
+      minimalBalance: 'Balance',
     },
-    NumberOrHex: 'u128'
+    NumberOrHex: 'u128',
   },
   typesAlias: {
     rewards: { OrmlCurrencyId: 'CurrencyId' },
     oracle: { DataProviderId: 'AcalaDataProviderId' },
-    chainBridge: { ChainId: 'ChainBridgeChainId' }
-  }
+    chainBridge: { ChainId: 'ChainBridgeChainId' },
+  },
 };

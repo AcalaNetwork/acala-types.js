@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js",
   "scripts": {
-    "build:release": "rm -rf dist && tsc -b --verbose -f",
-    "pub": "npm publish --tolerate-republish --access public"
+    "build": "rm -rf dist && tsc -b --verbose -f",
+    "publish:manual": "npm publish --tolerate-republish --access public"
   },
   "files": [
     "dist"

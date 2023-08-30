@@ -1,5 +1,3 @@
-import type { OverrideVersionedType } from '@polkadot/types/types';
-
 export function jsonrpcFromDefs (
   definitions: Record<string, { rpc?: Record<string, any> }>,
   jsonrpc: Record<string, Record<string, any>> = {}
@@ -16,7 +14,7 @@ export function jsonrpcFromDefs (
           isSubscription,
           jsonrpc: `${section}_${method}`,
           method,
-          section
+          section,
         };
       });
     });
@@ -41,7 +39,7 @@ export function typesFromDefs (
   return Object.values(definitions).reduce(
     (res: Record<string, any>, { types }): Record<string, any> => ({
       ...res,
-      ...types
+      ...types,
     }),
     initTypes
   );

@@ -9,7 +9,7 @@ import * as loan from './loan';
 export const acalaDerives: DeriveCustom = {
   loan: loan as unknown as DeriveCustom[string],
   dex: dex as unknown as DeriveCustom[string],
-  homa: homa as unknown as DeriveCustom[string]
+  homa: homa as unknown as DeriveCustom[string],
 };
 
 export * from './types';

@@ -5,55 +5,55 @@ export default {
       params: [
         {
           name: 'account',
-          type: 'AccountId'
-        }
+          type: 'AccountId',
+        },
       ],
-      type: 'BalanceInfo'
+      type: 'BalanceInfo',
     },
     getLiquidStakingExchangeRate: {
       description: 'get liquid staking exchange rate',
       params: [],
-      type: 'ExchangeRate'
-    }
+      type: 'ExchangeRate',
+    },
   },
   types: {
     SubAccountStatus: {
       bonded: 'Balance',
       available: 'Balance',
       unbonding: 'Vec<(EraIndex,Balance)>',
-      mockRewardRate: 'Rate'
+      mockRewardRate: 'Rate',
     },
     Params: {
       targetMaxFreeUnbondedRatio: 'Ratio',
       targetMinFreeUnbondedRatio: 'Ratio',
       targetUnbondingToFreeRatio: 'Ratio',
       unbondingToFreeAdjustment: 'Ratio',
-      baseFeeRate: 'Rate'
+      baseFeeRate: 'Rate',
     },
     StakingPoolPhase: {
-      _enum: ['Started', 'RelaychainUpdated', 'LedgerUpdated', 'Finished']
+      _enum: ['Started', 'RelaychainUpdated', 'LedgerUpdated', 'Finished'],
     },
     Ledger: {
       bonded: 'Balance',
       unbondingToFree: 'Balance',
       freePool: 'Balance',
-      toUnbondNextEra: '(Balance, Balance)'
+      toUnbondNextEra: '(Balance, Balance)',
     },
     ChangeRate: {
       _enum: {
         NoChange: 'Null',
-        NewValue: 'Rate'
-      }
+        NewValue: 'Rate',
+      },
     },
     ChangeRatio: {
       _enum: {
         NoChange: 'Null',
-        NewValue: 'Ratio'
-      }
+        NewValue: 'Ratio',
+      },
     },
     BalanceInfo: { amount: 'Balance' },
     PolkadotAccountId: 'AccountId',
-    PolkadotAccountIdOf: 'PolkadotAccountId'
+    PolkadotAccountIdOf: 'PolkadotAccountId',
   },
-  typesAlias: { stakingPool: { Phase: 'StakingPoolPhase' } }
+  typesAlias: { stakingPool: { Phase: 'StakingPoolPhase' } },
 };

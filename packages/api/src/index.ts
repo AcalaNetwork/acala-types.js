@@ -2,7 +2,15 @@ import type { ApiOptions } from '@polkadot/api/types';
 import type { RegistryTypes } from '@polkadot/types/types';
 
 import { acalaDerives } from '@acala-network/api-derive';
-import { acalaLookupTypes, acalaRpc, acalaRuntime, acalaSignedExtensions, acalaTypes, acalaTypesAlias, acalaTypesBundle } from '@acala-network/types';
+import {
+  acalaLookupTypes,
+  acalaRpc,
+  acalaRuntime,
+  acalaSignedExtensions,
+  acalaTypes,
+  acalaTypesAlias,
+  acalaTypesBundle,
+} from '@acala-network/types';
 
 export const options = ({ derives = {},
   rpc = {},
@@ -15,45 +23,45 @@ export const options = ({ derives = {},
   types: {
     ...acalaTypes as unknown as RegistryTypes,
     ...acalaLookupTypes as unknown as RegistryTypes,
-    ...types
+    ...types,
   },
   runtime: {
     ...acalaRuntime,
-    ...runtime
+    ...runtime,
   },
   rpc: {
     ...acalaRpc,
-    ...rpc
+    ...rpc,
   },
   typesAlias: {
     ...acalaTypesAlias,
-    ...typesAlias
+    ...typesAlias,
   },
   derives: {
     ...acalaDerives,
-    ...derives
+    ...derives,
   },
   typesBundle: {
     spec: {
       ...typesBundle.spec,
       acala: {
         ...acalaTypesBundle.spec.acala,
-        ...typesBundle?.spec?.acala
+        ...typesBundle?.spec?.acala,
       },
       mandala: {
         ...acalaTypesBundle.spec.mandala,
-        ...typesBundle?.spec?.mandala
+        ...typesBundle?.spec?.mandala,
       },
       karura: {
         ...acalaTypesBundle.spec.karura,
-        ...typesBundle?.spec?.mandala
-      }
+        ...typesBundle?.spec?.mandala,
+      },
     },
-    ...typesBundle
+    ...typesBundle,
   },
   signedExtensions: {
     ...acalaSignedExtensions,
-    ...signedExtensions
+    ...signedExtensions,
   },
-  ...otherOptions
+  ...otherOptions,
 });

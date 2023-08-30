@@ -4,16 +4,16 @@ export default {
     RelaychainAccountId: 'AccountId',
     SlashInfo: {
       validator: 'RelaychainAccountId',
-      relaychainTokenAmount: 'Balance'
+      relaychainTokenAmount: 'Balance',
     },
     ValidatorBacking: {
       totalInsurance: 'Balance',
-      isFrozen: 'bool'
+      isFrozen: 'bool',
     },
     Guarantee: {
       total: 'Balance',
       bonded: 'Balance',
-      unbonding: 'Option<(Balance, BlockNumber)>'
-    }
-  }
+      unbonding: 'Option<(Balance, BlockNumber)>',
+    },
+  },
 };

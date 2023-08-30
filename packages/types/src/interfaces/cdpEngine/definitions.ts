@@ -7,27 +7,27 @@ export default {
     ChangeOptionRate: {
       _enum: {
         NoChange: 'Null',
-        NewValue: 'OptionRate'
-      }
+        NewValue: 'OptionRate',
+      },
     },
     ChangeOptionRatio: {
       _enum: {
         NoChange: 'Null',
-        NewValue: 'OptionRatio'
-      }
+        NewValue: 'OptionRatio',
+      },
     },
     ChangeBalance: {
       _enum: {
         NoChange: 'Null',
-        NewValue: 'Balance'
-      }
+        NewValue: 'Balance',
+      },
     },
     RiskManagementParams: {
       maximumTotalDebitValue: 'Balance',
       interestRatePerSec: 'Option<Rate>',
       liquidationRatio: 'Option<Rate>',
       liquidationPenalty: 'Option<Rate>',
-      requiredCollateralRatio: 'Option<Rate>'
-    }
-  }
+      requiredCollateralRatio: 'Option<Rate>',
+    },
+  },
 };
