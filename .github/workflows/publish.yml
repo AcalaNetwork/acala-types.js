@@ -9,17 +9,29 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup node env
+        uses: actions/setup-node@v3
         with:
-          token: ${{ secrets.GH_PAT }}
+          node-version: 16
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: build
         run: |
           yarn install --immutable | grep -v 'YN0013'
           yarn build
+
       - name: publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          echo npmAuthToken: "${NPM_TOKEN}" >> .yarnrc.yml
+          echo npmAuthToken: "\${NPM_TOKEN}" >> ./.yarnrc.yml
           yarn publish
+
+      - name: cleanup
+        run: |
+          git checkout ./.yarnrc.yml
 
