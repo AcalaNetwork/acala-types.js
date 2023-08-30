@@ -4,6 +4,10 @@
   "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "type": "module",
   "scripts": {
     "generate": "npm run load:meta && npm run generate:defs && npm run generate:meta",
