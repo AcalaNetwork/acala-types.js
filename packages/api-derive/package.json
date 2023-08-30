@@ -4,10 +4,6 @@
   "description": "Additional polkadot.js derives for Acala Network",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "repository": {
     "directory": "packages/api-derive",
     "type": "git",

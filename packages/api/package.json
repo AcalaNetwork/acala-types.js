@@ -4,10 +4,6 @@
   "description": "Acala JS API",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "repository": {
     "directory": "packages/api",
     "type": "git",
