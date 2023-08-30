@@ -1,6 +1,6 @@
-import type { Observable } from 'rxjs';
-import type { ApiInterfaceRx } from '@polkadot/api/types';
 import type { AcalaPrimitivesCurrencyCurrencyId } from '@polkadot/types/lookup';
+import type { ApiInterfaceRx } from '@polkadot/api/types';
+import type { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
 

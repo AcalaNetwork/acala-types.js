@@ -10,9 +10,9 @@
     "load:meta": "curl -s -H \"Content-Type: application/json\" -d '{\"id\":\"1\", \"jsonrpc\":\"2.0\", \"method\": \"state_getMetadata\", \"params\":[]}' https://acala-rpc.aca-api.network > metadata.json",
     "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-defs --package @acala-network/types/interfaces --endpoint ./metadata.json --input ./src/interfaces",
     "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm ../../node_modules/.bin/polkadot-types-from-chain --package @acala-network/types/interfaces --endpoint ./metadata.json  --output ./src/interfaces",
-    "build:release": "rm -rf dist && tsc --build tsconfig.cjs.json --verbose -f && yarn postBuild",
+    "build": "rm -rf dist && tsc --build tsconfig.cjs.json --verbose -f && yarn postBuild",
     "postBuild": "node ./scripts/postbuild.js",
-    "pub": "cd ./dist && npm publish --tolerate-republish --access public"
+    "publish:manual": "cd ./dist && npm publish --tolerate-republish --access public"
   },
   "files": [
     "interfaces/",

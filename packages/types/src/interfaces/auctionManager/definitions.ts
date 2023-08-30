@@ -7,17 +7,17 @@ export default {
       initialAmount: 'Compact<Balance>',
       amount: 'Compact<Balance>',
       target: 'Compact<Balance>',
-      startTime: 'BlockNumber'
+      startTime: 'BlockNumber',
     },
     DebitAuctionItem: {
       initialAmount: 'Compact<Balance>',
       amount: 'Compact<Balance>',
       fix: 'Compact<Balance>',
-      startTime: 'BlockNumber'
+      startTime: 'BlockNumber',
     },
     SurplusAuctionItem: {
       amount: 'Compact<Balance>',
-      startTime: 'BlockNumber'
-    }
-  }
+      startTime: 'BlockNumber',
+    },
+  },
 };

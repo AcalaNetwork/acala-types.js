@@ -5,44 +5,44 @@ export default {
       params: [
         {
           name: 'supplyCurrencyId',
-          type: 'CurrencyId'
+          type: 'CurrencyId',
         },
         {
           name: 'targetCurrencyId',
-          type: 'CurrencyId'
+          type: 'CurrencyId',
         },
         {
           name: 'targetCurrencyAmount',
-          type: 'BalanceRequest'
-        }
+          type: 'BalanceRequest',
+        },
       ],
-      type: 'BalanceWrapper'
+      type: 'BalanceWrapper',
     },
     getTargetAmount: {
       description: 'Get target amount',
       params: [
         {
           name: 'supplyCurrencyId',
-          type: 'CurrencyId'
+          type: 'CurrencyId',
         },
         {
           name: 'targetCurrencyId',
-          type: 'CurrencyId'
+          type: 'CurrencyId',
         },
         {
           name: 'supplyCurrencyAmount',
-          type: 'BalanceRequest'
-        }
+          type: 'BalanceRequest',
+        },
       ],
-      type: 'BalanceWrapper'
-    }
+      type: 'BalanceWrapper',
+    },
   },
   types: {
     TradingPairProvisionParameters: {
       minContribution: '(Balance, Balance)',
       targetProvision: '(Balance, Balance)',
       accumulatedProvision: '(Balance, Balance)',
-      notBefore: 'BlockNumber'
+      notBefore: 'BlockNumber',
     },
     BalanceWrapper: { amount: 'Balance' },
     BalanceRequest: { amount: 'Balance' },
@@ -50,8 +50,8 @@ export default {
       _enum: {
         Disabled: 'Null',
         Provisioning: 'TradingPairProvisionParameters',
-        Enabled: 'Null'
-      }
-    }
-  }
+        Enabled: 'Null',
+      },
+    },
+  },
 };

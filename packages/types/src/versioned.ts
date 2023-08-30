@@ -5,7 +5,7 @@ const sharedTypes = {
   DispatchErrorModule: 'DispatchErrorModuleU8',
   RawSolution: 'RawSolutionWith16',
   Keys: 'SessionKeys1',
-  Weight: 'WeightV1'
+  Weight: 'WeightV1',
 };
 
 const xcmV0 = {
@@ -14,7 +14,7 @@ const xcmV0 = {
   Xcm: 'XcmV0',
   XcmOrder: 'XcmOrderV0',
   XcmError: 'XcmErrorV0',
-  Response: 'ResponseV0'
+  Response: 'ResponseV0',
 };
 
 const xcmV1 = {
@@ -23,17 +23,17 @@ const xcmV1 = {
   Xcm: 'XcmV1',
   XcmOrder: 'XcmOrderV1',
   XcmError: 'XcmErrorV1',
-  Response: 'ResponseV1'
+  Response: 'ResponseV1',
 };
 
 const addressV0 = {
   Address: 'LookupSource',
-  LookupSource: 'IndicesLookupSource'
+  LookupSource: 'IndicesLookupSource',
 };
 
 const addressV1 = {
   Address: 'GenericMultiAddress',
-  LookupSource: 'GenericMultiAddress'
+  LookupSource: 'GenericMultiAddress',
 };
 
 const currencyV0 = {
@@ -41,9 +41,9 @@ const currencyV0 = {
     _enum: {
       Token: 'TokenSymbol',
       DEXShare: '(TokenSymbol, TokenSymbol)',
-      ERC20: 'EvmAddress'
-    }
-  }
+      ERC20: 'EvmAddress',
+    },
+  },
 };
 
 const poolIdV0 = {
@@ -52,9 +52,9 @@ const poolIdV0 = {
       Loans: 'CurrencyId',
       DexIncentive: 'CurrencyId',
       DexSaving: 'CurrencyId',
-      Homa: 'Null'
-    }
-  }
+      Homa: 'Null',
+    },
+  },
 };
 
 const poolIdV1 = {
@@ -64,15 +64,15 @@ const poolIdV1 = {
       DexIncentive: 'CurrencyId',
       HomaIncentive: 'Null',
       DexSaving: 'CurrencyId',
-      HomaValidatorAllowance: 'AccountId'
-    }
+      HomaValidatorAllowance: 'AccountId',
+    },
   },
   // for orml-reward types
   PoolInfo: {
     totalShares: 'Compact<Share>',
     totalRewards: 'Compact<Balance>',
-    totalWithdrawnRewards: 'Compact<Balance>'
-  }
+    totalWithdrawnRewards: 'Compact<Balance>',
+  },
 };
 
 const versioned: OverrideVersionedType[] = [
@@ -84,9 +84,9 @@ const versioned: OverrideVersionedType[] = [
       ...poolIdV0,
       ...addressV0,
       TokenSymbol: {
-        _enum: ['ACA', 'AUSD', 'DOT', 'XBTC', 'LDOT', 'RENBTC']
-      }
-    }
+        _enum: ['ACA', 'AUSD', 'DOT', 'XBTC', 'LDOT', 'RENBTC'],
+      },
+    },
   },
   {
     minmax: [700, 719],
@@ -96,9 +96,9 @@ const versioned: OverrideVersionedType[] = [
       ...poolIdV0,
       ...addressV1,
       TokenSymbol: {
-        _enum: ['ACA', 'AUSD', 'DOT', 'XBTC', 'LDOT', 'RENBTC']
-      }
-    }
+        _enum: ['ACA', 'AUSD', 'DOT', 'XBTC', 'LDOT', 'RENBTC'],
+      },
+    },
   },
   {
     minmax: [720, 722],
@@ -126,10 +126,10 @@ const versioned: OverrideVersionedType[] = [
           KSM: 130,
           LKSM: 131,
           SDN: 135,
-          KILT: 138
-        }
-      }
-    }
+          KILT: 138,
+        },
+      },
+    },
   },
   {
     minmax: [723, 729],
@@ -157,10 +157,10 @@ const versioned: OverrideVersionedType[] = [
           KSM: 130,
           LKSM: 131,
           SDN: 135,
-          KILT: 138
-        }
-      }
-    }
+          KILT: 138,
+        },
+      },
+    },
   },
   {
     minmax: [730, 1007],
@@ -182,10 +182,10 @@ const versioned: OverrideVersionedType[] = [
           KSM: 130,
           LKSM: 131,
           // Reserve for XBTC = 132
-          CASH: 140
-        }
-      }
-    }
+          CASH: 140,
+        },
+      },
+    },
   },
   {
     minmax: [1008, 1008],
@@ -205,10 +205,10 @@ const versioned: OverrideVersionedType[] = [
           KAR: 128,
           KUSD: 129,
           KSM: 130,
-          LKSM: 131
-        }
-      }
-    }
+          LKSM: 131,
+        },
+      },
+    },
   },
   {
     minmax: [1008, 1009],
@@ -216,29 +216,29 @@ const versioned: OverrideVersionedType[] = [
       ...sharedTypes,
       ...addressV1,
       ...xcmV0,
-      ...poolIdV1
-    }
+      ...poolIdV1,
+    },
   },
   {
     minmax: [1010, 1013],
     types: {
       ...sharedTypes,
       ...addressV1,
-      ...xcmV0
-    }
+      ...xcmV0,
+    },
   },
   {
     minmax: [1014, 1018],
     types: {
       ...sharedTypes,
       ...addressV1,
-      ...xcmV1
-    }
+      ...xcmV1,
+    },
   },
   {
     minmax: [1019, undefined],
-    types: { ...addressV1 }
-  }
+    types: { ...addressV1 },
+  },
 ];
 
 export const acalaVersioned = versioned;

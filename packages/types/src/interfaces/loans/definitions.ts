@@ -3,7 +3,7 @@ export default {
   types: {
     Position: {
       collateral: 'Balance',
-      debit: 'Balance'
-    }
-  }
+      debit: 'Balance',
+    },
+  },
 };

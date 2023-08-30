@@ -4,13 +4,13 @@ export default {
     NomineeId: 'AccountId',
     HomaUnlockChunk: {
       value: 'Balance',
-      era: 'EraIndex'
+      era: 'EraIndex',
     },
     BondingLedger: {
       total: 'Balance',
       active: 'Balance',
-      unlocking: 'Vec<HomaUnlockChunk>'
-    }
+      unlocking: 'Vec<HomaUnlockChunk>',
+    },
   },
-  typesAlias: { nomineesElection: { UnlockChunk: 'HomaUnlockChunk' } }
+  typesAlias: { nomineesElection: { UnlockChunk: 'HomaUnlockChunk' } },
 };

@@ -3,11 +3,11 @@ export default {
   types: {
     AcalaStakingLedge: {
       bonded: 'Compact<Balance>',
-      unlocking: 'Vec<UnlockChunk>'
+      unlocking: 'Vec<UnlockChunk>',
     },
     AcalaUnlockChunk: {
       value: 'Compact<Balance>',
-      era: 'Compact<EraIndex>'
-    }
-  }
+      era: 'Compact<EraIndex>',
+    },
+  },
 };

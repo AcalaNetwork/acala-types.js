@@ -55,4 +55,4 @@ jobs:
       - name: build
         run: |
           yarn install --immutable | grep -v 'YN0013'
-          yarn build:release
+          yarn build

@@ -6,7 +6,7 @@ export default {
     TokenInfoOf: {
       metadata: 'CID',
       owner: 'AccountId',
-      data: 'TokenData'
+      data: 'TokenData',
     },
     Properties: {
       _set: {
@@ -14,17 +14,17 @@ export default {
         Transferable: 0b00000001,
         Burnable: 0b00000010,
         Mintable: 0b00000100,
-        ClassPropertiesMutable: 0b00001000
-      }
+        ClassPropertiesMutable: 0b00001000,
+      },
     },
     ClassData: {
       deposit: 'Balance',
       properties: 'Properties',
-      attributes: 'Attributes'
+      attributes: 'Attributes',
     },
     TokenData: {
       deposit: 'Balance',
-      attributes: 'Attributes'
+      attributes: 'Attributes',
     },
     TokenId: 'u64',
     TokenIdOf: 'TokenId',
@@ -36,13 +36,13 @@ export default {
       metadata: 'CID',
       totalIssuance: 'TokenId',
       owner: 'AccountId',
-      data: 'ClassData'
-    }
+      data: 'ClassData',
+    },
   },
   typesAligns: {
     nft: {
       ClassId: 'NFTClassId',
-      BalanceOf: 'NFTBalanceOf'
-    }
-  }
+      BalanceOf: 'NFTBalanceOf',
+    },
+  },
 };

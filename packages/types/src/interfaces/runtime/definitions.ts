@@ -1,6 +1,5 @@
-import type { Definitions } from '@polkadot/types/types';
-
 import substrateRuntimeDefs from '@polkadot/types/interfaces/runtime/definitions';
+import type { Definitions } from '@polkadot/types/types';
 
 const acalaRuntimeDefs: Definitions = {
   rpc: {},
@@ -9,11 +8,11 @@ const acalaRuntimeDefs: Definitions = {
     OracleValue: 'Price',
     AsOriginId: 'AuthoritysOriginId',
     ProxyType: {
-      _enum: ['Any', 'CancelProxy', 'Governance', 'Auction', 'Swap', 'Loan']
+      _enum: ['Any', 'CancelProxy', 'Governance', 'Auction', 'Swap', 'Loan'],
     },
     AtLeast64BitUnsigned: 'u128',
     StableAssetPoolId: 'u32',
-    RelayChainBlockNumberOf: 'RelayChainBlockNumber'
+    RelayChainBlockNumberOf: 'RelayChainBlockNumber',
   },
   runtime: {
     EVMRuntimeRPCApi: [
@@ -25,96 +24,96 @@ const acalaRuntimeDefs: Definitions = {
             params: [
               {
                 name: 'from',
-                type: 'H160'
+                type: 'H160',
               },
               {
                 name: 'to',
-                type: 'H160'
+                type: 'H160',
               },
               {
                 name: 'data',
-                type: 'Vec<u8>'
+                type: 'Vec<u8>',
               },
               {
                 name: 'value',
-                type: 'Balance'
+                type: 'Balance',
               },
               {
                 name: 'gas_limit',
-                type: 'u64'
+                type: 'u64',
               },
               {
                 name: 'storage_limit',
-                type: 'u32'
+                type: 'u32',
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>'
+                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
               },
               {
                 name: 'estimate',
-                type: 'bool'
-              }
+                type: 'bool',
+              },
             ],
-            type: 'Result<CallInfo, sp_runtime::DispatchError>'
+            type: 'Result<CallInfo, sp_runtime::DispatchError>',
           },
           create: {
             description: 'create evm contract',
             params: [
               {
                 name: 'from',
-                type: 'H160'
+                type: 'H160',
               },
               {
                 name: 'data',
-                type: 'Vec<u8>'
+                type: 'Vec<u8>',
               },
               {
                 name: 'value',
-                type: 'Balance'
+                type: 'Balance',
               },
               {
                 name: 'gas_limit',
-                type: 'u64'
+                type: 'u64',
               },
               {
                 name: 'storage_limit',
-                type: 'u32'
+                type: 'u32',
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>'
+                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
               },
               {
                 name: 'estimate',
-                type: 'bool'
-              }
+                type: 'bool',
+              },
             ],
-            type: 'Result<CreateInfo, sp_runtime::DispatchError>'
+            type: 'Result<CreateInfo, sp_runtime::DispatchError>',
           },
           block_limits: {
             description: 'evm block limits',
             params: [],
-            type: 'BlockLimits'
-          }
-        }
-      }
-    ]
-  }
+            type: 'BlockLimits',
+          },
+        },
+      },
+    ],
+  },
 };
 
 // we need to merge substrate runtime defs, otherwise won't be able to build
 export default {
   rpc: {
     ...substrateRuntimeDefs.rpc,
-    ...acalaRuntimeDefs.rpc
+    ...acalaRuntimeDefs.rpc,
   },
   types: {
     ...substrateRuntimeDefs.types,
-    ...acalaRuntimeDefs.types
+    ...acalaRuntimeDefs.types,
   },
   runtime: {
     ...substrateRuntimeDefs.runtime,
-    ...acalaRuntimeDefs.runtime
-  }
+    ...acalaRuntimeDefs.runtime,
+  },
 };

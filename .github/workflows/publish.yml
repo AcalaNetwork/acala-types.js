@@ -17,5 +17,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn install --immutable | grep -v 'YN0013'
-          yarn build:release
+          yarn build
+          yarn publish
 

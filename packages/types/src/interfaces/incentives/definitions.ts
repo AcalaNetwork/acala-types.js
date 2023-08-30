@@ -4,8 +4,8 @@ export default {
     PoolId: {
       _enum: {
         Loans: 'CurrencyId',
-        Dex: 'CurrencyId'
-      }
+        Dex: 'CurrencyId',
+      },
     },
     PoolIdV0: {
       _enum: {
@@ -13,8 +13,8 @@ export default {
         DexIncentive: 'CurrencyId',
         HomaIncentive: 'Null',
         DexSaving: 'CurrencyId',
-        HomaValidatorAllowance: 'AccountId'
-      }
-    }
-  }
+        HomaValidatorAllowance: 'AccountId',
+      },
+    },
+  },
 };
