@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@polkadot/typegen": "^10.9.1",
-    "@types/node": "^20.4.9",
+    "@types/node": "^20.5.7",
     "typescript": "^5.0.4"
   }
 }
