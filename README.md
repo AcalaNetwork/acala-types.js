@@ -24,7 +24,7 @@ import '@acala-network/types';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { options } from '@acala-network/api';
 
-const provider = new WsProvider('wss://karura.api.onfinality.io/public-ws');
+const provider = new WsProvider('wss://karura-rpc.aca-api.network');
 const api = new ApiPromise(options({ provider }));
 await api.isReady;
 
