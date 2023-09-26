@@ -6,7 +6,7 @@
 import '@polkadot/api-base/types/consts';
 
 import type { ApiTypes, AugmentedConst } from '@polkadot/api-base/types';
-import type { Option, Vec, bool, u128, u16, u32, u64 } from '@polkadot/types-codec';
+import type { Option, U8aFixed, Vec, bool, u128, u16, u32, u64 } from '@polkadot/types-codec';
 import type { Codec, ITuple } from '@polkadot/types-codec/types';
 import type { AccountId32, H160, Percent, Permill } from '@polkadot/types/interfaces/runtime';
 import type { AcalaPrimitivesCurrencyCurrencyId, FrameSupportPalletId, FrameSystemLimitsBlockLength, FrameSystemLimitsBlockWeights, SpVersionRuntimeVersion, SpWeightsRuntimeDbWeight, SpWeightsWeightV2Weight, XcmV3MultiLocation } from '@polkadot/types/lookup';
@@ -16,6 +16,7 @@ export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>
 declare module '@polkadot/api-base/types/consts' {
   interface AugmentedConsts<ApiType extends ApiTypes> {
     acalaOracle: {
+      maxFeedValues: u32 & AugmentedConst<ApiType>;
       maxHasDispatchedSize: u32 & AugmentedConst<ApiType>;
       rootOperatorAccountId: AccountId32 & AugmentedConst<ApiType>;
       /**
@@ -51,6 +52,8 @@ declare module '@polkadot/api-base/types/consts' {
     };
     balances: {
       existentialDeposit: u128 & AugmentedConst<ApiType>;
+      maxFreezes: u32 & AugmentedConst<ApiType>;
+      maxHolds: u32 & AugmentedConst<ApiType>;
       maxLocks: u32 & AugmentedConst<ApiType>;
       maxReserves: u32 & AugmentedConst<ApiType>;
       /**
@@ -148,6 +151,17 @@ declare module '@polkadot/api-base/types/consts' {
        **/
       [key: string]: Codec;
     };
+    earning: {
+      instantUnstakeFee: Option<Permill> & AugmentedConst<ApiType>;
+      lockIdentifier: U8aFixed & AugmentedConst<ApiType>;
+      maxUnbondingChunks: u32 & AugmentedConst<ApiType>;
+      minBond: u128 & AugmentedConst<ApiType>;
+      unbondingPeriod: u32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
     evm: {
       developerDeposit: u128 & AugmentedConst<ApiType>;
       networkContractSource: H160 & AugmentedConst<ApiType>;
@@ -168,6 +182,20 @@ declare module '@polkadot/api-base/types/consts' {
        **/
       [key: string]: Codec;
     };
+    financialCouncil: {
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    generalCouncil: {
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
     homa: {
       activeSubAccountsIndexList: Vec<u16> & AugmentedConst<ApiType>;
       bondingDuration: u32 & AugmentedConst<ApiType>;
@@ -178,6 +206,13 @@ declare module '@polkadot/api-base/types/consts' {
       redeemThreshold: u128 & AugmentedConst<ApiType>;
       stakingCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       treasuryAccount: AccountId32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    homaCouncil: {
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -200,10 +235,19 @@ declare module '@polkadot/api-base/types/consts' {
     };
     incentives: {
       accumulatePeriod: u32 & AugmentedConst<ApiType>;
-      earnShareBooster: Permill & AugmentedConst<ApiType>;
       nativeCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       palletId: FrameSupportPalletId & AugmentedConst<ApiType>;
       rewardsSource: AccountId32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    liquidCrowdloan: {
+      crowdloanVault: AccountId32 & AugmentedConst<ApiType>;
+      liquidCrowdloanCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
+      palletId: FrameSupportPalletId & AugmentedConst<ApiType>;
+      relayChainCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -290,6 +334,13 @@ declare module '@polkadot/api-base/types/consts' {
        **/
       [key: string]: Codec;
     };
+    technicalCommittee: {
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
     timestamp: {
       minimumPeriod: u64 & AugmentedConst<ApiType>;
       /**
@@ -364,6 +415,7 @@ declare module '@polkadot/api-base/types/consts' {
     xcmInterface: {
       parachainAccount: AccountId32 & AugmentedConst<ApiType>;
       relayChainUnbondingSlashingSpans: u32 & AugmentedConst<ApiType>;
+      selfLocation: XcmV3MultiLocation & AugmentedConst<ApiType>;
       stakingCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
       /**
        * Generic const
