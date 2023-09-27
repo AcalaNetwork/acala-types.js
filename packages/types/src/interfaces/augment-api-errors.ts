@@ -79,9 +79,11 @@ declare module '@polkadot/api-base/types/errors' {
       DeadAccount: AugmentedError<ApiType>;
       ExistentialDeposit: AugmentedError<ApiType>;
       ExistingVestingSchedule: AugmentedError<ApiType>;
+      Expendability: AugmentedError<ApiType>;
       InsufficientBalance: AugmentedError<ApiType>;
-      KeepAlive: AugmentedError<ApiType>;
       LiquidityRestrictions: AugmentedError<ApiType>;
+      TooManyFreezes: AugmentedError<ApiType>;
+      TooManyHolds: AugmentedError<ApiType>;
       TooManyReserves: AugmentedError<ApiType>;
       VestingBalance: AugmentedError<ApiType>;
       /**
@@ -252,6 +254,16 @@ declare module '@polkadot/api-base/types/errors' {
     dmpQueue: {
       OverLimit: AugmentedError<ApiType>;
       Unknown: AugmentedError<ApiType>;
+      /**
+       * Generic error
+       **/
+      [key: string]: AugmentedError<ApiType>;
+    };
+    earning: {
+      BelowMinBondThreshold: AugmentedError<ApiType>;
+      MaxUnlockChunksExceeded: AugmentedError<ApiType>;
+      NotAllowed: AugmentedError<ApiType>;
+      NotBonded: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
