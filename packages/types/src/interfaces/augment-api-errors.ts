@@ -293,6 +293,7 @@ declare module '@polkadot/api-base/types/errors' {
       ContractNotFound: AugmentedError<ApiType>;
       InvalidDecimals: AugmentedError<ApiType>;
       NoPermission: AugmentedError<ApiType>;
+      NotEOA: AugmentedError<ApiType>;
       OutOfStorage: AugmentedError<ApiType>;
       ReserveStorageFailed: AugmentedError<ApiType>;
       StrictCallFailed: AugmentedError<ApiType>;
@@ -518,6 +519,12 @@ declare module '@polkadot/api-base/types/errors' {
       TooBig: AugmentedError<ApiType>;
       Unauthorized: AugmentedError<ApiType>;
       ValidationDataNotAvailable: AugmentedError<ApiType>;
+      /**
+       * Generic error
+       **/
+      [key: string]: AugmentedError<ApiType>;
+    };
+    parameters: {
       /**
        * Generic error
        **/
