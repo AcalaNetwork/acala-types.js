@@ -152,7 +152,6 @@ declare module '@polkadot/api-base/types/consts' {
       [key: string]: Codec;
     };
     earning: {
-      instantUnstakeFee: Option<Permill> & AugmentedConst<ApiType>;
       lockIdentifier: U8aFixed & AugmentedConst<ApiType>;
       maxUnbondingChunks: u32 & AugmentedConst<ApiType>;
       minBond: u128 & AugmentedConst<ApiType>;
