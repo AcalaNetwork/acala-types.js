@@ -40,7 +40,7 @@ __metadata:
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
     "@polkadot/typegen": ^10.9.1
-    "@types/node": ^20.4.9
+    "@types/node": ^20.8.0
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^10.9.1
@@ -736,10 +736,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.4.9":
-  version: 20.4.9
-  resolution: "@types/node@npm:20.4.9"
-  checksum: 504e3da96274f3865c1251830f4750bb0a8f6ef6f8648902cd3bba33370c5f219235471bfbf55cce726b25c8eacfcc8e2aad0ec3b13e27ea6708b00d4a9a46c8
+"@types/node@npm:^20.8.0":
+  version: 20.8.0
+  resolution: "@types/node@npm:20.8.0"
+  checksum: ebad6342d54238a24bf980d7750117a5d67749c9b72cbb7a974a1e932c39034aa3a810d669e007e8a5071782a253aa069a187b614407a382403c9826e837c849
   languageName: node
   linkType: hard
 
@@ -2586,7 +2586,7 @@ __metadata:
   dependencies:
     "@polkadot/api": ^10.9.1
     "@types/eslint": ^8
-    "@types/node": ^20.4.9
+    "@types/node": ^20.8.0
     "@typescript-eslint/eslint-plugin": ^6.5.0
     "@typescript-eslint/parser": ^6.5.0
     eslint: ^8.48.0
