@@ -116,21 +116,22 @@ export default {
     },
     ExitError: {
       _enum: {
-        StackUnderflow: 'Null',
-        StackOverflow: 'Null',
-        InvalidJump: 'Null',
-        InvalidRange: 'Null',
-        DesignatedInvalid: 'Null',
-        CallTooDeep: 'Null',
-        CreateCollision: 'Null',
-        CreateContractLimit: 'Null',
-        OutOfOffset: 'Null',
-        OutOfGas: 'Null',
-        OutOfFund: 'Null',
-        PCUnderflow: 'Null',
-        CreateEmpty: 'Null',
-        Other: 'Text',
-        InvalidCode: 'u8',
+        StackUnderflow: 'Null',       // 0
+        StackOverflow: 'Null',        // 1
+        InvalidJump: 'Null',          // 2
+        InvalidRange: 'Null',         // 3
+        DesignatedInvalid: 'Null',    // 4
+        CallTooDeep: 'Null',          // 5
+        CreateCollision: 'Null',      // 6
+        CreateContractLimit: 'Null',  // 7
+        OutOfOffset: 'Null',          // 8
+        OutOfGas: 'Null',             // 9
+        OutOfFund: 'Null',            // 10
+        PCUnderflow: 'Null',          // 11
+        CreateEmpty: 'Null',          // 12
+        Other: 'Text',                // 13
+        MaxNonce: null,               // 14
+        InvalidCode: 'u8',            // 15
       },
     },
     ExitRevert: {
