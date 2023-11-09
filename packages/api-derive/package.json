@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/api-derive",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "Additional polkadot.js derives for Acala Network",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@acala-network/types": "6.0.3"
+    "@acala-network/types": "6.0.4"
   },
   "peerDependencies": {
     "@polkadot/api": "^10.9.1"
