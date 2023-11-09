@@ -1,6 +1,6 @@
 {
   "name": "@acala-network/types",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "Acala types for @polkadot/api",
   "author": "Acala Developers <hello@acala.network>",
   "license": "Apache-2.0",
