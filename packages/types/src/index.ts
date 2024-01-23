@@ -9,7 +9,8 @@ import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from './utils';
 import { versioned } from './versioned';
 
 export * as acalaLookupTypes from './interfaces/lookup';
-export { acalaSignedExtensions } from './signedExtensions';
+import { acalaSignedExtensions } from './signedExtensions';
+export { acalaSignedExtensions };
 
 // FIXME: currently we cannot override this in runtime definations because the code generation script cannot handle overrides
 // This will make it behave correctly in runtime, but wrong types in TS defination.
@@ -35,6 +36,8 @@ const sharedBundle: OverrideBundleDefinition = {
     },
   })),
   alias: acalaTypesAlias,
+  signedExtensions: acalaSignedExtensions,
+  runtime: acalaRuntime,
 };
 
 export const acalaTypesBundle: OverrideBundleType = {
