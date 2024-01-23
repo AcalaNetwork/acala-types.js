@@ -2,11 +2,11 @@ import './interfaces/augment-api';
 import './interfaces/augment-types';
 import './interfaces/types-lookup';
 
-import type { OverrideBundleType, OverrideVersionedType } from '@polkadot/types/types';
+import type { OverrideBundleDefinition, OverrideBundleType } from '@polkadot/types/types';
 
 import * as acalaDefs from './interfaces/definitions';
-import { acalaVersioned, karuraVersioned, mandalaVersioned } from './versioned';
 import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from './utils';
+import { versioned } from './versioned';
 
 export * as acalaLookupTypes from './interfaces/lookup';
 export { acalaSignedExtensions } from './signedExtensions';
@@ -24,36 +24,26 @@ export const acalaRpc = jsonrpcFromDefs(acalaDefs, {});
 export const acalaTypesAlias = typesAliasFromDefs(acalaDefs, {});
 export const acalaRuntime = acalaDefs.runtime.runtime;
 
-function getBundle (versioned: OverrideVersionedType[]) {
-  return {
-    acalaRpc,
-    instances: { council: ['generalCouncil'] },
-    types: [...versioned].map((version) => {
-      return {
-        minmax: version.minmax,
-        types: {
-          ...acalaTypes,
-          ...version.types,
-        },
-      };
-    }),
-    alias: acalaTypesAlias,
-  };
-}
+const sharedBundle: OverrideBundleDefinition = {
+  rpc: acalaRpc,
+  instances: { council: ['generalCouncil'] },
+  types: versioned.map((version) => ({
+    minmax: version.minmax,
+    types: {
+      ...acalaTypes,
+      ...version.types,
+    },
+  })),
+  alias: acalaTypesAlias,
+};
 
-export const acalaTypesBundle = {
+export const acalaTypesBundle: OverrideBundleType = {
   spec: {
-    acala: getBundle(acalaVersioned),
-    mandala: getBundle(mandalaVersioned),
-    karura: getBundle(karuraVersioned),
-  },
-} as unknown as OverrideBundleType;
-
-// Type overrides have priority issues
-export const typesBundleForPolkadot = {
-  spec: {
-    acala: getBundle(acalaVersioned),
-    mandala: getBundle(mandalaVersioned),
-    karura: getBundle(karuraVersioned),
+    acala: sharedBundle,
+    mandala: sharedBundle,
+    karura: sharedBundle,
   },
 };
+
+// Type overrides have priority issues
+export const typesBundleForPolkadot = acalaTypesBundle;
