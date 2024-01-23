@@ -4,8 +4,9 @@ import { acalaTypesBundle } from './bundle';
 
 // TODO: implement type overrides if needed
 export const options = ({ provider }: ApiOptions = {}): ApiOptions => ({
+  provider,
   typesBundle: acalaTypesBundle,
-  ...(provider ?? {}),
 });
 
 export const withAcalaTypes = options;
+export * from './bundle';

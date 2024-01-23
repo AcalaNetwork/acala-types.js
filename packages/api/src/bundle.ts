@@ -3,37 +3,21 @@ import {
   acalaRpc,
   acalaRuntime,
   acalaSignedExtensions,
-  acalaTypes,
   acalaTypesAlias,
-  versioned,
+  versionedTypes,
 } from '@acala-network/types';
-import type {
-  OverrideBundleDefinition,
-  OverrideBundleType,
-  OverrideVersionedType,
-} from '@polkadot/types/types';
+import type { OverrideBundleType } from '@polkadot/types/types';
 
-function getBundle(versioned: OverrideVersionedType[]): OverrideBundleDefinition {
-  return {
-    alias: acalaTypesAlias,
-    derives: acalaDerives,
-    instances: { council: ['generalCouncil'] },
-    rpc: acalaRpc,
-    runtime: acalaRuntime,
-    signedExtensions: acalaSignedExtensions,
-    types: versioned.map((version) => {
-      return {
-        minmax: version.minmax,
-        types: {
-          ...acalaTypes,
-          ...version.types,
-        },
-      };
-    }),
-  };
-}
+const sharedBundle = {
+  alias: acalaTypesAlias,
+  derives: acalaDerives,
+  instances: { council: ['generalCouncil'] },
+  rpc: acalaRpc,
+  runtime: acalaRuntime,
+  signedExtensions: acalaSignedExtensions,
+  types: versionedTypes,
+};
 
-const sharedBundle = getBundle(versioned);
 export const acalaTypesBundle: OverrideBundleType = {
   spec: {
     acala: sharedBundle,

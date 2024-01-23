@@ -1,4 +1,18 @@
-import type { OverrideVersionedType } from '@polkadot/types/types';
+import type { OverrideVersionedType, RegistryTypes } from '@polkadot/types/types';
+
+import * as acalaDefs from './interfaces/definitions';
+import { typesFromDefs } from './utils';
+import acalaLookupTypes from './interfaces/lookup';
+
+// FIXME: currently we cannot override this in runtime definations because the code generation script cannot handle overrides
+// This will make it behave correctly in runtime, but wrong types in TS defination.
+const additionalOverride = { Keys: 'SessionKeys1' };
+
+export const baseTypes = {
+  ...typesFromDefs(acalaDefs),
+  ...acalaLookupTypes as unknown as RegistryTypes,
+  ...additionalOverride,
+};
 
 const sharedTypes = {
   CompactAssignments: 'CompactAssignmentsWith16',
@@ -6,6 +20,7 @@ const sharedTypes = {
   RawSolution: 'RawSolutionWith16',
   Keys: 'SessionKeys1',
   Weight: 'WeightV1',
+  ...baseTypes,
 };
 
 const xcmV0 = {
@@ -75,7 +90,7 @@ const poolIdV1 = {
   },
 };
 
-const versioned: OverrideVersionedType[] = [
+const versionedTypes: OverrideVersionedType[] = [
   {
     minmax: [600, 699],
     types: {
@@ -237,11 +252,13 @@ const versioned: OverrideVersionedType[] = [
   },
   {
     minmax: [1019, undefined],
-    types: { ...addressV1 },
+    types: {
+      ...addressV1,
+    },
   },
 ];
 
-export { versioned };
-export const acalaVersioned = versioned;
-export const karuraVersioned = versioned;
-export const mandalaVersioned = versioned;
+export { versionedTypes };
+export const acalaVersioned = versionedTypes;
+export const karuraVersioned = versionedTypes;
+export const mandalaVersioned = versionedTypes;
