@@ -241,6 +241,7 @@ const versioned: OverrideVersionedType[] = [
   },
 ];
 
+export { versioned };
 export const acalaVersioned = versioned;
 export const karuraVersioned = versioned;
 export const mandalaVersioned = versioned;
