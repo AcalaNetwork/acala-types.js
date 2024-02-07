@@ -96,6 +96,78 @@ const acalaRuntimeDefs: Definitions = {
             params: [],
             type: 'BlockLimits',
           },
+          account_call: {
+            description: 'call evm contract',
+            params: [
+              {
+                name: 'from',
+                type: 'AccountId',
+              },
+              {
+                name: 'to',
+                type: 'H160',
+              },
+              {
+                name: 'data',
+                type: 'Vec<u8>',
+              },
+              {
+                name: 'value',
+                type: 'Balance',
+              },
+              {
+                name: 'gas_limit',
+                type: 'u64',
+              },
+              {
+                name: 'storage_limit',
+                type: 'u32',
+              },
+              {
+                name: 'access_list',
+                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+              },
+              {
+                name: 'estimate',
+                type: 'bool',
+              },
+            ],
+            type: 'Result<CallInfo, sp_runtime::DispatchError>',
+          },
+          account_create: {
+            description: 'create evm contract',
+            params: [
+              {
+                name: 'from',
+                type: 'AccountId',
+              },
+              {
+                name: 'data',
+                type: 'Vec<u8>',
+              },
+              {
+                name: 'value',
+                type: 'Balance',
+              },
+              {
+                name: 'gas_limit',
+                type: 'u64',
+              },
+              {
+                name: 'storage_limit',
+                type: 'u32',
+              },
+              {
+                name: 'access_list',
+                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+              },
+              {
+                name: 'estimate',
+                type: 'bool',
+              },
+            ],
+            type: 'Result<CreateInfo, sp_runtime::DispatchError>',
+          },
         },
       },
     ],
