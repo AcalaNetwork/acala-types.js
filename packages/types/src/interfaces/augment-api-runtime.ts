@@ -110,6 +110,14 @@ declare module '@polkadot/api-base/types/calls' {
     /** 0xe3df3f2aa8a5cc57/2 */
     evmRuntimeRPCApi: {
       /**
+       * call evm contract from substrate account
+       **/
+      accountCall: AugmentedCall<ApiType, (from: AccountId | string | Uint8Array, to: H160 | string | Uint8Array, data: Bytes | string | Uint8Array, value: Balance | AnyNumber | Uint8Array, gas_limit: u64 | AnyNumber | Uint8Array, storage_limit: u32 | AnyNumber | Uint8Array, access_list: Option<Vec<EthereumTransactionAccessListItem>> | null | Uint8Array | Vec<EthereumTransactionAccessListItem> | (EthereumTransactionAccessListItem | { address?: any; storageKeys?: any } | string | Uint8Array)[], estimate: bool | boolean | Uint8Array) => Observable<Result<CallInfo, DispatchError>>>;
+      /**
+       * create evm contract from substrate account
+       **/
+      accountCreate: AugmentedCall<ApiType, (from: AccountId | string | Uint8Array, data: Bytes | string | Uint8Array, value: Balance | AnyNumber | Uint8Array, gas_limit: u64 | AnyNumber | Uint8Array, storage_limit: u32 | AnyNumber | Uint8Array, access_list: Option<Vec<EthereumTransactionAccessListItem>> | null | Uint8Array | Vec<EthereumTransactionAccessListItem> | (EthereumTransactionAccessListItem | { address?: any; storageKeys?: any } | string | Uint8Array)[], estimate: bool | boolean | Uint8Array) => Observable<Result<CreateInfo, DispatchError>>>;
+      /**
        * evm block limits
        **/
       blockLimits: AugmentedCall<ApiType, () => Observable<BlockLimits>>;

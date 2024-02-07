@@ -97,7 +97,7 @@ const acalaRuntimeDefs: Definitions = {
             type: 'BlockLimits',
           },
           account_call: {
-            description: 'call evm contract',
+            description: 'call evm contract from substrate account',
             params: [
               {
                 name: 'from',
@@ -135,7 +135,7 @@ const acalaRuntimeDefs: Definitions = {
             type: 'Result<CallInfo, sp_runtime::DispatchError>',
           },
           account_create: {
-            description: 'create evm contract',
+            description: 'create evm contract from substrate account',
             params: [
               {
                 name: 'from',
