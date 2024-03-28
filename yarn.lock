@@ -35,16 +35,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@acala-network/types@npm:6.1.0":
-  version: 6.1.0
-  resolution: "@acala-network/types@npm:6.1.0"
-  peerDependencies:
-    "@polkadot/api": ^10.9.1
-  checksum: 52790bf0e75ceaa2cf8533c87182b362b5da6c27055767ac535dafbcc207bd2f5ddfc7a3582d0d14e40cb5b52ef66848222ed620777b6c874c9c9936db2b300e
-  languageName: node
-  linkType: hard
-
-"@acala-network/types@workspace:packages/types":
+"@acala-network/types@6.1.0, @acala-network/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
