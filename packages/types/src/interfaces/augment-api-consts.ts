@@ -259,6 +259,15 @@ declare module '@polkadot/api-base/types/consts' {
        **/
       [key: string]: Codec;
     };
+    messageQueue: {
+      heapSize: u32 & AugmentedConst<ApiType>;
+      maxStale: u32 & AugmentedConst<ApiType>;
+      serviceWeight: Option<SpWeightsWeightV2Weight> & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
     multisig: {
       depositBase: u128 & AugmentedConst<ApiType>;
       depositFactor: u128 & AugmentedConst<ApiType>;
@@ -418,6 +427,13 @@ declare module '@polkadot/api-base/types/consts' {
       relayChainUnbondingSlashingSpans: u32 & AugmentedConst<ApiType>;
       selfLocation: StagingXcmV3MultiLocation & AugmentedConst<ApiType>;
       stakingCurrencyId: AcalaPrimitivesCurrencyCurrencyId & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    xcmpQueue: {
+      maxInboundSuspended: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/

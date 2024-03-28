@@ -163,12 +163,6 @@ declare module '@polkadot/api-base/types/errors' {
        **/
       [key: string]: AugmentedError<ApiType>;
     };
-    cumulusXcm: {
-      /**
-       * Generic error
-       **/
-      [key: string]: AugmentedError<ApiType>;
-    };
     currencies: {
       AmountIntoBalanceFailed: AugmentedError<ApiType>;
       BalanceTooLow: AugmentedError<ApiType>;
@@ -246,14 +240,6 @@ declare module '@polkadot/api-base/types/errors' {
       IntervalIsZero: AugmentedError<ApiType>;
       InvalidCurrencyId: AugmentedError<ApiType>;
       InvalidPool: AugmentedError<ApiType>;
-      /**
-       * Generic error
-       **/
-      [key: string]: AugmentedError<ApiType>;
-    };
-    dmpQueue: {
-      OverLimit: AugmentedError<ApiType>;
-      Unknown: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
@@ -445,6 +431,21 @@ declare module '@polkadot/api-base/types/errors' {
        **/
       [key: string]: AugmentedError<ApiType>;
     };
+    messageQueue: {
+      AlreadyProcessed: AugmentedError<ApiType>;
+      InsufficientWeight: AugmentedError<ApiType>;
+      NoMessage: AugmentedError<ApiType>;
+      NoPage: AugmentedError<ApiType>;
+      NotReapable: AugmentedError<ApiType>;
+      Queued: AugmentedError<ApiType>;
+      QueuePaused: AugmentedError<ApiType>;
+      RecursiveDisallowed: AugmentedError<ApiType>;
+      TemporarilyUnprocessable: AugmentedError<ApiType>;
+      /**
+       * Generic error
+       **/
+      [key: string]: AugmentedError<ApiType>;
+    };
     multisig: {
       AlreadyApproved: AugmentedError<ApiType>;
       AlreadyStored: AugmentedError<ApiType>;
@@ -538,20 +539,25 @@ declare module '@polkadot/api-base/types/errors' {
       AlreadySubscribed: AugmentedError<ApiType>;
       BadLocation: AugmentedError<ApiType>;
       BadVersion: AugmentedError<ApiType>;
+      CannotCheckOutTeleport: AugmentedError<ApiType>;
       CannotReanchor: AugmentedError<ApiType>;
       DestinationNotInvertible: AugmentedError<ApiType>;
       Empty: AugmentedError<ApiType>;
       FeesNotMet: AugmentedError<ApiType>;
       Filtered: AugmentedError<ApiType>;
       InUse: AugmentedError<ApiType>;
-      InvalidAsset: AugmentedError<ApiType>;
+      InvalidAssetNotConcrete: AugmentedError<ApiType>;
+      InvalidAssetUnknownReserve: AugmentedError<ApiType>;
+      InvalidAssetUnsupportedReserve: AugmentedError<ApiType>;
       InvalidOrigin: AugmentedError<ApiType>;
+      LocalExecutionIncomplete: AugmentedError<ApiType>;
       LockNotFound: AugmentedError<ApiType>;
       LowBalance: AugmentedError<ApiType>;
       NoSubscription: AugmentedError<ApiType>;
       SendFailure: AugmentedError<ApiType>;
       TooManyAssets: AugmentedError<ApiType>;
       TooManyLocks: AugmentedError<ApiType>;
+      TooManyReserves: AugmentedError<ApiType>;
       Unreachable: AugmentedError<ApiType>;
       UnweighableMessage: AugmentedError<ApiType>;
       /**
@@ -665,7 +671,9 @@ declare module '@polkadot/api-base/types/errors' {
       InvalidSpecName: AugmentedError<ApiType>;
       NonDefaultComposite: AugmentedError<ApiType>;
       NonZeroRefCount: AugmentedError<ApiType>;
+      NothingAuthorized: AugmentedError<ApiType>;
       SpecVersionNeedsToIncrease: AugmentedError<ApiType>;
+      Unauthorized: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
@@ -798,11 +806,9 @@ declare module '@polkadot/api-base/types/errors' {
       [key: string]: AugmentedError<ApiType>;
     };
     xcmpQueue: {
-      BadOverweightIndex: AugmentedError<ApiType>;
-      BadXcm: AugmentedError<ApiType>;
-      BadXcmOrigin: AugmentedError<ApiType>;
-      FailedToSend: AugmentedError<ApiType>;
-      WeightOverLimit: AugmentedError<ApiType>;
+      AlreadyResumed: AugmentedError<ApiType>;
+      AlreadySuspended: AugmentedError<ApiType>;
+      BadQueueConfig: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
