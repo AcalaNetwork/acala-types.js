@@ -6,6 +6,13 @@ const sharedTypes = {
   RawSolution: 'RawSolutionWith16',
   Keys: 'SessionKeys1',
   Weight: 'WeightV1',
+  DispatchTime: {
+    _enum: {
+      At: 'BlockNumber',
+      After: 'BlockNumber',
+    },
+  },
+  CallOf: 'Call',
 };
 
 const xcmV0 = {
