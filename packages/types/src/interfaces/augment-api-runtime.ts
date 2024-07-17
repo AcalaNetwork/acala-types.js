@@ -17,7 +17,6 @@ import type { Extrinsic } from '@polkadot/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@polkadot/types/interfaces/metadata';
 import type { FeeDetails, RuntimeDispatchInfo } from '@polkadot/types/interfaces/payment';
 import type { AccountId, Balance, Block, H160, Header, Index, KeyTypeId, SlotDuration, Weight } from '@polkadot/types/interfaces/runtime';
-import type { RuntimeVersion } from '@polkadot/types/interfaces/state';
 import type { ApplyExtrinsicResult, DispatchError } from '@polkadot/types/interfaces/system';
 import type { TransactionSource, TransactionValidity } from '@polkadot/types/interfaces/txqueue';
 import type { EthereumTransactionAccessListItem } from '@polkadot/types/lookup';
@@ -83,25 +82,6 @@ declare module '@polkadot/api-base/types/calls' {
        * Collect information about a collation.
        **/
       collectCollationInfo: AugmentedCall<ApiType, (header: Header | { parentHash?: any; number?: any; stateRoot?: any; extrinsicsRoot?: any; digest?: any } | string | Uint8Array) => Observable<CollationInfo>>;
-      /**
-       * Generic call
-       **/
-      [key: string]: DecoratedCallBase<ApiType>;
-    };
-    /** 0xdf6acb689907609b/4 */
-    core: {
-      /**
-       * Execute the given block.
-       **/
-      executeBlock: AugmentedCall<ApiType, (block: Block | { header?: any; extrinsics?: any } | string | Uint8Array) => Observable<Null>>;
-      /**
-       * Initialize a block with the given header.
-       **/
-      initializeBlock: AugmentedCall<ApiType, (header: Header | { parentHash?: any; number?: any; stateRoot?: any; extrinsicsRoot?: any; digest?: any } | string | Uint8Array) => Observable<Null>>;
-      /**
-       * Returns the version of the runtime.
-       **/
-      version: AugmentedCall<ApiType, () => Observable<RuntimeVersion>>;
       /**
        * Generic call
        **/

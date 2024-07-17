@@ -33,7 +33,7 @@ declare module '@polkadot/api-base/types/errors' {
       AssetIdExisted: AugmentedError<ApiType>;
       AssetIdNotExists: AugmentedError<ApiType>;
       BadLocation: AugmentedError<ApiType>;
-      MultiLocationExisted: AugmentedError<ApiType>;
+      LocationExisted: AugmentedError<ApiType>;
       /**
        * Generic error
        **/
@@ -77,10 +77,12 @@ declare module '@polkadot/api-base/types/errors' {
     };
     balances: {
       DeadAccount: AugmentedError<ApiType>;
+      DeltaZero: AugmentedError<ApiType>;
       ExistentialDeposit: AugmentedError<ApiType>;
       ExistingVestingSchedule: AugmentedError<ApiType>;
       Expendability: AugmentedError<ApiType>;
       InsufficientBalance: AugmentedError<ApiType>;
+      IssuanceDeactivated: AugmentedError<ApiType>;
       LiquidityRestrictions: AugmentedError<ApiType>;
       TooManyFreezes: AugmentedError<ApiType>;
       TooManyHolds: AugmentedError<ApiType>;
@@ -604,6 +606,7 @@ declare module '@polkadot/api-base/types/errors' {
     rewards: {
       CanSplitOnlyLessThanShare: AugmentedError<ApiType>;
       PoolDoesNotExist: AugmentedError<ApiType>;
+      ShareBelowMinimal: AugmentedError<ApiType>;
       ShareDoesNotExist: AugmentedError<ApiType>;
       /**
        * Generic error
@@ -669,6 +672,7 @@ declare module '@polkadot/api-base/types/errors' {
       CallFiltered: AugmentedError<ApiType>;
       FailedToExtractRuntimeVersion: AugmentedError<ApiType>;
       InvalidSpecName: AugmentedError<ApiType>;
+      MultiBlockMigrationsOngoing: AugmentedError<ApiType>;
       NonDefaultComposite: AugmentedError<ApiType>;
       NonZeroRefCount: AugmentedError<ApiType>;
       NothingAuthorized: AugmentedError<ApiType>;
@@ -828,7 +832,8 @@ declare module '@polkadot/api-base/types/errors' {
       MinXcmFeeNotDefined: AugmentedError<ApiType>;
       NotCrossChainTransfer: AugmentedError<ApiType>;
       NotCrossChainTransferableCurrency: AugmentedError<ApiType>;
-      NotSupportedMultiLocation: AugmentedError<ApiType>;
+      NotSupportedLocation: AugmentedError<ApiType>;
+      RateLimited: AugmentedError<ApiType>;
       TooManyAssetsBeingSent: AugmentedError<ApiType>;
       UnweighableMessage: AugmentedError<ApiType>;
       XcmExecutionFailed: AugmentedError<ApiType>;
