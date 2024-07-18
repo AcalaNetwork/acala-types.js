@@ -4,7 +4,7 @@
 import type { AuthoritysOriginId, CurrencyId } from '@acala-network/types/interfaces/primitives';
 import type { Price } from '@acala-network/types/interfaces/support';
 import type { GenericAccountId32, GenericAccountId33, GenericAccountIndex, GenericBlock, GenericCall, GenericConsensusEngineId, GenericEthereumAccountId, GenericLookupSource, GenericMultiAddress, StorageKey } from '@polkadot/types';
-import type { Bytes, Compact, DoNotConstruct, Enum, Int, Null, Option, Struct, U8aFixed, UInt, Vec, u128, u16, u32, u64, u8 } from '@polkadot/types-codec';
+import type { Bytes, Compact, DoNotConstruct, Enum, Int, Null, Option, Struct, Text, U256, U8aFixed, UInt, Vec, bool, u128, u16, u32, u64, u8 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 import type { AuthorityId } from '@polkadot/types/interfaces/consensus';
 import type { Signature } from '@polkadot/types/interfaces/extrinsics';
@@ -68,6 +68,33 @@ export interface CallHash extends Hash {}
 /** @name CallHashOf */
 export interface CallHashOf extends CallHash {}
 
+/** @name CallTrace */
+export interface CallTrace extends Struct {
+  readonly type: CallType;
+  readonly from: H160;
+  readonly to: H160;
+  readonly input: Bytes;
+  readonly value: U256;
+  readonly gas: Compact<u64>;
+  readonly gasUsed: Compact<u64>;
+  readonly output: Option<Bytes>;
+  readonly error: Option<Text>;
+  readonly revertReason: Option<Text>;
+  readonly depth: Compact<u32>;
+  readonly calls: Vec<CallTrace>;
+}
+
+/** @name CallType */
+export interface CallType extends Enum {
+  readonly isCall: boolean;
+  readonly isCallcode: boolean;
+  readonly isStaticcall: boolean;
+  readonly isDelegatecall: boolean;
+  readonly isCreate: boolean;
+  readonly isSuicide: boolean;
+  readonly type: 'Call' | 'Callcode' | 'Staticcall' | 'Delegatecall' | 'Create' | 'Suicide';
+}
+
 /** @name ChangesTrieConfiguration */
 export interface ChangesTrieConfiguration extends Struct {
   readonly digestInterval: u32;
@@ -126,6 +153,13 @@ export interface DigestItem extends Enum {
 
 /** @name EncodedJustification */
 export interface EncodedJustification extends Bytes {}
+
+/** @name ExtrinsicInclusionMode */
+export interface ExtrinsicInclusionMode extends Enum {
+  readonly isAllExtrinsics: boolean;
+  readonly isOnlyInherents: boolean;
+  readonly type: 'AllExtrinsics' | 'OnlyInherents';
+}
 
 /** @name ExtrinsicsWeight */
 export interface ExtrinsicsWeight extends Struct {
@@ -245,6 +279,14 @@ export interface MultiSigner extends Enum {
 
 /** @name OpaqueCall */
 export interface OpaqueCall extends Bytes {}
+
+/** @name OpcodeConfig */
+export interface OpcodeConfig extends Struct {
+  readonly page: u32;
+  readonly pageSize: u32;
+  readonly disableStack: bool;
+  readonly enableMemory: bool;
+}
 
 /** @name OracleKey */
 export interface OracleKey extends CurrencyId {}
@@ -377,6 +419,16 @@ export interface SlotDuration extends u64 {}
 /** @name StableAssetPoolId */
 export interface StableAssetPoolId extends u32 {}
 
+/** @name Step */
+export interface Step extends Struct {
+  readonly op: u8;
+  readonly pc: Compact<u32>;
+  readonly depth: Compact<u32>;
+  readonly gas: Compact<u64>;
+  readonly stack: Vec<Bytes>;
+  readonly memory: Option<Vec<Bytes>>;
+}
+
 /** @name StorageData */
 export interface StorageData extends Bytes {}
 
@@ -392,6 +444,23 @@ export interface StorageInfo extends Struct {
 /** @name StorageProof */
 export interface StorageProof extends Struct {
   readonly trieNodes: Vec<Bytes>;
+}
+
+/** @name TraceOutcome */
+export interface TraceOutcome extends Enum {
+  readonly isCalls: boolean;
+  readonly asCalls: Vec<CallTrace>;
+  readonly isSteps: boolean;
+  readonly asSteps: Vec<Step>;
+  readonly type: 'Calls' | 'Steps';
+}
+
+/** @name TracerConfig */
+export interface TracerConfig extends Enum {
+  readonly isCallTracer: boolean;
+  readonly isOpcodeTracer: boolean;
+  readonly asOpcodeTracer: OpcodeConfig;
+  readonly type: 'CallTracer' | 'OpcodeTracer';
 }
 
 /** @name TransactionInfo */

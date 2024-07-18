@@ -6,6 +6,7 @@
 import '@polkadot/api-base/types/calls';
 
 import type { BlockLimits, CallInfo, CreateInfo } from '@acala-network/types/interfaces/evm';
+import type { TraceOutcome, TracerConfig } from '@acala-network/types/interfaces/runtime';
 import type { ApiTypes, AugmentedCall, DecoratedCallBase } from '@polkadot/api-base/types';
 import type { Bytes, Null, Option, Raw, Result, Vec, bool, u128, u32, u64 } from '@polkadot/types-codec';
 import type { AnyNumber, ITuple } from '@polkadot/types-codec/types';
@@ -16,8 +17,9 @@ import type { CollationInfo } from '@polkadot/types/interfaces/cumulus';
 import type { Extrinsic } from '@polkadot/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@polkadot/types/interfaces/metadata';
 import type { FeeDetails, RuntimeDispatchInfo } from '@polkadot/types/interfaces/payment';
-import type { AccountId, Balance, Block, H160, Header, Index, KeyTypeId, SlotDuration, Weight } from '@polkadot/types/interfaces/runtime';
-import type { ApplyExtrinsicResult, DispatchError } from '@polkadot/types/interfaces/system';
+import type { AccountId, Balance, Block, ExtrinsicInclusionMode, H160, Header, Index, KeyTypeId, SlotDuration, Weight } from '@polkadot/types/interfaces/runtime';
+import type { RuntimeVersion } from '@polkadot/types/interfaces/state';
+import type { ApplyExtrinsicResult, DispatchError, TransactionValidityError } from '@polkadot/types/interfaces/system';
 import type { TransactionSource, TransactionValidity } from '@polkadot/types/interfaces/txqueue';
 import type { EthereumTransactionAccessListItem } from '@polkadot/types/lookup';
 import type { IExtrinsic, Observable } from '@polkadot/types/types';
@@ -87,6 +89,25 @@ declare module '@polkadot/api-base/types/calls' {
        **/
       [key: string]: DecoratedCallBase<ApiType>;
     };
+    /** 0xdf6acb689907609b/5 */
+    core: {
+      /**
+       * Execute the given block.
+       **/
+      executeBlock: AugmentedCall<ApiType, (block: Block | { header?: any; extrinsics?: any } | string | Uint8Array) => Observable<Null>>;
+      /**
+       * Initialize a block with the given header.
+       **/
+      initializeBlock: AugmentedCall<ApiType, (header: Header | { parentHash?: any; number?: any; stateRoot?: any; extrinsicsRoot?: any; digest?: any } | string | Uint8Array) => Observable<ExtrinsicInclusionMode>>;
+      /**
+       * Returns the version of the runtime.
+       **/
+      version: AugmentedCall<ApiType, () => Observable<RuntimeVersion>>;
+      /**
+       * Generic call
+       **/
+      [key: string]: DecoratedCallBase<ApiType>;
+    };
     /** 0xe3df3f2aa8a5cc57/2 */
     evmRuntimeRPCApi: {
       /**
@@ -109,6 +130,17 @@ declare module '@polkadot/api-base/types/calls' {
        * create evm contract
        **/
       create: AugmentedCall<ApiType, (from: H160 | string | Uint8Array, data: Bytes | string | Uint8Array, value: Balance | AnyNumber | Uint8Array, gas_limit: u64 | AnyNumber | Uint8Array, storage_limit: u32 | AnyNumber | Uint8Array, access_list: Option<Vec<EthereumTransactionAccessListItem>> | null | Uint8Array | Vec<EthereumTransactionAccessListItem> | (EthereumTransactionAccessListItem | { address?: any; storageKeys?: any } | string | Uint8Array)[], estimate: bool | boolean | Uint8Array) => Observable<Result<CreateInfo, DispatchError>>>;
+      /**
+       * Generic call
+       **/
+      [key: string]: DecoratedCallBase<ApiType>;
+    };
+    /** 0x09508987e5d0dcf4/1 */
+    evmTraceApi: {
+      /**
+       * trace an evm extrinsic
+       **/
+      traceExtrinsic: AugmentedCall<ApiType, (extrinsic: Extrinsic | IExtrinsic | string | Uint8Array, tracer_config: TracerConfig | { CallTracer: any } | { OpcodeTracer: any } | string | Uint8Array) => Observable<Result<TraceOutcome, TransactionValidityError>>>;
       /**
        * Generic call
        **/

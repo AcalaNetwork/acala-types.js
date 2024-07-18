@@ -13,6 +13,56 @@ const acalaRuntimeDefs: Definitions = {
     AtLeast64BitUnsigned: 'u128',
     StableAssetPoolId: 'u32',
     RelayChainBlockNumberOf: 'RelayChainBlockNumber',
+    Step: {
+      op: 'u8',
+      pc: 'Compact<u32>',
+      depth: 'Compact<u32>',
+      gas: 'Compact<u64>',
+      stack: 'Vec<Bytes>',
+      memory: 'Option<Vec<Bytes>>',
+    },
+    CallType: {
+      _enum: {
+        CALL: null,
+        CALLCODE: null,
+        STATICCALL: null,
+        DELEGATECALL: null,
+        CREATE: null,
+        SUICIDE: null,
+      },
+    },
+    CallTrace: {
+      type: 'CallType',
+      from: 'H160',
+      to: 'H160',
+      input: 'Bytes',
+      value: 'U256',
+      gas: 'Compact<u64>',
+      gasUsed: 'Compact<u64>',
+      output: 'Option<Bytes>',
+      error: 'Option<String>',
+      revertReason: 'Option<String>',
+      depth: 'Compact<u32>',
+      calls: 'Vec<CallTrace>',
+    },
+    TraceOutcome: {
+      _enum: {
+        Calls: 'Vec<CallTrace>',
+        Steps: 'Vec<Step>',
+      },
+    },
+    OpcodeConfig: {
+      page: 'u32',
+      pageSize: 'u32',
+      disableStack: 'bool',
+      enableMemory: 'bool',
+    },
+    TracerConfig: {
+      _enum: {
+        CallTracer: null,
+        OpcodeTracer: 'OpcodeConfig',
+      },
+    },
   },
   runtime: {
     EVMRuntimeRPCApi: [
@@ -167,6 +217,27 @@ const acalaRuntimeDefs: Definitions = {
               },
             ],
             type: 'Result<CreateInfo, sp_runtime::DispatchError>',
+          },
+        },
+      },
+    ],
+    EVMTraceApi: [
+      {
+        version: 1,
+        methods: {
+          trace_extrinsic: {
+            description: 'trace an evm extrinsic',
+            params: [
+              {
+                name: 'extrinsic',
+                type: 'Block::Extrinsic',
+              },
+              {
+                name: 'tracer_config',
+                type: 'primitives::evm::tracing::TracerConfig',
+              },
+            ],
+            type: 'Result<primitives::evm::tracing::TraceOutcome, sp_runtime::transaction_validity::TransactionValidityError>',
           },
         },
       },
