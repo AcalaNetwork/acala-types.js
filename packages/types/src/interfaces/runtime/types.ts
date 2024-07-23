@@ -81,6 +81,7 @@ export interface CallTrace extends Struct {
   readonly error: Option<Text>;
   readonly revertReason: Option<Text>;
   readonly depth: Compact<u32>;
+  readonly logs: Vec<LogTrace>;
   readonly calls: Vec<CallTrace>;
 }
 
@@ -251,6 +252,24 @@ export interface KeyValue extends ITuple<[StorageKey, StorageData]> {}
 /** @name LockIdentifier */
 export interface LockIdentifier extends U8aFixed {}
 
+/** @name LogTrace */
+export interface LogTrace extends Enum {
+  readonly isLog: boolean;
+  readonly asLog: LogTraceLog;
+  readonly isSLoad: boolean;
+  readonly asSLoad: SLoad;
+  readonly isSStore: boolean;
+  readonly asSStore: SStore;
+  readonly type: 'Log' | 'SLoad' | 'SStore';
+}
+
+/** @name LogTraceLog */
+export interface LogTraceLog extends Struct {
+  readonly address: H160;
+  readonly topics: Vec<H256>;
+  readonly data: Bytes;
+}
+
 /** @name LookupSource */
 export interface LookupSource extends MultiAddress {}
 
@@ -410,11 +429,25 @@ export interface SignedBlockWithJustifications extends Struct {
   readonly justifications: Option<Justifications>;
 }
 
+/** @name SLoad */
+export interface SLoad extends Struct {
+  readonly address: H160;
+  readonly index: H256;
+  readonly value: H256;
+}
+
 /** @name Slot */
 export interface Slot extends u64 {}
 
 /** @name SlotDuration */
 export interface SlotDuration extends u64 {}
+
+/** @name SStore */
+export interface SStore extends Struct {
+  readonly address: H160;
+  readonly index: H256;
+  readonly value: H256;
+}
 
 /** @name StableAssetPoolId */
 export interface StableAssetPoolId extends u32 {}

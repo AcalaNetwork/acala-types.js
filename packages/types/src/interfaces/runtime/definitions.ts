@@ -43,6 +43,7 @@ const acalaRuntimeDefs: Definitions = {
       error: 'Option<String>',
       revertReason: 'Option<String>',
       depth: 'Compact<u32>',
+      logs: 'Vec<LogTrace>',
       calls: 'Vec<CallTrace>',
     },
     TraceOutcome: {
@@ -61,6 +62,28 @@ const acalaRuntimeDefs: Definitions = {
       _enum: {
         CallTracer: null,
         OpcodeTracer: 'OpcodeConfig',
+      },
+    },
+    LogTraceLog: {
+      address: 'H160',
+      topics: 'Vec<H256>',
+      data: 'Vec<u8>',
+    },
+    SLoad: {
+      address: 'H160',
+      index: 'H256',
+      value: 'H256',
+    },
+    SStore: {
+      address: 'H160',
+      index: 'H256',
+      value: 'H256',
+    },
+    LogTrace: {
+      _enum: {
+        Log: 'LogTraceLog',
+        SLoad: 'SLoad',
+        SStore: 'SStore',
       },
     },
   },
