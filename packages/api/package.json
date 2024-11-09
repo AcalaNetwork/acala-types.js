@@ -27,7 +27,7 @@
     "@acala-network/types": "6.1.3"
   },
   "peerDependencies": {
-    "@polkadot/api": "^12"
+    "@polkadot/api": "^14"
   },
   "devDependencies": {
     "typescript": "^5.0.4"

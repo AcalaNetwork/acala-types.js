@@ -23,7 +23,7 @@
     "publish": "yarn workspaces foreach -vit run publish:manual"
   },
   "devDependencies": {
-    "@polkadot/api": "^12",
+    "@polkadot/api": "^14",
     "@types/eslint": "^8",
     "@types/node": "^20.4.9",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
