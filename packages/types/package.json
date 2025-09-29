@@ -34,10 +34,10 @@
     }
   },
   "peerDependencies": {
-    "@polkadot/api": "^14"
+    "@polkadot/api": "^16"
   },
   "devDependencies": {
-    "@polkadot/typegen": "^14",
+    "@polkadot/typegen": "^16",
     "@types/node": "^20.4.9",
     "typescript": "^5.0.4"
   }

@@ -3,7 +3,7 @@
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js#readme",
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
     "publish": "yarn workspaces foreach -vit run publish:manual"
   },
   "devDependencies": {
-    "@polkadot/api": "^14",
+    "@polkadot/api": "^16",
     "@types/eslint": "^8",
     "@types/node": "^20.4.9",
     "@typescript-eslint/eslint-plugin": "^6.5.0",

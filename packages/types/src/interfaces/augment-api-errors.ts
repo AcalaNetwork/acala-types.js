@@ -99,6 +99,7 @@ declare module '@polkadot/api-base/types/errors' {
       InvalidFee: AugmentedError<ApiType>;
       InvalidIndex: AugmentedError<ApiType>;
       InvalidValue: AugmentedError<ApiType>;
+      NotProposer: AugmentedError<ApiType>;
       PendingPayout: AugmentedError<ApiType>;
       Premature: AugmentedError<ApiType>;
       ReasonTooBig: AugmentedError<ApiType>;
@@ -214,6 +215,7 @@ declare module '@polkadot/api-base/types/errors' {
       ExcessiveSupplyAmount: AugmentedError<ApiType>;
       InsufficientLiquidity: AugmentedError<ApiType>;
       InsufficientTargetAmount: AugmentedError<ApiType>;
+      InvalidClaim: AugmentedError<ApiType>;
       InvalidContributionIncrement: AugmentedError<ApiType>;
       InvalidCurrencyId: AugmentedError<ApiType>;
       InvalidLiquidityIncrement: AugmentedError<ApiType>;
@@ -319,6 +321,7 @@ declare module '@polkadot/api-base/types/errors' {
       DuplicateVote: AugmentedError<ApiType>;
       NotMember: AugmentedError<ApiType>;
       PrimeAccountNotMember: AugmentedError<ApiType>;
+      ProposalActive: AugmentedError<ApiType>;
       ProposalMissing: AugmentedError<ApiType>;
       TooEarly: AugmentedError<ApiType>;
       TooManyProposals: AugmentedError<ApiType>;
@@ -345,6 +348,7 @@ declare module '@polkadot/api-base/types/errors' {
       DuplicateVote: AugmentedError<ApiType>;
       NotMember: AugmentedError<ApiType>;
       PrimeAccountNotMember: AugmentedError<ApiType>;
+      ProposalActive: AugmentedError<ApiType>;
       ProposalMissing: AugmentedError<ApiType>;
       TooEarly: AugmentedError<ApiType>;
       TooManyProposals: AugmentedError<ApiType>;
@@ -386,6 +390,7 @@ declare module '@polkadot/api-base/types/errors' {
       DuplicateVote: AugmentedError<ApiType>;
       NotMember: AugmentedError<ApiType>;
       PrimeAccountNotMember: AugmentedError<ApiType>;
+      ProposalActive: AugmentedError<ApiType>;
       ProposalMissing: AugmentedError<ApiType>;
       TooEarly: AugmentedError<ApiType>;
       TooManyProposals: AugmentedError<ApiType>;
@@ -539,12 +544,10 @@ declare module '@polkadot/api-base/types/errors' {
     };
     parachainSystem: {
       HostConfigurationNotAvailable: AugmentedError<ApiType>;
-      NothingAuthorized: AugmentedError<ApiType>;
       NotScheduled: AugmentedError<ApiType>;
       OverlappingUpgrades: AugmentedError<ApiType>;
       ProhibitedByPolkadot: AugmentedError<ApiType>;
       TooBig: AugmentedError<ApiType>;
-      Unauthorized: AugmentedError<ApiType>;
       ValidationDataNotAvailable: AugmentedError<ApiType>;
       /**
        * Generic error
@@ -559,6 +562,7 @@ declare module '@polkadot/api-base/types/errors' {
     };
     polkadotXcm: {
       AccountNotSovereign: AugmentedError<ApiType>;
+      AliasNotFound: AugmentedError<ApiType>;
       AlreadySubscribed: AugmentedError<ApiType>;
       BadLocation: AugmentedError<ApiType>;
       BadVersion: AugmentedError<ApiType>;
@@ -566,6 +570,7 @@ declare module '@polkadot/api-base/types/errors' {
       CannotReanchor: AugmentedError<ApiType>;
       DestinationNotInvertible: AugmentedError<ApiType>;
       Empty: AugmentedError<ApiType>;
+      ExpiresInPast: AugmentedError<ApiType>;
       FeesNotMet: AugmentedError<ApiType>;
       Filtered: AugmentedError<ApiType>;
       InUse: AugmentedError<ApiType>;
@@ -573,11 +578,13 @@ declare module '@polkadot/api-base/types/errors' {
       InvalidAssetUnsupportedReserve: AugmentedError<ApiType>;
       InvalidOrigin: AugmentedError<ApiType>;
       LocalExecutionIncomplete: AugmentedError<ApiType>;
+      LocalExecutionIncompleteWithError: AugmentedError<ApiType>;
       LockNotFound: AugmentedError<ApiType>;
       LowBalance: AugmentedError<ApiType>;
       NoSubscription: AugmentedError<ApiType>;
       SendFailure: AugmentedError<ApiType>;
       TooManyAssets: AugmentedError<ApiType>;
+      TooManyAuthorizedAliases: AugmentedError<ApiType>;
       TooManyLocks: AugmentedError<ApiType>;
       TooManyReserves: AugmentedError<ApiType>;
       Unreachable: AugmentedError<ApiType>;
@@ -589,7 +596,6 @@ declare module '@polkadot/api-base/types/errors' {
     };
     preimage: {
       AlreadyNoted: AugmentedError<ApiType>;
-      NoCost: AugmentedError<ApiType>;
       NotAuthorized: AugmentedError<ApiType>;
       NotNoted: AugmentedError<ApiType>;
       NotRequested: AugmentedError<ApiType>;
@@ -710,6 +716,7 @@ declare module '@polkadot/api-base/types/errors' {
       DuplicateVote: AugmentedError<ApiType>;
       NotMember: AugmentedError<ApiType>;
       PrimeAccountNotMember: AugmentedError<ApiType>;
+      ProposalActive: AugmentedError<ApiType>;
       ProposalMissing: AugmentedError<ApiType>;
       TooEarly: AugmentedError<ApiType>;
       TooManyProposals: AugmentedError<ApiType>;
