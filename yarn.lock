@@ -12,14 +12,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/api-derive@6.2.0, @acala-network/api-derive@workspace:packages/api-derive":
+"@acala-network/api-derive@6.3.0, @acala-network/api-derive@workspace:packages/api-derive":
   version: 0.0.0-use.local
   resolution: "@acala-network/api-derive@workspace:packages/api-derive"
   dependencies:
-    "@acala-network/types": 6.2.0
+    "@acala-network/types": 6.3.0
     typescript: ^5.0.4
   peerDependencies:
-    "@polkadot/api": ^14
+    "@polkadot/api": ^16
   languageName: unknown
   linkType: soft
 
@@ -27,15 +27,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@acala-network/api@workspace:packages/api"
   dependencies:
-    "@acala-network/api-derive": 6.2.0
-    "@acala-network/types": 6.2.0
+    "@acala-network/api-derive": 6.3.0
+    "@acala-network/types": 6.3.0
     typescript: ^5.0.4
   peerDependencies:
     "@polkadot/api": ^16
   languageName: unknown
   linkType: soft
 
-"@acala-network/types@6.2.0, @acala-network/types@workspace:packages/types":
+"@acala-network/types@6.3.0, @acala-network/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@acala-network/types@workspace:packages/types"
   dependencies:
