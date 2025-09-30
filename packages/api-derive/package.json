@@ -29,6 +29,6 @@
     "@polkadot/api": "^16"
   },
   "devDependencies": {
-    "typescript": "^5.0.4"
+    "typescript": "^5.5.4"
   }
 }

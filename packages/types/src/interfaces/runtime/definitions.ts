@@ -121,7 +121,7 @@ const acalaRuntimeDefs: Definitions = {
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+                type: 'Option<Vec<EthereumTransactionEip2930AccessListItem>>',
               },
               {
                 name: 'estimate',
@@ -155,7 +155,7 @@ const acalaRuntimeDefs: Definitions = {
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+                type: 'Option<Vec<EthereumTransactionEip2930AccessListItem>>',
               },
               {
                 name: 'estimate',
@@ -198,7 +198,7 @@ const acalaRuntimeDefs: Definitions = {
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+                type: 'Option<Vec<EthereumTransactionEip2930AccessListItem>>',
               },
               {
                 name: 'estimate',
@@ -232,7 +232,7 @@ const acalaRuntimeDefs: Definitions = {
               },
               {
                 name: 'access_list',
-                type: 'Option<Vec<EthereumTransactionAccessListItem>>',
+                type: 'Option<Vec<EthereumTransactionEip2930AccessListItem>>',
               },
               {
                 name: 'estimate',
