@@ -3,7 +3,7 @@
   "private": true,
   "bugs": "https://github.com/AcalaNetwork/acala-types.js/issues",
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
   },
   "homepage": "https://github.com/AcalaNetwork/acala-types.js#readme",
   "license": "Apache-2.0",
